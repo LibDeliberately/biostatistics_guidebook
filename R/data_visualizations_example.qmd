@@ -1,0 +1,277 @@
+---
+title: "Data Visualizations Example"
+author: "Olivia Dobbs"
+format: html
+editor: visual
+---
+
+## Packages
+
+```{r}
+# Adding libraries for basic visualizations
+library(ggplot2) # graphic representation for plots
+library(gtsummary) # for generating presentation-ready tables
+library(tidyverse) # inclusive package list for data science/manipulation/visualization
+library(ggridges) # package to create ridgeline plots
+library(janitor) # packing that helps with making things neat and neatly displaying data
+
+# Adding loading/datasets for example suse
+# Palmer penguins
+library(palmerpenguins) # penguin measurements
+penguins <- palmerpenguins::penguins
+```
+
+## Observing Datasets
+
+Before plotting data, it helps to view summaries of the data you're working with
+
+```{r}
+# glimpse, from dplyr package in tidyverse
+# shows first several data points for each variable
+# shows the number of rows and columns in the dataset
+glimpse(penguins)
+```
+
+```{r}
+# summary gives summary information about variables included in the dataset
+# includes minimum and maximum, and number of each in categories included
+summary(penguins)
+```
+
+```{r}
+# tbl_summary provides basic information on distributions of values in variables
+tbl_summary(penguins)
+```
+
+```{r}
+# use head to view the first 6 rows of a dataset
+head(penguins)
+
+# and tail shows the last few rows of a dataset
+# you can specify how many rows are shown using a numerical parameter
+tail(penguins, 10)
+```
+
+#### Frequency Tables
+
+```{r}
+# With a single variable
+penguins %>% count(species)
+
+# We can use tabyl for a prettier version
+penguins %>% tabyl(species) %>%
+  adorn_totals("row") %>% # adds a total at the bottom of the table 
+  adorn_pct_formatting(digits=2) # allows the specification of significant figures for percent
+```
+
+#### Contingency Tables
+
+```{r}
+# With multiple variables at once
+penguins %>% count(species, sex)
+
+# Or a prettier version with tabyl
+penguins %>% tabyl(species) %>%
+  adorn_totals(c("row","col")) # totals calculated for each row and each column
+```
+
+#### Summarizing Averages
+
+```{r}
+
+# summary measurements like mean will return NA when NA values are present in a column.
+# We can fix this by omitting the NA variables for now
+clean_penguins = na.omit(penguins)
+
+clean_penguins %>%
+  summarize(
+    mean = mean(bill_length_mm),
+    sd = sd(bill_length_mm),
+    median = median(bill_length_mm),
+    min = min(bill_length_mm),
+    max = max(bill_length_mm)
+  )
+
+# We can also group this by a categorical variable
+
+clean_penguins %>%
+  group_by(sex) %>%
+  summarize(
+    mean = mean(bill_length_mm),
+    sd = sd(bill_length_mm),
+    median = median(bill_length_mm),
+    min = min(bill_length_mm),
+    max = max(bill_length_mm)
+  )
+```
+
+# Plots
+
+## GGPlot Plots
+
+### Single Variables
+
+#### Histograms
+
+```{r}
+# Basic historgram showing count
+ggplot(data = penguins, # specifying what dataset to use
+       aes(x = bill_length_mm)) + # assigning x variable in plot
+       geom_histogram() # specifying what type of graph
+
+# Basic histogram showing proportions in decimals
+ggplot(data = penguins,
+       aes(x = bill_length_mm)) + 
+       geom_histogram(aes(y = stat(density)))
+
+# Basic histogram showing proportions in percents
+ggplot(data = penguins,
+       aes(x = bill_length_mm)) + 
+       geom_histogram(aes(y = stat(density))) +
+  scale_y_continuous(labels = scales::percent_format())
+```
+
+#### Density Plot
+
+```{r}
+# Basic density plot
+ggplot(data = penguins,
+       aes(x = bill_length_mm)) +
+       geom_density() 
+```
+
+#### Dot Plot
+
+```{r}
+ggplot(data = penguins,
+       aes(x = bill_length_mm)) +
+  geom_dotplot(binwidth = 0.5) + # binwidth sets the physical size of intervals used to group continuous data into bars on your plot
+  labs(title = "Distribution of Bill Lengths", # labs lets you add text to your plot
+       x = "Bill Lengths",
+       y = "Count")
+       
+```
+
+#### Boxplot
+
+```{r}
+ggplot(data = penguins,
+       aes(x = bill_length_mm)) +
+  geom_boxplot()
+
+# for a vertical boxplot, you can also set bill length to 'y'
+ggplot(data = penguins,
+       aes(y = bill_length_mm)) +
+  geom_boxplot()
+```
+
+#### Barplots
+
+```{r}
+ggplot(data = penguins,
+       aes(x = species)) +
+  geom_bar()
+```
+
+### Multiple Variables
+
+#### Boxplots Grouped by A Variable
+
+```{r}
+ggplot(data = penguins,
+       aes(x = bill_length_mm,
+           y = species)) +
+  geom_boxplot()
+```
+
+#### Jitter Graph Grouped by A Variable
+
+```{r}
+ggplot(data = penguins,
+       aes(x = bill_length_mm,
+           y = species)) +
+  geom_jitter(
+    aes(color = species)
+  )
+```
+
+#### Combining Jitter Graph and Boxplot
+
+```{r}
+ggplot(data = penguins,
+       aes(x = bill_length_mm,
+           y = species)) +
+  geom_boxplot() +
+  geom_jitter(
+    aes(color = species)
+  )
+```
+
+#### Density Plots Grouped by A Variable
+
+```{r}
+ggplot(data = penguins,
+       aes(x = bill_length_mm,
+           color = species)) + # Note that we put 'color' here instead of 'y'
+  geom_density() 
+```
+
+#### Ridgeline Plot
+
+```{r}
+ggplot(data = penguins,
+       aes(x = bill_length_mm,
+           y = species,
+           fill = species)) +
+  geom_density_ridges(alpha = 0.5, # changes opacity
+                      show.legend = FALSE # removes the key to the right
+  )
+```
+
+#### Scatterplots for Two Continuous Variables
+
+```{r}
+ggplot(data = penguins,
+       aes( x = bill_length_mm,
+            y = body_mass_g)) +
+  geom_point()
+
+# You can also add a categorical variable to color the points
+ggplot(data = penguins,
+       aes( x = bill_length_mm,
+            y = body_mass_g,
+            color = species)) +
+  geom_point()
+
+# You can also add a linear model line
+ggplot(data = penguins,
+       aes( x = bill_length_mm,
+            y = body_mass_g,
+            color = species)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+#-----------------------------------------------------------------------------------------------------------------------------------#
+# Note that lm determines uncertainty bands by calculated a 95% CI for the predicted mean value of y at each specific value of x. 
+# (It uses standard error of the fit - SE_y-hat)
+# Instead of lm you can also use 
+    # loess (smooth, flexible curve for non-linear patterns without assuming a pattern)
+    # gam (general additive model that performs similar to loess, but better for n > 1000 datasets)
+    # glm (assumes linear, but better for logistic regression or poisson regression)
+    # rlm (a linear model that's less sensitive to outliers & needs the MASS library)
+```
+
+#### Bar Plots Between Two Categorical Variables
+
+```{r}
+ggplot(data = penguins,
+       aes(x = species,
+           fill = sex)) +
+  geom_bar()
+
+# We can also put them next to each other instead of stacked
+ggplot(data = penguins,
+       aes(x = species,
+           fill = sex)) +
+  geom_bar(position = "dodge")
+
+```
