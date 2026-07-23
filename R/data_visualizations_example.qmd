@@ -105,6 +105,28 @@ clean_penguins %>%
   )
 ```
 
+#### Making a Table 1
+
+```{r}
+# TO DO
+clean_penguins %>%
+  select( bill_length_mm, bill_depth_mm, flipper_length_mm, island,
+          species, body_mass_g, sex, year) %>%
+  tbl_summary(by = species,
+              label = c(
+                bill_length_mm ~ "Length of Bill (mm)",
+                        bill_depth_mm ~ "Depth of Bill (mm)",
+                        flipper_length_mm ~ "Length of Flippers (mm)",
+                        island ~ "Island Measured From",
+                        body_mass_g ~ "Body Mass (g)",
+                        sex ~ "Sex",
+                        year ~ "Year Measured"
+                        ),
+              statistic = list(all_continuous() ~ "{mean} ({sd})"),
+              missing_text = "Unknown"
+              )
+```
+
 # Plots
 
 ## GGPlot Plots
@@ -275,3 +297,11 @@ ggplot(data = penguins,
   geom_bar(position = "dodge")
 
 ```
+
+///////TO DO Pie CHART
+
+///// TO DO OTHER PLOTS TBD
+
+## /////TODO BASE R PLOTS
+
+////TO DO SAVING PLOTS
