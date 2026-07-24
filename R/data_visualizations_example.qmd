@@ -298,10 +298,21 @@ ggplot(data = penguins,
 
 ```
 
-///////TO DO Pie CHART
+## Base R Plots
+
+#### Pie Chart
+
+```{r}
+# creating a dataframe of counts for penguin species
+peng_species_count <- data.frame(
+  group = c("Adelie", "Chinstrap", "Gentoo"),
+  count = c(146,68,119)
+)
+pie(peng_species_count$count,
+    labels = peng_species_count$group,
+    main = "Species Share")
+```
 
 ///// TO DO OTHER PLOTS TBD
-
-## /////TODO BASE R PLOTS
 
 ////TO DO SAVING PLOTS

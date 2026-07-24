@@ -1,0 +1,183 @@
+---
+title: "Purposeful Model Selection Example"
+author: "Olivia Dobbs"
+format: html
+editor: visual
+---
+
+## Packages and Data Import
+
+```{r}
+# libraries needed
+library(tidyverse)
+library(here)
+library(readr)
+library(gtsummary)
+library(GGally)
+
+# dataset
+exp <- read_csv(here("data", "population_bp_example.csv"))
+glimpse(exp)
+```
+
+```{r}
+head(exp)-
+```
+
+[**Note:**]{.underline} The data for this example is entirely synthetic and generated for the purposes of this example. No results from this data should be considered indicative of any real patterns of health in any real population.
+
+## Step 0: Defining a Research Question
+
+##### How is systolic blood pressure (mmHg) associated with daily grams of sodium intake? 
+
+## Step 1: Exploring Simple Relationships
+
+```{r}
+exp %>% ggpairs(progress = FALSE)
+```
+
+#### SLR with main effect of interest and outcome
+
+```{r}
+mod_main_ef = exp %>%
+  lm(formula = systolic_bp ~ sodium_intake_g_day)
+
+tidy(mod_main_ef) %>% gt() %>%
+  tab_options(table.font.size = 15) %>%
+  fmt_number(decimals = 3)
+```
+
+#### SLR with other variables of interest
+
+```{r}
+# This version is simpler and allows for more output control, but requires repetitive code.
+# age
+mod_age = exp %>%
+  lm(formula = systolic_bp ~ age)
+
+tidy(mod_age) %>% gt() %>%
+  tab_options(table.font.size = 15) %>%
+  fmt_number(decimals = 3)
+
+# sex
+mod_sex = exp %>%
+  lm(formula = systolic_bp ~ sex)
+
+tidy(mod_sex) %>% gt() %>%
+  tab_options(table.font.size = 15) %>%
+  fmt_number(decimals = 3)
+
+# race_ethnicity
+mod_eth = exp %>%
+  lm(formula = systolic_bp ~ race_ethnicity)
+
+tidy(mod_eth) %>% gt() %>%
+  tab_options(table.font.size = 15) %>%
+  fmt_number(decimals = 3)
+
+# education
+mod_edu = exp %>%
+  lm(formula = systolic_bp ~ education)
+
+tidy(mod_edu) %>% gt() %>%
+  tab_options(table.font.size = 15) %>%
+  fmt_number(decimals = 3)
+
+# smoking_status
+mod_smo = exp %>%
+  lm(formula = systolic_bp ~ smoking_status)
+
+tidy(mod_smo) %>% gt() %>%
+  tab_options(table.font.size = 15) %>%
+  fmt_number(decimals = 3)
+
+# bmi
+mod_bmi = exp %>%
+  lm(formula = systolic_bp ~ bmi)
+
+tidy(mod_bmi) %>% gt() %>%
+  tab_options(table.font.size = 15) %>%
+  fmt_number(decimals = 3)
+
+# physical_activity_hrs_week
+mod_phys = exp %>%
+  lm(formula = systolic_bp ~ physical_activity_hrs_week)
+
+tidy(mod_phys) %>% gt() %>%
+  tab_options(table.font.size = 15) %>%
+  fmt_number(decimals = 3)
+
+# sleep_hrs_night
+mod_zzz = exp %>%
+  lm(formula = systolic_bp ~ sleep_hrs_night)
+
+tidy(mod_zzz) %>% gt() %>%
+  tab_options(table.font.size = 15) %>%
+  fmt_number(decimals = 3)
+```
+
+```{r}
+# Alternative, quick method with more efficient code
+
+exp_int = exp %>%
+  lm(formula = systolic_bp ~ 1)
+
+add1(exp_int,
+     scope = ~ age + sex + race_ethnicity + education + smoking_status + bmi + physical_activity_hrs_week + sodium_intake_g_day + sleep_hrs_night,
+     test = "F")
+```
+
+#### Observing ANOVAs
+
+```{r}
+anova(mod_main_ef)
+anova(mod_age)
+anova(mod_bmi)
+anova(mod_edu)
+anova(mod_eth)
+anova(mod_phys)
+anova(mod_sex)
+anova(mod_smo)
+anova(mod_zzz)
+```
+
+## Step 2: Preliminary Variable Selection
+
+Using values from the add1 function above, I'm beginning model selection using all variables where the resulting p-value is less than 0.25.
+
+As a result, this initial model will **not** include:
+
+-   Weekly physical activity hours (0.410)
+
+-   Hours of sleep each night (p = 0.346)
+
+The remaining variables will be included.
+
+```{r}
+init_mod = exp %>%
+  lm(formula = systolic_bp ~ sodium_intake_g_day + age + sex + race_ethnicity + education + smoking_status + bmi)
+
+
+tbl_regression(
+  init_mod) %>%
+  as_gt() %>%
+  tab_options(table.font.size = 15)
+```
+
+```{r}
+drop1(init_mod, test="F")
+```
+
+## Step 3: Assess change in coefficient
+
+```{r}
+# Displaying an ANOVA table
+```
+
+## Step 4: Assess scale for continuous variables
+
+Main Effects Model
+
+## Step 5: Check for interactions
+
+## Step 6: Assess model fit

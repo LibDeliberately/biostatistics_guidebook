@@ -1,0 +1,301 @@
+id,age,sex,race_ethnicity,education,smoking_status,bmi,physical_activity_hrs_week,sodium_intake_g_day,sleep_hrs_night,systolic_bp
+1,74.0,Female,White,HS,Never,23.6,3.9,1.77,8.4,141.7
+2,20.2,Male,White,Some college,Former,30.2,1.7,2.44,6.5,150.1
+3,37.5,Male,White,College+,Never,17.9,1.0,3.41,6.9,142.6
+4,44.6,Male,Black,Some college,Current,29.6,4.0,1.97,6.5,145.6
+5,46.9,Male,White,Less than HS,Never,22.7,1.8,3.89,8.5,148.5
+6,59.4,Male,White,Less than HS,Never,21.3,6.1,3.45,5.7,162.6
+7,49.2,Male,Hispanic,HS,Current,31.8,0.0,2.94,6.4,152.4
+8,48.2,Male,White,Less than HS,Former,26.2,4.7,2.95,7.0,118.0
+9,38.4,Male,Hispanic,HS,Never,23.7,5.3,2.92,5.4,135.8
+10,61.6,Female,White,HS,Never,32.1,1.0,4.02,7.9,141.7
+11,18.0,Female,White,Some college,Never,23.2,7.6,3.78,4.3,137.0
+12,53.5,Male,Other,HS,Current,37.4,3.8,2.75,5.8,166.0
+13,66.7,Female,White,Less than HS,Current,27.7,1.1,4.13,7.4,149.7
+14,28.1,Female,White,Less than HS,Never,28.4,9.0,,8.6,128.2
+15,61.8,Male,White,Some college,Never,30.3,6.0,5.16,7.9,143.3
+16,57.8,Male,White,Some college,Never,23.0,7.0,4.55,6.2,136.0
+17,61.4,Male,White,HS,Never,27.6,6.8,3.62,,145.2
+18,54.5,Male,White,HS,Former,35.9,4.4,2.47,8.0,147.8
+19,60.6,Female,White,Less than HS,Never,31.5,4.9,2.79,8.9,152.3
+20,38.5,Male,White,College+,Former,30.3,6.7,3.8,6.4,131.9
+21,53.4,Male,Hispanic,Less than HS,Current,24.7,3.7,3.23,,155.5
+22,56.0,Male,White,HS,Never,31.1,2.9,2.19,4.8,144.5
+23,70.5,Female,Other,Some college,Never,29.0,6.7,4.34,7.7,135.4
+24,62.8,Female,Hispanic,Some college,Never,35.2,7.6,3.3,6.6,145.0
+25,59.4,Male,Black,HS,Never,29.0,3.9,4.56,7.0,158.2
+26,37.0,Female,White,HS,Never,28.2,4.8,2.81,8.0,126.6
+27,55.9,Male,White,College+,Former,26.5,5.5,3.44,7.4,147.5
+28,45.8,Female,Asian,Some college,Current,32.4,4.3,3.31,6.8,159.0
+29,30.3,Male,Black,HS,Never,35.0,3.2,3.08,5.8,141.9
+30,59.2,Female,White,HS,Former,23.3,8.0,2.98,8.3,149.4
+31,63.0,Male,Black,HS,Current,31.5,5.0,4.1,7.8,151.6
+32,73.0,Female,Black,Less than HS,Current,29.6,1.7,4.54,6.8,155.9
+33,35.4,Male,White,College+,Current,30.1,3.7,3.64,7.4,141.0
+34,51.4,Female,White,Less than HS,Former,31.1,2.9,5.29,6.6,143.2
+35,36.1,Female,White,College+,Former,30.7,5.9,2.84,5.4,127.1
+36,34.7,Male,White,Some college,Former,30.4,7.9,3.07,6.7,144.3
+37,34.6,Male,White,Some college,Former,28.3,3.7,2.55,5.6,142.2
+38,47.7,Male,White,College+,Never,25.2,7.6,4.49,7.2,171.9
+39,34.3,Male,White,College+,Never,19.0,5.6,4.07,7.5,131.6
+40,69.2,Male,White,Less than HS,Never,27.8,3.1,3.38,6.4,157.9
+41,73.4,Male,White,HS,Former,31.3,3.4,4.02,8.4,159.0
+42,53.4,Male,White,HS,Never,25.8,0.4,3.61,8.6,141.5
+43,61.1,Male,Black,Some college,Former,24.9,6.0,2.89,7.4,168.7
+44,38.2,Female,White,College+,Former,24.6,7.2,2.68,6.7,130.4
+45,45.2,Female,White,Less than HS,Never,28.0,3.8,3.55,6.0,138.2
+46,63.6,Male,White,Some college,Never,31.6,8.8,3.91,6.5,156.0
+47,64.2,Male,White,Less than HS,Current,34.5,1.5,3.47,7.9,161.1
+48,34.3,Female,White,College+,Never,27.0,4.1,3.57,,137.6
+49,38.3,Male,White,HS,Never,24.2,2.8,3.98,8.3,157.9
+50,60.7,Female,Black,Some college,Never,25.5,5.4,4.78,4.3,160.0
+51,37.2,Female,White,College+,Never,22.8,3.0,4.09,7.1,130.1
+52,42.1,Female,White,Some college,Current,27.1,5.8,4.22,6.1,142.6
+53,51.9,Female,White,HS,Current,26.9,1.2,3.54,7.6,135.7
+54,29.3,Male,White,Some college,Never,31.3,0.0,3.33,7.2,144.3
+55,59.7,Female,White,HS,Never,25.5,3.5,2.18,7.0,146.4
+56,27.8,Male,Black,Some college,Never,25.8,4.6,4.33,7.1,142.6
+57,37.9,Male,White,Some college,Never,23.4,4.8,4.18,7.1,146.6
+58,42.7,Female,Asian,College+,Never,28.4,3.0,2.74,7.1,143.0
+59,40.0,Female,White,Less than HS,Former,27.2,5.0,4.28,7.2,148.1
+60,80.5,Male,Asian,Some college,Former,36.5,4.8,3.73,6.7,157.7
+61,44.4,Male,White,Less than HS,Former,26.6,5.8,2.33,7.4,150.5
+62,42.2,Male,White,Less than HS,Never,29.8,5.9,3.46,7.8,157.6
+63,34.9,Male,Hispanic,Less than HS,Current,29.5,3.8,2.78,5.0,134.6
+64,72.8,Male,White,College+,Current,24.7,5.2,4.27,4.0,156.9
+65,42.9,Male,White,Some college,Former,23.9,1.6,3.23,6.7,147.3
+66,32.7,Female,Asian,HS,Never,22.5,9.0,1.47,6.9,139.9
+67,50.9,Male,White,HS,Never,25.7,1.7,3.23,5.7,146.4
+68,53.4,Male,Hispanic,College+,Former,26.4,8.1,4.67,7.6,144.8
+69,31.6,Female,Black,HS,Never,26.6,2.2,4.04,6.3,145.9
+70,46.5,Male,White,HS,Former,29.4,3.4,3.63,7.3,150.2
+71,61.1,Male,White,College+,Former,34.0,2.8,3.76,4.6,154.2
+72,40.4,Male,White,HS,Never,29.1,3.3,3.79,6.3,154.9
+73,60.4,Male,Asian,Less than HS,Never,18.2,7.5,3.76,6.2,134.2
+74,45.0,Female,Hispanic,HS,Current,20.1,6.0,5.01,5.7,161.5
+75,44.8,Female,Black,Less than HS,Former,26.3,3.2,2.32,7.7,155.7
+76,41.1,Female,White,Some college,Never,22.1,2.8,4.19,5.9,143.7
+77,25.3,Male,White,Less than HS,Never,33.0,4.2,4.64,6.0,155.4
+78,43.9,Male,Asian,Some college,Current,27.5,8.2,2.57,8.4,151.2
+79,39.7,Male,White,HS,Current,28.1,2.6,3.13,6.8,151.1
+80,18.0,Male,Asian,Some college,Former,37.4,2.2,3.11,7.7,152.6
+81,49.7,Male,White,HS,Never,27.8,5.8,3.73,5.9,157.0
+82,49.8,Female,White,Some college,Former,24.0,4.9,2.76,6.9,147.8
+83,40.3,Male,Black,Some college,Never,27.9,6.1,3.25,7.9,132.2
+84,41.9,Male,Black,HS,Never,32.0,2.5,2.77,6.5,142.5
+85,42.0,Female,Black,College+,Never,26.5,0.1,2.48,7.0,137.1
+86,61.5,Female,White,HS,Never,30.3,5.7,3.08,6.5,157.8
+87,48.4,Male,Hispanic,College+,Never,29.6,3.8,4.67,6.9,155.0
+88,35.4,Female,White,HS,Never,20.0,3.2,3.13,6.4,135.9
+89,28.1,Female,White,Some college,Never,26.4,2.8,3.55,7.2,131.4
+90,28.4,Male,Asian,Some college,Never,29.7,3.4,2.35,7.4,128.7
+91,53.8,Female,White,College+,Never,33.5,7.7,2.73,7.0,141.0
+92,29.2,Female,White,HS,Former,25.2,4.7,3.88,5.1,138.1
+93,43.6,Female,White,HS,Never,28.5,4.5,4.53,7.2,146.2
+94,57.7,Male,White,HS,Never,27.6,3.0,2.83,7.1,151.2
+95,52.6,Male,Asian,Some college,Never,29.8,1.6,3.84,6.7,149.8
+96,53.2,Female,White,Some college,Never,25.7,1.6,3.43,6.2,146.6
+97,50.0,Female,Hispanic,HS,Never,25.9,1.4,,3.9,165.4
+98,43.8,Male,Hispanic,Less than HS,Former,24.9,4.2,3.21,7.2,142.7
+99,66.3,Female,Asian,College+,Current,25.8,4.0,3.99,7.6,164.6
+100,47.8,Female,Black,Some college,Never,17.0,4.5,2.19,8.4,121.6
+101,57.0,Male,Hispanic,Some college,Never,23.4,7.7,,5.2,161.6
+102,30.2,Female,Asian,Some college,Former,34.1,8.0,3.93,6.1,132.2
+103,42.2,Female,White,HS,Never,30.9,3.1,4.98,6.7,142.5
+104,53.0,Male,Black,HS,Former,22.8,7.7,2.4,7.1,151.0
+105,54.8,Female,White,Some college,Former,18.0,5.8,4.01,7.0,129.4
+106,31.1,Female,White,HS,Current,30.7,2.1,4.99,5.8,130.9
+107,51.7,Male,White,Some college,Never,31.0,0.0,2.6,9.0,126.7
+108,44.0,Female,White,Some college,Former,27.5,7.2,3.09,9.2,151.1
+109,53.4,Male,Black,Some college,Never,25.4,0.0,2.19,6.9,151.7
+110,28.4,Male,White,HS,Former,19.0,7.1,3.65,,123.2
+111,75.7,Female,White,Some college,Current,31.6,4.5,2.46,7.0,152.9
+112,54.6,Male,White,Some college,Never,30.8,6.3,4.05,6.1,145.4
+113,67.6,Male,White,HS,Former,34.3,8.6,4.61,6.3,161.8
+114,58.0,Male,White,HS,Never,25.4,3.4,3.58,8.4,128.1
+115,46.7,Female,Hispanic,HS,Never,30.6,5.1,3.02,6.9,138.3
+116,66.1,Male,Black,Some college,Current,35.0,5.3,3.16,7.3,170.8
+117,42.2,Female,Hispanic,College+,Former,29.4,2.6,3.52,7.0,170.4
+118,54.9,Male,Hispanic,HS,Current,29.0,3.9,3.85,8.1,131.6
+119,34.4,Male,White,Some college,Never,20.0,5.2,4.18,5.6,118.7
+120,59.9,Female,White,Some college,Former,27.6,2.6,2.67,7.0,159.4
+121,51.2,Female,Other,Less than HS,Former,19.0,5.0,3.38,5.5,164.2
+122,62.3,Female,Hispanic,Less than HS,Never,35.5,5.4,,4.8,156.3
+123,46.8,Male,Black,Less than HS,Never,32.5,6.3,4.5,7.3,162.1
+124,46.9,Female,Hispanic,Less than HS,Former,27.3,7.1,3.14,,149.0
+125,49.0,Female,White,Less than HS,Former,26.7,6.0,3.62,7.6,136.0
+126,37.1,Female,White,HS,Never,25.2,2.8,4.32,7.2,127.9
+127,27.0,Male,Hispanic,College+,Former,26.5,3.6,4.17,8.1,143.5
+128,18.0,Female,White,College+,Current,26.6,4.1,3.61,7.6,130.1
+129,55.5,Female,Hispanic,Less than HS,Current,23.7,6.3,4.9,5.2,167.8
+130,66.9,Male,White,Less than HS,Former,27.9,7.7,3.32,6.1,152.9
+131,64.4,Female,Hispanic,Some college,Never,26.9,2.5,2.96,6.1,143.0
+132,35.8,Male,White,Less than HS,Former,26.0,8.2,2.74,6.8,120.2
+133,21.3,Female,White,HS,Never,30.4,6.7,4.37,7.7,145.4
+134,49.8,Male,Hispanic,Some college,Never,30.9,2.2,3.79,7.5,169.3
+135,57.2,Female,White,College+,Never,32.6,3.1,3.81,4.7,143.3
+136,48.6,Female,White,Some college,Never,24.6,6.1,1.54,8.2,127.7
+137,27.2,Male,Hispanic,Less than HS,Current,34.7,5.3,3.02,7.2,163.7
+138,57.2,Female,White,HS,Never,21.4,6.5,2.37,7.0,129.9
+139,35.9,Female,White,HS,Never,23.9,8.4,2.88,7.0,139.3
+140,56.1,Female,Hispanic,Some college,Former,35.6,6.4,3.02,6.8,170.1
+141,60.4,Male,White,College+,Former,29.2,4.7,2.19,8.8,146.8
+142,32.9,Female,Black,College+,Current,26.2,5.3,4.08,,151.6
+143,56.5,Male,White,Some college,Never,29.2,3.1,2.46,8.9,135.9
+144,81.2,Female,White,HS,Current,26.6,5.2,3.13,6.0,162.2
+145,65.2,Male,White,HS,Former,30.4,9.7,2.89,7.1,168.5
+146,39.3,Female,White,Some college,Never,28.6,6.8,3.42,6.0,122.8
+147,65.0,Female,Hispanic,HS,Never,28.5,2.6,4.41,7.2,136.4
+148,43.0,Male,White,HS,Current,21.1,3.4,3.28,7.2,150.8
+149,65.5,Female,Hispanic,Less than HS,Former,25.5,3.7,2.66,7.1,157.3
+150,65.2,Male,White,College+,Never,29.7,7.1,2.4,6.3,149.1
+151,39.0,Female,Asian,HS,Never,22.5,8.2,1.2,7.1,127.0
+152,30.4,Female,White,College+,Former,22.1,5.7,2.69,5.8,144.6
+153,38.9,Male,White,College+,Current,24.3,6.6,2.87,8.1,104.8
+154,68.3,Male,Hispanic,HS,Never,28.2,5.3,3.77,8.0,153.8
+155,31.3,Female,Hispanic,HS,Never,29.1,7.6,3.8,6.0,139.6
+156,45.6,Female,White,Less than HS,Never,28.7,4.2,4.71,6.8,140.8
+157,54.1,Female,White,Some college,Current,31.2,4.0,3.25,7.5,147.7
+158,26.6,Female,Hispanic,College+,Never,27.7,1.8,3.84,7.2,126.3
+159,50.1,Male,Hispanic,Less than HS,Never,24.7,4.0,3.18,6.3,144.4
+160,63.0,Male,White,Some college,Current,32.2,0.3,3.17,5.0,156.1
+161,57.5,Male,Other,College+,Current,33.3,3.9,3.67,5.3,163.2
+162,28.5,Female,White,College+,Never,24.7,1.8,2.8,5.3,108.9
+163,51.8,Female,White,HS,Never,35.2,2.3,2.94,6.4,155.5
+164,24.2,Male,White,Some college,Never,32.5,5.9,2.44,7.6,124.5
+165,35.5,Male,Hispanic,College+,Former,29.8,5.8,4.02,4.4,146.5
+166,56.9,Male,White,Some college,Former,28.6,2.9,2.87,6.2,141.0
+167,75.0,Female,White,Less than HS,Current,29.9,6.1,,5.2,166.8
+168,25.9,Female,White,College+,Current,28.4,6.0,2.81,8.3,106.8
+169,27.3,Male,Hispanic,College+,Never,31.8,7.4,3.2,6.8,139.9
+170,48.1,Male,White,Some college,Current,29.0,4.2,3.17,8.0,160.0
+171,32.3,Female,Other,HS,Never,23.4,3.9,2.96,9.3,122.7
+172,18.0,Male,Black,College+,Current,26.4,1.9,4.28,7.1,133.0
+173,66.4,Female,Hispanic,Less than HS,Never,25.4,5.4,3.55,6.7,138.6
+174,67.4,Female,Hispanic,Some college,Never,17.0,8.0,3.97,9.2,145.3
+175,59.0,Female,White,HS,Former,30.9,1.0,1.83,7.0,144.1
+176,38.7,Female,White,Some college,Former,25.1,3.3,3.76,8.2,164.9
+177,68.5,Male,White,Some college,Former,28.1,6.5,5.02,6.7,161.7
+178,75.1,Female,White,College+,Former,27.7,5.3,2.38,7.7,148.5
+179,26.7,Female,Black,HS,Never,23.2,4.5,5.24,6.0,142.9
+180,31.8,Male,White,HS,Never,25.6,0.0,2.16,8.5,151.6
+181,18.0,Female,Other,Some college,Never,32.0,5.9,3.19,7.9,119.4
+182,52.5,Male,White,Less than HS,Never,33.3,6.6,3.12,7.2,154.1
+183,32.8,Male,White,HS,Never,18.5,4.3,2.82,6.6,140.3
+184,18.0,Male,White,College+,Never,29.9,4.2,5.38,6.8,136.7
+185,40.2,Male,Hispanic,College+,Current,22.4,5.8,2.68,7.8,158.3
+186,50.3,Female,White,HS,Current,26.8,2.9,2.63,7.7,134.7
+187,41.0,Male,White,College+,Former,32.9,3.6,3.87,8.5,147.5
+188,48.2,Male,White,College+,Never,24.9,7.6,3.88,4.9,133.2
+189,26.1,Female,Hispanic,College+,Never,19.2,1.5,3.91,8.6,126.9
+190,33.8,Female,Other,College+,Never,24.9,3.2,3.01,7.0,143.9
+191,50.8,Female,White,Some college,Never,18.6,7.7,4.29,7.2,126.6
+192,41.0,Female,White,Less than HS,Never,28.0,5.4,4.37,7.0,126.7
+193,44.1,Female,White,Less than HS,Never,34.1,4.1,2.13,7.7,143.3
+194,52.8,Male,White,Some college,Former,33.1,0.6,3.56,6.1,161.3
+195,39.7,Female,Black,Less than HS,Former,19.3,7.7,2.75,6.4,153.1
+196,45.0,Female,Hispanic,College+,Never,26.9,3.0,2.48,6.4,142.3
+197,67.8,Male,Hispanic,Less than HS,Never,28.6,5.4,3.88,8.4,141.0
+198,24.1,Male,Black,HS,Never,27.8,2.0,4.15,9.1,133.1
+199,49.7,Male,White,Less than HS,Current,29.7,3.8,,10.1,151.0
+200,51.1,Male,White,College+,Never,31.4,2.8,3.03,6.4,146.0
+201,56.6,Female,White,Some college,Never,26.2,5.0,3.57,7.6,151.0
+202,73.1,Female,White,HS,Former,39.2,4.6,3.14,7.0,168.6
+203,69.5,Female,White,Less than HS,Former,23.5,5.1,4.13,9.4,151.9
+204,56.7,Female,Hispanic,Some college,Former,27.1,9.9,3.67,7.7,145.8
+205,22.4,Male,White,HS,Current,30.0,0.2,4.17,7.0,151.9
+206,50.3,Female,Asian,College+,Never,24.6,4.7,3.51,6.7,152.2
+207,31.3,Male,White,College+,Current,24.7,0.1,3.35,6.4,120.9
+208,45.9,Female,White,Less than HS,Current,25.1,3.2,5.2,6.6,144.1
+209,50.0,Female,White,College+,Never,21.8,3.1,3.14,6.0,122.8
+210,34.3,Female,White,Some college,Never,22.1,5.6,1.9,6.7,126.1
+211,45.4,Female,Hispanic,Less than HS,Never,23.9,3.3,2.61,8.3,149.6
+212,64.2,Male,Asian,Less than HS,Never,38.9,2.9,2.91,4.9,166.0
+213,48.0,Male,Hispanic,HS,Never,29.3,5.1,3.34,7.7,155.5
+214,35.8,Male,White,Some college,Former,30.5,6.3,3.1,5.4,137.0
+215,27.4,Female,Black,HS,Never,24.5,5.6,3.09,6.5,143.2
+216,23.6,Male,Hispanic,Less than HS,Current,21.6,6.5,3.33,6.7,137.4
+217,38.5,Male,White,HS,Current,28.2,6.4,3.03,7.3,146.6
+218,50.7,Male,Other,Less than HS,Never,28.5,4.7,3.04,8.7,149.7
+219,39.4,Female,Black,HS,Former,24.4,4.6,3.3,8.2,131.8
+220,32.5,Male,White,College+,Never,32.1,7.5,3.56,7.1,149.5
+221,82.3,Female,White,HS,Former,26.1,5.1,1.48,5.9,154.2
+222,21.6,Male,Hispanic,HS,Current,31.7,3.0,2.69,7.0,145.0
+223,54.4,Female,White,Some college,Never,28.6,3.9,4.7,7.6,135.0
+224,57.5,Female,Black,Less than HS,Current,38.2,6.1,3.03,6.4,185.0
+225,33.3,Male,White,Less than HS,Current,31.1,0.1,4.3,6.3,139.1
+226,66.9,Male,White,HS,Never,33.2,2.3,5.98,7.5,156.7
+227,28.4,Female,White,Some college,Never,27.5,3.8,3.81,,135.7
+228,64.5,Female,White,Less than HS,Never,33.4,2.0,3.57,7.3,147.1
+229,59.4,Female,White,Some college,Never,33.0,6.4,3.59,6.2,160.3
+230,48.4,Female,Hispanic,HS,Current,32.4,4.4,3.23,7.0,156.2
+231,44.2,Female,White,Less than HS,Current,23.5,3.7,3.4,8.2,131.8
+232,39.8,Female,Hispanic,College+,Former,35.6,0.9,3.42,8.5,138.2
+233,62.9,Male,Other,HS,Never,26.2,6.0,4.63,8.8,153.6
+234,37.8,Male,Hispanic,HS,Current,27.0,5.7,4.63,6.8,146.2
+235,83.4,Female,White,College+,Never,25.2,4.0,,7.0,145.9
+236,62.1,Female,White,Some college,Never,29.4,3.4,3.25,8.4,168.7
+237,59.1,Female,Hispanic,Less than HS,Current,36.9,2.5,4.92,7.3,176.1
+238,51.4,Female,White,College+,Never,27.6,4.2,2.36,6.9,157.3
+239,62.0,Female,White,HS,Former,23.6,0.8,4.65,7.6,157.4
+240,45.3,Female,White,HS,Former,30.8,2.9,3.14,8.0,160.0
+241,51.2,Female,Hispanic,Some college,Former,21.5,8.6,2.32,6.1,143.1
+242,79.7,Female,White,Less than HS,Never,24.7,4.6,4.46,7.1,137.7
+243,37.6,Male,White,Some college,Former,24.8,3.5,4.22,6.5,164.4
+244,33.5,Female,White,Some college,Never,27.5,9.2,2.88,6.3,148.5
+245,61.8,Male,Other,Some college,Never,32.4,3.4,,,146.4
+246,58.2,Female,Other,Some college,Current,24.0,5.2,2.31,6.8,162.7
+247,46.2,Male,Asian,HS,Never,25.6,4.2,4.32,4.9,152.2
+248,44.5,Male,Asian,College+,Never,28.7,7.7,3.82,6.5,144.8
+249,35.5,Female,Black,Less than HS,Never,23.1,8.6,4.12,7.8,135.9
+250,55.0,Male,White,HS,Former,31.5,6.4,3.73,5.9,145.1
+251,49.7,Male,White,Less than HS,Never,25.8,4.7,4.03,6.6,142.0
+252,51.6,Female,White,HS,Former,25.7,6.2,3.19,5.1,148.5
+253,75.8,Male,White,Some college,Never,29.0,0.0,4.66,7.2,149.6
+254,44.7,Female,Other,Less than HS,Never,33.1,4.5,2.3,5.4,161.5
+255,73.3,Female,Black,Less than HS,Never,27.7,3.7,3.65,7.3,137.3
+256,55.8,Female,Hispanic,HS,Former,29.3,4.7,3.19,6.5,151.6
+257,58.6,Female,White,HS,Never,26.9,8.6,3.22,6.6,123.6
+258,51.4,Female,White,HS,Never,35.2,6.2,5.04,6.1,131.1
+259,40.3,Male,White,Less than HS,Never,31.7,9.8,4.53,8.0,157.9
+260,25.9,Female,White,College+,Never,25.0,0.2,1.27,5.4,139.0
+261,56.8,Female,Black,Less than HS,Never,30.7,4.3,3.73,6.3,148.0
+262,43.6,Female,Hispanic,Some college,Former,20.6,4.6,4.44,8.9,141.5
+263,79.8,Male,Other,College+,Former,27.9,1.2,3.9,6.4,183.8
+264,63.7,Male,Asian,Less than HS,Never,26.0,2.2,3.69,6.0,128.9
+265,40.3,Female,White,College+,Never,25.0,5.6,2.72,7.4,141.3
+266,55.4,Male,White,Less than HS,Never,31.3,10.5,3.38,5.6,154.8
+267,71.6,Male,Hispanic,Less than HS,Former,27.0,3.8,4.23,9.3,169.7
+268,60.1,Male,White,Some college,Never,37.2,9.1,3.57,6.6,163.2
+269,65.4,Female,White,Less than HS,Never,24.7,5.5,4.91,6.9,131.0
+270,30.0,Male,Black,College+,Never,23.5,7.1,3.71,6.1,132.0
+271,25.5,Female,White,HS,Never,23.1,2.8,2.23,8.5,141.4
+272,57.1,Male,Hispanic,HS,Never,26.0,6.7,4.05,5.7,147.1
+273,55.8,Female,White,Less than HS,Current,20.1,4.5,2.41,5.4,137.4
+274,32.5,Male,White,Less than HS,Current,40.5,3.7,4.05,6.0,158.5
+275,44.9,Male,Asian,Less than HS,Never,33.0,1.1,2.14,6.3,166.8
+276,39.2,Male,Hispanic,Less than HS,Current,20.5,2.7,1.52,6.5,166.2
+277,52.8,Male,White,HS,Never,23.1,3.7,4.11,8.0,138.2
+278,47.3,Female,Hispanic,Less than HS,Never,28.5,8.4,3.81,5.8,144.4
+279,20.7,Male,Hispanic,Less than HS,Current,24.5,4.1,3.2,6.9,168.0
+280,32.3,Male,Hispanic,Some college,Current,28.2,4.2,5.35,5.9,155.0
+281,56.0,Male,White,HS,Current,20.5,7.5,6.01,5.4,170.4
+282,64.7,Male,White,HS,Never,25.1,6.7,1.5,6.6,141.3
+283,50.9,Female,White,Less than HS,Current,29.9,5.8,4.42,9.0,144.2
+284,32.8,Male,White,College+,Never,31.3,5.8,2.63,6.9,140.2
+285,64.7,Female,White,College+,Never,31.2,5.2,3.88,6.8,150.6
+286,56.0,Female,White,Some college,Never,28.3,3.2,4.07,7.0,132.5
+287,59.5,Male,White,Some college,Current,40.9,6.2,4.3,6.2,157.3
+288,32.7,Female,Black,Some college,Current,25.4,8.4,2.72,5.5,123.8
+289,60.5,Female,White,College+,Never,26.1,3.9,4.22,7.3,137.7
+290,33.7,Female,White,College+,Never,27.9,2.6,2.74,6.2,134.0
+291,43.2,Male,White,College+,Never,30.8,1.8,3.8,7.2,153.8
+292,68.8,Male,White,HS,Former,28.7,1.3,4.41,7.9,168.3
+293,52.8,Female,Hispanic,Less than HS,Never,19.1,5.3,4.1,6.5,135.9
+294,49.7,Female,White,College+,Never,26.9,0.7,3.9,8.1,153.3
+295,39.2,Female,Hispanic,College+,Never,31.3,4.4,2.46,5.5,135.2
+296,30.2,Female,Hispanic,College+,Current,23.0,7.7,4.26,6.9,144.9
+297,43.2,Female,White,Less than HS,Former,26.7,9.5,3.3,6.4,134.2
+298,18.0,Male,Hispanic,Some college,Never,36.8,4.6,3.68,7.6,169.2
+299,74.4,Male,White,Less than HS,Never,27.7,7.0,2.72,7.9,162.9
+300,18.5,Female,Black,College+,Former,17.2,2.2,3.85,6.7,135.5
