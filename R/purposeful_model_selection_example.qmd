@@ -28,7 +28,7 @@ head(exp)-
 
 ## Step 0: Defining a Research Question
 
-##### How is systolic blood pressure (mmHg) associated with daily grams of sodium intake? 
+##### How is systolic blood pressure (mmHg) associated with daily grams of sodium intake?
 
 ## Step 1: Exploring Simple Relationships
 
