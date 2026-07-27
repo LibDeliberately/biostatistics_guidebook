@@ -148,9 +148,11 @@ The following objects are masked from 'package:stats':
 
     chisq.test, fisher.test</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding loading/datasets for example suse</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Palmer penguins</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins) <span class="co"># penguin measurements</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary) <span class="co"># Using to be able to save a table as an excel file</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding loading/datasets for example suse</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Palmer penguins</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins) <span class="co"># penguin measurements</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'palmerpenguins' was built under R version 4.4.3</code></pre>
 </div>
@@ -205,23 +207,23 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tbl_summary provides basic information on distributions of values in variables</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fwmryunjsa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fwmryunjsa table {
+<div id="appgoyuykg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#appgoyuykg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fwmryunjsa thead, #fwmryunjsa tbody, #fwmryunjsa tfoot, #fwmryunjsa tr, #fwmryunjsa td, #fwmryunjsa th {
+#appgoyuykg thead, #appgoyuykg tbody, #appgoyuykg tfoot, #appgoyuykg tr, #appgoyuykg td, #appgoyuykg th {
   border-style: none;
 }
 
-#fwmryunjsa p {
+#appgoyuykg p {
   margin: 0;
   padding: 0;
 }
 
-#fwmryunjsa .gt_table {
+#appgoyuykg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -247,12 +249,12 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-left-color: #D3D3D3;
 }
 
-#fwmryunjsa .gt_caption {
+#appgoyuykg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fwmryunjsa .gt_title {
+#appgoyuykg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -264,7 +266,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-bottom-width: 0;
 }
 
-#fwmryunjsa .gt_subtitle {
+#appgoyuykg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -276,7 +278,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-top-width: 0;
 }
 
-#fwmryunjsa .gt_heading {
+#appgoyuykg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -288,13 +290,13 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-right-color: #D3D3D3;
 }
 
-#fwmryunjsa .gt_bottom_border {
+#appgoyuykg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fwmryunjsa .gt_col_headings {
+#appgoyuykg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -309,7 +311,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-right-color: #D3D3D3;
 }
 
-#fwmryunjsa .gt_col_heading {
+#appgoyuykg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -329,7 +331,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   overflow-x: hidden;
 }
 
-#fwmryunjsa .gt_column_spanner_outer {
+#appgoyuykg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -341,15 +343,15 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   padding-right: 4px;
 }
 
-#fwmryunjsa .gt_column_spanner_outer:first-child {
+#appgoyuykg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fwmryunjsa .gt_column_spanner_outer:last-child {
+#appgoyuykg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fwmryunjsa .gt_column_spanner {
+#appgoyuykg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -361,11 +363,11 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   width: 100%;
 }
 
-#fwmryunjsa .gt_spanner_row {
+#appgoyuykg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fwmryunjsa .gt_group_heading {
+#appgoyuykg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -391,7 +393,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   text-align: left;
 }
 
-#fwmryunjsa .gt_empty_group_heading {
+#appgoyuykg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -406,15 +408,15 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   vertical-align: middle;
 }
 
-#fwmryunjsa .gt_from_md > :first-child {
+#appgoyuykg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fwmryunjsa .gt_from_md > :last-child {
+#appgoyuykg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fwmryunjsa .gt_row {
+#appgoyuykg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -433,7 +435,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   overflow-x: hidden;
 }
 
-#fwmryunjsa .gt_stub {
+#appgoyuykg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -446,7 +448,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   padding-right: 5px;
 }
 
-#fwmryunjsa .gt_stub_row_group {
+#appgoyuykg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -460,15 +462,15 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   vertical-align: top;
 }
 
-#fwmryunjsa .gt_row_group_first td {
+#appgoyuykg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fwmryunjsa .gt_row_group_first th {
+#appgoyuykg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fwmryunjsa .gt_summary_row {
+#appgoyuykg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -478,16 +480,16 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   padding-right: 5px;
 }
 
-#fwmryunjsa .gt_first_summary_row {
+#appgoyuykg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fwmryunjsa .gt_first_summary_row.thick {
+#appgoyuykg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fwmryunjsa .gt_last_summary_row {
+#appgoyuykg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -497,7 +499,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-bottom-color: #D3D3D3;
 }
 
-#fwmryunjsa .gt_grand_summary_row {
+#appgoyuykg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -507,7 +509,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   padding-right: 5px;
 }
 
-#fwmryunjsa .gt_first_grand_summary_row {
+#appgoyuykg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -517,7 +519,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-top-color: #D3D3D3;
 }
 
-#fwmryunjsa .gt_last_grand_summary_row_top {
+#appgoyuykg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -527,11 +529,11 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-bottom-color: #D3D3D3;
 }
 
-#fwmryunjsa .gt_striped {
+#appgoyuykg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fwmryunjsa .gt_table_body {
+#appgoyuykg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -540,7 +542,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-bottom-color: #D3D3D3;
 }
 
-#fwmryunjsa .gt_footnotes {
+#appgoyuykg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -554,7 +556,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-right-color: #D3D3D3;
 }
 
-#fwmryunjsa .gt_footnote {
+#appgoyuykg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -563,7 +565,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   padding-right: 5px;
 }
 
-#fwmryunjsa .gt_sourcenotes {
+#appgoyuykg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -577,7 +579,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-right-color: #D3D3D3;
 }
 
-#fwmryunjsa .gt_sourcenote {
+#appgoyuykg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -585,72 +587,72 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   padding-right: 5px;
 }
 
-#fwmryunjsa .gt_left {
+#appgoyuykg .gt_left {
   text-align: left;
 }
 
-#fwmryunjsa .gt_center {
+#appgoyuykg .gt_center {
   text-align: center;
 }
 
-#fwmryunjsa .gt_right {
+#appgoyuykg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fwmryunjsa .gt_font_normal {
+#appgoyuykg .gt_font_normal {
   font-weight: normal;
 }
 
-#fwmryunjsa .gt_font_bold {
+#appgoyuykg .gt_font_bold {
   font-weight: bold;
 }
 
-#fwmryunjsa .gt_font_italic {
+#appgoyuykg .gt_font_italic {
   font-style: italic;
 }
 
-#fwmryunjsa .gt_super {
+#appgoyuykg .gt_super {
   font-size: 65%;
 }
 
-#fwmryunjsa .gt_footnote_marks {
+#appgoyuykg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fwmryunjsa .gt_asterisk {
+#appgoyuykg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fwmryunjsa .gt_indent_1 {
+#appgoyuykg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fwmryunjsa .gt_indent_2 {
+#appgoyuykg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fwmryunjsa .gt_indent_3 {
+#appgoyuykg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fwmryunjsa .gt_indent_4 {
+#appgoyuykg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fwmryunjsa .gt_indent_5 {
+#appgoyuykg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fwmryunjsa .katex-display {
+#appgoyuykg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fwmryunjsa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#appgoyuykg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -931,23 +933,23 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>              <span class="at">missing_text =</span> <span class="st">"Unknown"</span></span>
 <span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>              )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="qlaxivtssb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qlaxivtssb table {
+<div id="vavqcpudct" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vavqcpudct table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qlaxivtssb thead, #qlaxivtssb tbody, #qlaxivtssb tfoot, #qlaxivtssb tr, #qlaxivtssb td, #qlaxivtssb th {
+#vavqcpudct thead, #vavqcpudct tbody, #vavqcpudct tfoot, #vavqcpudct tr, #vavqcpudct td, #vavqcpudct th {
   border-style: none;
 }
 
-#qlaxivtssb p {
+#vavqcpudct p {
   margin: 0;
   padding: 0;
 }
 
-#qlaxivtssb .gt_table {
+#vavqcpudct .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -973,12 +975,12 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-left-color: #D3D3D3;
 }
 
-#qlaxivtssb .gt_caption {
+#vavqcpudct .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qlaxivtssb .gt_title {
+#vavqcpudct .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -990,7 +992,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-bottom-width: 0;
 }
 
-#qlaxivtssb .gt_subtitle {
+#vavqcpudct .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1002,7 +1004,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-top-width: 0;
 }
 
-#qlaxivtssb .gt_heading {
+#vavqcpudct .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1014,13 +1016,13 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-right-color: #D3D3D3;
 }
 
-#qlaxivtssb .gt_bottom_border {
+#vavqcpudct .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qlaxivtssb .gt_col_headings {
+#vavqcpudct .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1035,7 +1037,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-right-color: #D3D3D3;
 }
 
-#qlaxivtssb .gt_col_heading {
+#vavqcpudct .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1055,7 +1057,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   overflow-x: hidden;
 }
 
-#qlaxivtssb .gt_column_spanner_outer {
+#vavqcpudct .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1067,15 +1069,15 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   padding-right: 4px;
 }
 
-#qlaxivtssb .gt_column_spanner_outer:first-child {
+#vavqcpudct .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qlaxivtssb .gt_column_spanner_outer:last-child {
+#vavqcpudct .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qlaxivtssb .gt_column_spanner {
+#vavqcpudct .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1087,11 +1089,11 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   width: 100%;
 }
 
-#qlaxivtssb .gt_spanner_row {
+#vavqcpudct .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qlaxivtssb .gt_group_heading {
+#vavqcpudct .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1117,7 +1119,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   text-align: left;
 }
 
-#qlaxivtssb .gt_empty_group_heading {
+#vavqcpudct .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1132,15 +1134,15 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   vertical-align: middle;
 }
 
-#qlaxivtssb .gt_from_md > :first-child {
+#vavqcpudct .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qlaxivtssb .gt_from_md > :last-child {
+#vavqcpudct .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qlaxivtssb .gt_row {
+#vavqcpudct .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1159,7 +1161,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   overflow-x: hidden;
 }
 
-#qlaxivtssb .gt_stub {
+#vavqcpudct .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1172,7 +1174,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   padding-right: 5px;
 }
 
-#qlaxivtssb .gt_stub_row_group {
+#vavqcpudct .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1186,15 +1188,15 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   vertical-align: top;
 }
 
-#qlaxivtssb .gt_row_group_first td {
+#vavqcpudct .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qlaxivtssb .gt_row_group_first th {
+#vavqcpudct .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qlaxivtssb .gt_summary_row {
+#vavqcpudct .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1204,16 +1206,16 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   padding-right: 5px;
 }
 
-#qlaxivtssb .gt_first_summary_row {
+#vavqcpudct .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qlaxivtssb .gt_first_summary_row.thick {
+#vavqcpudct .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qlaxivtssb .gt_last_summary_row {
+#vavqcpudct .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1223,7 +1225,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-bottom-color: #D3D3D3;
 }
 
-#qlaxivtssb .gt_grand_summary_row {
+#vavqcpudct .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1233,7 +1235,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   padding-right: 5px;
 }
 
-#qlaxivtssb .gt_first_grand_summary_row {
+#vavqcpudct .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1243,7 +1245,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-top-color: #D3D3D3;
 }
 
-#qlaxivtssb .gt_last_grand_summary_row_top {
+#vavqcpudct .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1253,11 +1255,11 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-bottom-color: #D3D3D3;
 }
 
-#qlaxivtssb .gt_striped {
+#vavqcpudct .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qlaxivtssb .gt_table_body {
+#vavqcpudct .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1266,7 +1268,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-bottom-color: #D3D3D3;
 }
 
-#qlaxivtssb .gt_footnotes {
+#vavqcpudct .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1280,7 +1282,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-right-color: #D3D3D3;
 }
 
-#qlaxivtssb .gt_footnote {
+#vavqcpudct .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1289,7 +1291,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   padding-right: 5px;
 }
 
-#qlaxivtssb .gt_sourcenotes {
+#vavqcpudct .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1303,7 +1305,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   border-right-color: #D3D3D3;
 }
 
-#qlaxivtssb .gt_sourcenote {
+#vavqcpudct .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1311,72 +1313,72 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
   padding-right: 5px;
 }
 
-#qlaxivtssb .gt_left {
+#vavqcpudct .gt_left {
   text-align: left;
 }
 
-#qlaxivtssb .gt_center {
+#vavqcpudct .gt_center {
   text-align: center;
 }
 
-#qlaxivtssb .gt_right {
+#vavqcpudct .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qlaxivtssb .gt_font_normal {
+#vavqcpudct .gt_font_normal {
   font-weight: normal;
 }
 
-#qlaxivtssb .gt_font_bold {
+#vavqcpudct .gt_font_bold {
   font-weight: bold;
 }
 
-#qlaxivtssb .gt_font_italic {
+#vavqcpudct .gt_font_italic {
   font-style: italic;
 }
 
-#qlaxivtssb .gt_super {
+#vavqcpudct .gt_super {
   font-size: 65%;
 }
 
-#qlaxivtssb .gt_footnote_marks {
+#vavqcpudct .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qlaxivtssb .gt_asterisk {
+#vavqcpudct .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qlaxivtssb .gt_indent_1 {
+#vavqcpudct .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qlaxivtssb .gt_indent_2 {
+#vavqcpudct .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qlaxivtssb .gt_indent_3 {
+#vavqcpudct .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qlaxivtssb .gt_indent_4 {
+#vavqcpudct .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qlaxivtssb .gt_indent_5 {
+#vavqcpudct .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qlaxivtssb .katex-display {
+#vavqcpudct .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qlaxivtssb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vavqcpudct div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1882,14 +1884,152 @@ Removed 2 rows containing missing values or values outside the scale range
 </div>
 </div>
 </div>
-<p>///////TO DO Pie CHART</p>
-<p>///// TO DO OTHER PLOTS TBD</p>
 </section>
 </section>
 </section>
-<section id="todo-base-r-plots" class="level2">
-<h2 class="anchored" data-anchor-id="todo-base-r-plots">/////TODO BASE R PLOTS</h2>
-<p>////TO DO SAVING PLOTS</p>
+<section id="base-r-plots" class="level2">
+<h2 class="anchored" data-anchor-id="base-r-plots">Base R Plots</h2>
+<section id="pie-chart" class="level4">
+<h4 class="anchored" data-anchor-id="pie-chart">Pie Chart</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a dataframe of counts for penguin species</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>peng_species_count <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span>, <span class="st">"Chinstrap"</span>, <span class="st">"Gentoo"</span>),</span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">count =</span> <span class="fu">c</span>(<span class="dv">146</span>,<span class="dv">68</span>,<span class="dv">119</span>)</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(peng_species_count<span class="sc">$</span>count,</span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> peng_species_count<span class="sc">$</span>group,</span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">"Species Share"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_visualizations_example_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="scatter-plot" class="level4">
+<h4 class="anchored" data-anchor-id="scatter-plot">Scatter Plot</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">Adelie =</span> <span class="st">"darkorange"</span>, <span class="at">Chinstrap =</span> <span class="st">"purple"</span>, <span class="at">Gentoo =</span> <span class="st">"cyan4"</span>)</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(penguins<span class="sc">$</span>flipper_length_mm, penguins<span class="sc">$</span>body_mass_g,</span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Flipper Length vs Body Mass"</span>,</span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Flipper length (mm)"</span>,</span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Body mass (g)"</span>,</span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> cols[penguins<span class="sc">$</span>species])</span>
+<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topleft"</span>,</span>
+<span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">legend =</span> <span class="fu">names</span>(cols),</span>
+<span id="cb79-12"><a href="#cb79-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> cols,</span>
+<span id="cb79-13"><a href="#cb79-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb79-14"><a href="#cb79-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">bty =</span> <span class="st">"n"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_visualizations_example_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="histogram" class="level4">
+<h4 class="anchored" data-anchor-id="histogram">Histogram</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(penguins<span class="sc">$</span>flipper_length_mm,</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Histogram of Flipper Length"</span>,</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Flipper length (mm)"</span>,</span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"gray"</span>,</span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">border =</span> <span class="st">"white"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_visualizations_example_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="boxplot-1" class="level4">
+<h4 class="anchored" data-anchor-id="boxplot-1">Boxplot</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(bill_length_mm <span class="sc">~</span> species, <span class="at">data =</span> penguins,</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Bill Length by Species"</span>,</span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Species"</span>,</span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Bill length (mm)"</span>,</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>, <span class="st">"purple"</span>, <span class="st">"cyan4"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_visualizations_example_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="bar-plot" class="level4">
+<h4 class="anchored" data-anchor-id="bar-plot">Bar Plot</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>species_counts <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins<span class="sc">$</span>species)</span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(species_counts,</span>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Number of Penguins by Species"</span>,</span>
+<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Count"</span>,</span>
+<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>, <span class="st">"purple"</span>, <span class="st">"cyan4"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_visualizations_example_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="saving-plots" class="level2">
+<h2 class="anchored" data-anchor-id="saving-plots">Saving Plots</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Saving plot objects</span></span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="co"># First, we have to store the plot as an object</span></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>dense_penguins <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">color =</span> species)) <span class="sc">+</span> </span>
+<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() </span>
+<span id="cb83-7"><a href="#cb83-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-8"><a href="#cb83-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Saving </span></span>
+<span id="cb83-9"><a href="#cb83-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"dense_penguins.png"</span>,</span>
+<span id="cb83-10"><a href="#cb83-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">plot =</span> dense_penguins,</span>
+<span id="cb83-11"><a href="#cb83-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">7</span>,</span>
+<span id="cb83-12"><a href="#cb83-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">height =</span> <span class="dv">5</span>,</span>
+<span id="cb83-13"><a href="#cb83-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">dpi =</span> <span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Saving table objects as an excel file</span></span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Again, we need to save a table as an object</span></span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>clean_penguins_table <span class="ot">&lt;-</span> clean_penguins <span class="sc">%&gt;%</span></span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>( bill_length_mm, bill_depth_mm, flipper_length_mm, island,</span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>          species, body_mass_g, sex, year) <span class="sc">%&gt;%</span></span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_summary</span>(<span class="at">by =</span> species,</span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">label =</span> <span class="fu">c</span>(</span>
+<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a>                bill_length_mm <span class="sc">~</span> <span class="st">"Length of Bill (mm)"</span>,</span>
+<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a>                        bill_depth_mm <span class="sc">~</span> <span class="st">"Depth of Bill (mm)"</span>,</span>
+<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a>                        flipper_length_mm <span class="sc">~</span> <span class="st">"Length of Flippers (mm)"</span>,</span>
+<span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a>                        island <span class="sc">~</span> <span class="st">"Island Measured From"</span>,</span>
+<span id="cb85-12"><a href="#cb85-12" aria-hidden="true" tabindex="-1"></a>                        body_mass_g <span class="sc">~</span> <span class="st">"Body Mass (g)"</span>,</span>
+<span id="cb85-13"><a href="#cb85-13" aria-hidden="true" tabindex="-1"></a>                        sex <span class="sc">~</span> <span class="st">"Sex"</span>,</span>
+<span id="cb85-14"><a href="#cb85-14" aria-hidden="true" tabindex="-1"></a>                        year <span class="sc">~</span> <span class="st">"Year Measured"</span></span>
+<span id="cb85-15"><a href="#cb85-15" aria-hidden="true" tabindex="-1"></a>                        ),</span>
+<span id="cb85-16"><a href="#cb85-16" aria-hidden="true" tabindex="-1"></a>              <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">"{mean} ({sd})"</span>),</span>
+<span id="cb85-17"><a href="#cb85-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">missing_text =</span> <span class="st">"Unknown"</span></span>
+<span id="cb85-18"><a href="#cb85-18" aria-hidden="true" tabindex="-1"></a>              )</span>
+<span id="cb85-19"><a href="#cb85-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-20"><a href="#cb85-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Saving</span></span>
+<span id="cb85-21"><a href="#cb85-21" aria-hidden="true" tabindex="-1"></a><span class="fu">as_hux_xlsx</span>(clean_penguins_table, <span class="at">file =</span> <span class="st">"penguins_table1.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 </section>
 
