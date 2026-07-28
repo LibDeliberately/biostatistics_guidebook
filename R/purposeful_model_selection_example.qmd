@@ -14,6 +14,9 @@ library(here)
 library(readr)
 library(gtsummary)
 library(GGally)
+library(gt)
+library(broom)
+library(gridExtra)
 
 # dataset
 exp <- read_csv(here("data", "population_bp_example.csv"))
@@ -21,7 +24,7 @@ glimpse(exp)
 ```
 
 ```{r}
-head(exp)-
+head(exp)
 ```
 
 [**Note:**]{.underline} The data for this example is entirely synthetic and generated for the purposes of this example. No results from this data should be considered indicative of any real patterns of health in any real population.
@@ -45,6 +48,8 @@ mod_main_ef = exp %>%
 tidy(mod_main_ef) %>% gt() %>%
   tab_options(table.font.size = 15) %>%
   fmt_number(decimals = 3)
+
+# Borderline insignificant.
 ```
 
 #### SLR with other variables of interest
@@ -130,6 +135,7 @@ add1(exp_int,
 #### Observing ANOVAs
 
 ```{r}
+# This is an additional step we need to make in light of how we created SLR models in the previous chunks of this section. 
 anova(mod_main_ef)
 anova(mod_age)
 anova(mod_bmi)
@@ -143,7 +149,7 @@ anova(mod_zzz)
 
 ## Step 2: Preliminary Variable Selection
 
-Using values from the add1 function above, I'm beginning model selection using all variables where the resulting p-value is less than 0.25.
+Using values from the **add1** function above, I'm beginning model selection using all variables where the resulting p-value is less than 0.25.
 
 As a result, this initial model will **not** include:
 
@@ -164,20 +170,104 @@ tbl_regression(
   tab_options(table.font.size = 15)
 ```
 
-```{r}
-drop1(init_mod, test="F")
-```
-
 ## Step 3: Assess change in coefficient
 
+I am opting to further remove variables in cases where:
+
+The p-value for the F-test of it's coefficients are \> 0.05
+
+and the change in coefficient of our main variable of interest is \<10% with it's removal
+
 ```{r}
-# Displaying an ANOVA table
+drop1(init_mod, test="F")
+
+# Resulting variables worth considering a drop: education (p ~ 0.49)
+# Displaying an ANOVA table to test
+full_mod = init_mod
+red_mod = lm(formula = systolic_bp ~ sodium_intake_g_day + age + sex + race_ethnicity + smoking_status + bmi,
+             data = exp)
+
+anova(full_mod, red_mod) %>% tidy() %>%
+  gt() %>% tab_options(table.font.size = 15) %>% fmt_number(decimals = 3)
+
+# Change in coefficient calculation:
+# Beta-1 full = 1.1
+tbl_regression(
+  red_mod) %>%
+  as_gt() %>%
+  tab_options(table.font.size = 15)
+# Beta-1 reduced = 1.1
 ```
+
+With a small percent change in the main effect coefficient and a non-significant ANOVA model comparison, I opted to remove education from the final model. The extra variable does not significantly improve the fit of the model, and has a very small impact on the main effect.
+
+Thus, I'll be proceeding with the reduced model.
 
 ## Step 4: Assess scale for continuous variables
 
 Main Effects Model
 
+```{r}
+# Continuous variables are: sodium, age, & bmi
+
+sodium = ggplot(data = exp, aes(y = systolic_bp, x = sodium_intake_g_day)) + 
+  geom_point() +
+  geom_smooth(se=F) + labs(x = "NA Intake (g/day)", y = "Systolic BP (mmHg)")
+
+age = ggplot(data = exp, aes(y = systolic_bp, x = age)) + 
+  geom_point() +
+  geom_smooth(se=F) + labs(x = "Age", y = "Systolic BP (mmHg)")
+
+bmi = ggplot(data = exp, aes(y = systolic_bp, x = bmi)) + 
+  geom_point() +
+  geom_smooth(se=F) + labs(x = "BMI", y = "Systolic BP (mmHg)")
+
+grid.arrange(sodium, age, bmi, nrow=1)
+```
+
+For now, I'll proceed with keeping these 3 variables continuous and without transformation/splines as, though they're not *perfectly* linear, they are linear enough from a quick visual check. Residuals in later steps may help clarify whether some transformation is necessary.
+
 ## Step 5: Check for interactions
 
+Variables with clinical plausibility to interact with daily sodium intake.
+
+**Age:** salt sensitivity increases with age
+
+**BMI:** BMI is associated with sodium intake
+
+**Sex:** Hormone prevalence may impact salt's effect on vascular health
+
+**Race:** Cultural differences in dietary sources may impact overall intake, and there are genetic differences in salt sensitivity between some racial groups.
+
+**Smoking Status:** Smoking alters tastes preferences & increases salt cravings
+
+```{r}
+main_eff_model = red_mod # Relabeling for easier reference
+add1(main_eff_model, scope = ~sodium_intake_g_day * . , test = "F")
+# None of the interaction additions are significant, keeping none of them in the final model.
+```
+
 ## Step 6: Assess model fit
+
+Gathering Model Fit Statistics
+
+NOTE: MLR Diagnostics will be performed in
+
+```{r}
+# Adjusted R-squared, AIC, and BIC
+glance(main_eff_model) %>% mutate(Model = "Final model") %>%
+  select(Model, adj.r.squared, AIC, BIC) %>%
+  gt() %>% 
+  tab_options(table.font.size = 15) %>%
+  fmt_number(decimals = 3)
+```
+
+TO DO: Write a summary here that showcases:
+
+-   "Final" model equation
+
+-   "Final" conclusions to be drawn.
+
+-   AND GENERALLY INTERPET RESULTS
+
+-   AND CHECK EVERYTHING
