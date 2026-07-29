@@ -1,0 +1,89 @@
+---
+title: "Bivariate Hypothesis Testing"
+author: "Olivia Dobbs"
+format: html
+editor: visual
+---
+
+## Setup
+
+```{r}
+# Adding libraries for basic visualizations
+library(ggplot2) 
+library(gtsummary) 
+library(tidyverse)
+library(ggridges) 
+library(janitor) 
+library(rstatix)
+library(gt)
+
+# Adding loading/datasets for example suse
+# Palmer penguins
+library(palmerpenguins) # penguin measurements
+penguins <- palmerpenguins::penguins
+head(penguins)
+```
+
+### Two-Sample T-Test
+
+**When:** continuous outcome variable, two independent groups in predictor, and independence between observations.
+
+**Assumptions:** normal distribution of outcomes in each group, and variances in each group are similar.
+
+**Null Hypothesis:** The population difference in mean bill length (mm) between the female and male groups of penguins is 0.
+
+$H_0: \mu_{female} - \mu_{male} = 0$
+
+**Alternative Hypothesis:** The population difference in mean bill length (mm) between the female and male groups of penguins is statistically different from 0.
+
+$H_0: \mu_{female} - \mu_{male} \ne 0$
+
+```{r}
+# Cleaning the dataset for sake of example
+clean_penguins = na.omit(penguins)
+
+# Assuming independence of observations
+# Observing normal distribution of groups
+ggplot(data = clean_penguins,
+       aes(x = bill_length_mm,
+           y = sex,
+           fill = sex)) +
+  geom_density_ridges(alpha = 0.5, # changes opacity
+                      show.legend = FALSE # removes the key to the right
+  )
+# Using the Central Limit Theorem as n for each group is > 164
+# Checking variances
+sumstats <- clean_penguins %>% 
+  group_by(sex) %>% 
+  get_summary_stats(type = "mean_sd") 
+sumstats %>% gt()
+
+# Performing the test
+t.test(bill_length_mm ~ sex, data = penguins, var.equal = TRUE)
+```
+
+Results: p-value = 1.094e-10
+
+Using alpha = 0.05, there is sufficient evidence that the population difference in mean bill length (mm) between male and female penguins is different from 0 (p \< 0.001). The mean bill length was 42.1 mm (SD = 4.9 mm) and 45.9 mm (SD = 5.4 mm) for the female and male groups, and the difference of 3.8 mm was statistically different.
+
+### Wilcoxon Rank-Sum (Mann-Whitney)
+
+### Paired T-Test
+
+### Wilcoxon Signed-Rank
+
+### One-Way ANOVA
+
+### Kruskal-Wallis
+
+### Pearson Correlation
+
+### Spearman Correlation
+
+### Chi-square Test of Independence
+
+### Fisher's Exact Test
+
+### McNemar's Test
+
+### Exact Nemar
