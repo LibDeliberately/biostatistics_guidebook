@@ -68,9 +68,60 @@ Using alpha = 0.05, there is sufficient evidence that the population difference 
 
 ### Wilcoxon Rank-Sum (Mann-Whitney)
 
+```{r}
+# Assuming that the distribution isn't normal enough for both groups for sake of example:
+
+wilcox.test(bill_length_mm ~ sex, data = penguins)
+```
+
 ### Paired T-Test
 
+t.test(extra \~ group, data = sleep, paired = TRUE)
+
+```{r}
+# Adding a dataset that has data that's worth applying a paired t-test to:
+# Same 10 IDs were tested with both drug types.
+head(sleep)
+
+# Observing data in a plot
+boxplot(extra ~ group, data = sleep, 
+        main = "Soporific Drug Effectiveness",
+        xlab = "Drug Group", 
+        ylab = "Extra Hours of Sleep",
+        col = c("lightblue", "lightpink"))
+
+# And performing the paired t-test
+with(sleep, t.test(extra[group == 1], extra[group == 2], paired = TRUE))
+# Note: "with()" is called an environment wrapper. It tells R to look inside 'sleep' for the variables that are mentioned inside of it. This option makes it so we don't have to type sleep$extra each time. 
+# "extra[group == 1]" tells R "the 'extra' variable, where the condtion group == 1 is TRUE"
+```
+
 ### Wilcoxon Signed-Rank
+
+```{r}
+# Graphing distribution of differences
+sleep_diff_tidy <- sleep %>%
+  mutate(group = paste0("drug_", group)) %>% # Renames 1 and 2 to drug_1 and drug_2
+  pivot_wider(names_from = group, values_from = extra) %>%
+  mutate(difference = drug_2 - drug_1)
+
+ggplot(sleep_diff_tidy, aes(x = difference)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 5, 
+                 fill = "skyblue", color = "white", alpha = 0.7) +
+  geom_density(color = "darkblue", linewidth = 1) +
+  geom_vline(xintercept = 0, color = "red", linetype = "dashed", linewidth = 1) +
+  labs(
+    title = "Distribution of Sleep Differences",
+    subtitle = "Values to the right of the red line mean Drug 2 outperformed Drug 1",
+    x = "Difference in Hours (Drug 2 - Drug 1)",
+    y = "Density"
+  ) +
+  theme_minimal()
+
+# Assuming the differences between ours pairs are NOT NORMALLLY DISTRIBUTED
+with(sleep, wilcox.test(extra[group == 1], extra[group == 2], paired = TRUE, exact = FALSE))
+# Applying exact = FALSE because patient 5 showed 0 change between drugs and patients 3 and 4 had the exact same difference between their drugs. 
+```
 
 ### One-Way ANOVA
 
