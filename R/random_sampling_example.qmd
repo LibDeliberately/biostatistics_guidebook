@@ -1,0 +1,122 @@
+---
+title: "Random Sampling Example"
+author: "Olivia Dobbs"
+format: html
+editor: visual
+---
+
+## Library Setup
+
+```{r}
+library(survey)
+library(sampling)
+library(dplyr)
+library(ggplot2)
+library(here)
+```
+
+```{r}
+# Adding in our example dataset
+exp <- read_csv(here("data", "population_bp_example.csv"))
+glimpse(exp)
+```
+
+## Example Sampling
+
+```{r}
+# Setting a seed for reproducibility. 
+# Without this, the random selection will change each time it's run. 
+set.seed(2026)
+```
+
+### DPLYR Version
+
+```{r}
+# If we want to sample a specified amount of rows
+sampled_data_n <- slice_sample(exp, n = 10)
+
+# If we want to sample a specific proportion of our data
+sampled_data_prop <- slice_sample(exp, prop = 0.20)
+
+# And then we can look at these two different samples:
+glimpse(sampled_data_n)
+glimpse(sampled_data_prop)
+```
+
+### Base R Version
+
+```{r}
+# Selecting a sample of 6 indices from my dataset, exp
+# Sample 6 numbers anywhere from 1 to the length of dataset exp
+random_indices <- sample(1:nrow(exp), 6) 
+
+
+# Extracting the rows from the dataset, exp, that match the random indices
+sampled_data <- exp[random_indices, ]
+head(sampled_data)
+```
+
+## Example Calculation 1: SRS *Without* Replacement
+
+When sampling from a population of a known, finite size, we can estimate information about that population by considering an outcome in our sample and applying a correction.
+
+```{r}
+## Information "given" by an experiment ##
+# Population size from which we're sampling
+N1 <- 55234
+
+# Sample we had access to
+n1 <- 500
+
+# Number within sample who had our trait of interest
+flag <- 44
+
+## Calculations to use a finite-population correction for an SRS ##
+# Proportion of those with flag in sample
+prop <- flag/n1
+
+# Determining weight
+w <- 1/prop
+
+# Computing the sample variance estimate for our binary flag variable
+sSquare1 <- (n1/(n1-1))*(prop*(1-prop))
+
+# Computing the standard error with the finite population correction for sampling without replacement
+SEwor <- sqrt((1-(n1/N1))*(sSquare1/n1))
+
+# Constructing the 95% CI
+lb1 <- prop - qnorm(.975)*SEwor
+ub1 <- prop + qnorm(.975)*SEwor
+
+# And outputting the confidence interval...
+c(lb1,ub1)
+# the standard error...
+SEwor
+# and the proportion of sample with the flag
+prop
+```
+
+From this calculation we could conclude...
+
+-   "In a simple random sample without replacement, the estimated proportion of \_\_\_\_\_ who \_\_\_\_\_\_ was 0.088 (8.8%) with a standard error of 0.01262 (95% CI: 0.06326, 0.1127)"
+
+## Example Calculation 2: SRS *With* Replacement
+
+When a selected observation can be picked again following its sampling, we don't need to apply the finite-population correction.
+
+```{r}
+# Calculating a new standard error without the finite population correction
+SEwr <- sqrt(sSquare1 / n1)
+
+# Constructing our new 95% Confidence Interval
+lb1 <- prop - qnorm(.975)*SEwr
+ub1 <- prop + qnorm(.975)*SEwr
+
+# Outputting our values
+c(lb1,ub1)
+SEwr
+```
+
+From this calculation we could conclude...
+
+-   "In a simple random sample with replacement, the estimated proportion of \_\_\_\_\_ who \_\_\_\_\_\_ was 0.088 (8.8%) with a standard error of 0.01268 (95% CI: 0.06314, 0.1129)"
