@@ -16,6 +16,7 @@ library(ggridges)
 library(janitor) 
 library(rstatix)
 library(gt)
+library(exact2x2)
 
 # Adding loading/datasets for example suse
 # Palmer penguins
@@ -76,8 +77,6 @@ wilcox.test(bill_length_mm ~ sex, data = penguins)
 
 ### Paired T-Test
 
-t.test(extra \~ group, data = sleep, paired = TRUE)
-
 ```{r}
 # Adding a dataset that has data that's worth applying a paired t-test to:
 # Same 10 IDs were tested with both drug types.
@@ -125,16 +124,136 @@ with(sleep, wilcox.test(extra[group == 1], extra[group == 2], paired = TRUE, exa
 
 ### One-Way ANOVA
 
+For performing a continuous outcome between 3+ groups.
+
+```{r}
+# Checking distribution and sample size
+ggplot(data = penguins,
+       aes(x = bill_length_mm,
+           color = species)) + # Note that we put 'color' here instead of 'y'
+  geom_density() 
+
+table(penguins$species)
+
+# Performing an anova, given n > 60 for each group and normal-appearing distributions
+peng_anova <- aov(bill_depth_mm ~ species,
+                  data = penguins)
+summary(peng_anova)
+```
+
 ### Kruskal-Wallis
+
+For performing a continuous outcome between 3+ groups when anova assumptions are violated.
+
+```{r}
+# Assuming these species' bill depths violate normal distribution
+# From the graph above and sample sizes, this isn't the case, but performing this test as an example. 
+kruskal.test(bill_depth_mm ~ species,
+             data = penguins)
+```
 
 ### Pearson Correlation
 
+For measuring the strength of a linear relationship between two quantitative & continuous variables.
+
+```{r}
+# Visualizing the relationship
+ggplot(data = penguins,
+       aes( x = bill_depth_mm,
+            y = body_mass_g)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+# Testing pearson correlation
+cor.test(~ bill_depth_mm + body_mass_g, 
+         method = "pearson", 
+         data = penguins)
+
+# Note that this is a Simpson's Paradox. The species groups each have a positive correlation between bill depth and body mass, but together the correlation appears negative.
+```
+
 ### Spearman Correlation
+
+For measuring the strength of a linear relationship between two continuous variables. Unlike Pearson, however, Spearman is better for monotonic relationships, ordinal data, or skewed data distributions.
+
+```{r}
+data("USJudgeRatings")
+#We'll be comparing demeanor vs integrity of judges in the US.
+
+# Visualizing the relationship
+ggplot(data = USJudgeRatings,
+       aes( x = INTG,
+            y = DMNR)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+# Testing pearson correlation
+cor.test(USJudgeRatings$INTG, USJudgeRatings$DMNR, method = "spearman")
+```
 
 ### Chi-square Test of Independence
 
+For comparing the frequencies of two categorical variables
+
+```{r}
+data("HairEyeColor")
+# This is a dataset that looks at the hair and eyecolor of a sample of statistics students
+head(HairEyeColor)
+# The data needs to be collapsed into a single table that isn't split by sex
+hair_eye <- margin.table(HairEyeColor, margin = c(1,2))
+head(hair_eye)
+
+# Then we can run the chisq test to see if hair and eye color are independent.
+chisq.test(hair_eye)
+```
+
 ### Fisher's Exact Test
+
+For comparing the frequencies of two categorical variables when expected cell counts are \<5
+
+```{r}
+# We can subset the hair-eye dataset to get smaller expected counts in our cells for an example.
+hair_eye_small <- HairEyeColor[c("Black", "Blond"), c("Green", "Hazel"), "Female"]
+head(hair_eye_small)
+
+# Running a chisq.test() on a table that's too small will return a warning
+chisq.test(hair_eye_small)
+
+# In this case, we can then run a Fisher's Exact Test instead!
+fisher.test(hair_eye_small)
+```
 
 ### McNemar's Test
 
-### Exact Nemar
+For paired data with a categorical outcome.
+
+```{r}
+# Making an example dataset for this option:
+sentiment <- matrix(c(5254, 899, 348, 8881),
+                    nrow = 2,
+                    dimnames = list(
+                      "Before Class" = c("Understanding", "Confused"),
+                      "After Class" = c("Understanding", "Confused")
+                    ))
+sentiment
+
+# Running the test
+mcnemar.test(sentiment)
+```
+
+### Exact McNemar
+
+For paired data with a categorical outcome, but when discordant pairs (understanding -\> confused and vice versa) add up to less than 25
+
+```{r}
+# Making an example dataset for this option:
+sentiment_xs <- matrix(c(5, 8, 3, 8),
+                    nrow = 2,
+                    dimnames = list(
+                      "Before Class" = c("Understanding", "Confused"),
+                      "After Class" = c("Understanding", "Confused")
+                    ))
+sentiment_xs
+
+mcnemar.exact(sentiment_xs)
+```
