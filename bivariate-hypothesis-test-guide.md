@@ -1,7 +1,6 @@
 # Choosing a Hypothesis Test for Simple Bivariate Analyses
 
-This guide helps you pick an appropriate statistical test when you have **two variables** and want to ask whether they are related or whether groups differ. It is written for people who are new to choosing tests: start with the decision steps below, then read the short section for the test you land on.
-
+This guide helps you pick an appropriate statistical test when you have **two variables** and want to ask whether they are related or whether groups differ in some meaningful way. 
 ---
 
 ## Before You Choose a Test
@@ -81,7 +80,7 @@ Same setup as the two-sample *t*-test, but the outcome is skewed, has outliers, 
 - Under the usual interpretation, the two groups have similarly shaped distributions (then a significant result points to a shift in location, often summarized with medians)  
 
 **If significant, what can you say?**  
-There is evidence that the **distributions differ** between groups—commonly that one group tends to have higher values than the other. Prefer talking about **medians** or ranks rather than means unless you have checked that means are still meaningful.
+There is evidence that the **distributions differ** between groups.Commonly this means that one group tends to have higher values than the other. Focus on **medians** or ranks rather than means unless you have explicitly checked that the means are still meaningful.
 
 ---
 
@@ -90,7 +89,7 @@ There is evidence that the **distributions differ** between groups—commonly th
 ### Paired *t*-test
 
 **When to use it**  
-Compare two related continuous measurements on the **same subjects** (before vs. after) or on **matched pairs**.
+Compare two related continuous measurements on the **same subjects** (before vs. after) or on **matched pairs** (twins, plants grown in adjacent pots, left vs right eyes, etc.).
 
 **Requirements**  
 - Two continuous measurements that form natural pairs  
@@ -119,7 +118,7 @@ Paired continuous (or ordinal) data when the paired differences are skewed or no
 - Differences are symmetric around their median (for the standard interpretation)  
 
 **If significant, what can you say?**  
-There is evidence of a **systematic change** between the paired measurements (one condition tends to produce higher values than the other). Summarize with the median difference when possible.
+There is evidence of a **systematic change** between the paired measurements (one condition tends to produce higher values than the other). Summarize with the median difference where possible.
 
 ---
 
@@ -128,7 +127,7 @@ There is evidence of a **systematic change** between the paired measurements (on
 ### One-way ANOVA
 
 **When to use it**  
-Compare **means** of a continuous outcome across **three or more** independent groups (for example, three diet arms).
+Compare **means** of a continuous outcome across **three or more** independent groups (for example, three different diets, or 3 species of penguins!).
 
 **Requirements**  
 - Continuous outcome  
@@ -159,7 +158,7 @@ Same setup as one-way ANOVA when normality or equal-variance assumptions are dou
 - Similar distribution shapes across groups if you want to interpret the result mainly as a difference in medians / location  
 
 **If significant, what can you say?**  
-There is evidence that **at least one group’s distribution differs** from the others (often, values tend to be higher in one group). Follow up with pairwise nonparametric comparisons if you need to know which groups differ.
+There is evidence that **at least one group’s distribution differs** from the others. Follow up with pairwise nonparametric comparisons if you need to know which groups differ.
 
 ---
 
@@ -179,7 +178,7 @@ Measure the strength of a **linear** association between two continuous variable
 - Both variables are approximately bivariate normal (or residuals behave reasonably); sensitive to outliers  
 
 **If significant, what can you say?**  
-There is evidence of a **nonzero linear correlation**. The correlation coefficient *r* tells direction (positive/negative) and strength (closer to ±1 is stronger). Correlation is **not** causation, and it does not describe curved relationships well.
+There is evidence of a **nonzero linear correlation**. The correlation coefficient *r* tells direction (positive/negative) and strength (closer to ±1 is stronger). Correlation is **not** causation, and it does not describe curved relationships well!!
 
 ---
 
@@ -216,7 +215,9 @@ When you want to **predict** or **estimate the average change** in a continuous 
 - Residuals approximately normal (mainly for inference in smaller samples)  
 
 **If the predictor’s coefficient is significant, what can you say?**  
-There is evidence that the **slope is not zero**: the average outcome changes as the predictor changes. Report the estimated slope and confidence interval. Again, significance alone does not establish causality.
+There is evidence that the **slope is not zero**: the average outcome changes as the predictor changes. Report the estimated slope and confidence interval.
+
+*Again, significance alone does not establish causality!*
 
 ---
 
@@ -230,11 +231,12 @@ Test whether two categorical variables are associated in a contingency table (fo
 **Requirements**  
 - Two categorical variables  
 - Independent observations (each subject contributes to one cell)  
-- Usually a 2×2 or larger table  
+- Usually a 2×2 (or larger) table  
 
 **Assumptions**  
 - Independence of observations  
-- Expected cell counts are large enough (a common rule of thumb: most expected counts ≥ 5; no expected count too small)  
+- *Expected* cell counts are large enough (a common rule of thumb: most expected counts ≥ 5; no expected count too small)  
+- *To determine expected cell counts:* Expected = (Row Total x Column Total)/ Grand Total
 
 **If significant, what can you say?**  
 There is evidence that the two variables are **not independent**—the distribution of one variable differs across levels of the other. Inspect percentages (and risk ratios / odds ratios in 2×2 tables) to describe **how** they are associated.
@@ -274,19 +276,6 @@ Two **paired** binary outcomes (for example, positive/negative before and after 
 
 **If significant, what can you say?**  
 There is evidence of a **net change** in the proportion of “yes” responses between the two paired conditions (the changes are not balanced in both directions). This is not the same as a chi-square test on unpaired groups.
-
----
-
-## A Short Worked Path (Example)
-
-**Question:** Do patients on Drug A have different mean LDL cholesterol than patients on Drug B?
-
-1. Outcome = LDL (continuous). Predictor = drug (two groups).  
-2. Patients are in only one arm → **independent**.  
-3. Check normality / outliers in each arm.  
-4. If reasonable → **two-sample *t*-test** (often Welch’s).  
-5. If skewed / small *n* with outliers → **Wilcoxon rank-sum**.  
-6. If significant → report that mean (or median) LDL differs between drugs, with the size of the difference and CI—not just “*p* < 0.05.”
 
 ---
 
