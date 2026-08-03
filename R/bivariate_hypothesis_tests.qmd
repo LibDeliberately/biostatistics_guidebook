@@ -69,11 +69,36 @@ Using alpha = 0.05, there is sufficient evidence that the population difference 
 
 ### Wilcoxon Rank-Sum (Mann-Whitney)
 
+**When:** continuous outcome variable, two independent groups in predictor, and independence between observations.
+
+**Assumptions:** distribution of outcomes in each group violates normality assumptions, and variances in each group are similar.
+
+-   **Note:** If variances are not similar, the test can still be run, but it no longer showcases median difference. Significance where variance isn't similar means that there is **stochastic dominance**.
+
+**Null Hypothesis:** The population difference in median bill length (mm) between the female and male groups of penguins is 0.
+
+$H_0: M_{female} - M_{male} = 0$
+
+**Alternative Hypothesis:** The population difference in median bill length (mm) between the female and male groups of penguins is statistically different from 0.
+
+$H_0: M_{female} - M_{male} \ne 0$
+
 ```{r}
 # Assuming that the distribution isn't normal enough for both groups for sake of example:
 
 wilcox.test(bill_length_mm ~ sex, data = penguins)
+
+# Getting median and IQR for results sentence
+median(penguins$bill_depth_mm[penguins$sex == "male"], na.rm = TRUE)
+IQR(penguins$bill_depth_mm[penguins$sex == "male"], na.rm = TRUE)
+
+median(penguins$bill_depth_mm[penguins$sex == "female"], na.rm = TRUE)
+IQR(penguins$bill_depth_mm[penguins$sex == "female"], na.rm = TRUE)
 ```
+
+Results: p-value = 9.901e-11
+
+Using alpha = 0.05, there is sufficient evidence that the population difference in median bill length (mm) between male and female penguins is different from 0 (p \< 0.001). The median bill length was 18.45 mm (IQR = 3.175 mm) and 17 mm (IQR = 3.3 mm) for the female and male groups, and the difference of 1.45 mm was statistically significant.
 
 ### Paired T-Test
 
@@ -140,6 +165,8 @@ peng_anova <- aov(bill_depth_mm ~ species,
                   data = penguins)
 summary(peng_anova)
 ```
+
+**///TO DO: Add comparisons to determine which group(s) is/are significantly different from the others.**
 
 ### Kruskal-Wallis
 
