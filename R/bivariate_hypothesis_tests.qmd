@@ -17,6 +17,7 @@ library(janitor)
 library(rstatix)
 library(gt)
 library(exact2x2)
+library(FSA)
 
 # Adding loading/datasets for example suse
 # Palmer penguins
@@ -24,6 +25,8 @@ library(palmerpenguins) # penguin measurements
 penguins <- palmerpenguins::penguins
 head(penguins)
 ```
+
+------------------------------------------------------------------------
 
 ### Two-Sample T-Test
 
@@ -100,7 +103,21 @@ Results: p-value = 9.901e-11
 
 Using alpha = 0.05, there is sufficient evidence that the population difference in median bill length (mm) between male and female penguins is different from 0 (p \< 0.001). The median bill length was 18.45 mm (IQR = 3.175 mm) and 17 mm (IQR = 3.3 mm) for the female and male groups, and the difference of 1.45 mm was statistically significant.
 
+------------------------------------------------------------------------
+
 ### Paired T-Test
+
+**When:** For when we want to compare the means of two related groups. Continuous, dependent variable, dependent paired observations.
+
+**Assumptions:** Independence of pairs, normality of differences.
+
+Null Hypothesis: The mean difference in extra hours of sleep after Drug 2 is 0.
+
+$H_0: \mu_d = 0$
+
+Alternative Hypothesis: The mean difference in extra hours of sleep after Drug 2 is statistically different from 0
+
+$H_0: \mu_d \ne 0$
 
 ```{r}
 # Adding a dataset that has data that's worth applying a paired t-test to:
@@ -120,7 +137,21 @@ with(sleep, t.test(extra[group == 1], extra[group == 2], paired = TRUE))
 # "extra[group == 1]" tells R "the 'extra' variable, where the condtion group == 1 is TRUE"
 ```
 
+Using alpha = 0.05, there is sufficient evidence that the mean difference in extra hours of sleep after Drug 2 is different from 0 hours (p-value = 0.002833). After Drug 2, extra sleep hours increased by on average 1.58 hours (p-value 0.002833, 95% CI = 0.7001, 2.4599).
+
 ### Wilcoxon Signed-Rank
+
+**When:** For when we want to compare the means of two related group, but paired differences aren't normally distributed, dependent variable is ordinal, and/or the sample size is too small to assume normality.
+
+**Assumptions:** Independence of pairs, paired observations, symmetric distribution of differences.
+
+Null Hypothesis: The median difference in extra hours of sleep after Drug 2 is 0.
+
+$H_0: M_d = 0$
+
+Alternative Hypothesis: The median difference in extra hours of sleep after Drug 2 is statistically different from 0
+
+$H_0: Md \ne 0$
 
 ```{r}
 # Graphing distribution of differences
@@ -143,13 +174,27 @@ ggplot(sleep_diff_tidy, aes(x = difference)) +
   theme_minimal()
 
 # Assuming the differences between ours pairs are NOT NORMALLLY DISTRIBUTED
-with(sleep, wilcox.test(extra[group == 1], extra[group == 2], paired = TRUE, exact = FALSE))
+with(sleep, wilcox.test(extra[group == 1], extra[group == 2], paired = TRUE, exact= FALSE, conf.int = TRUE))
 # Applying exact = FALSE because patient 5 showed 0 change between drugs and patients 3 and 4 had the exact same difference between their drugs. 
 ```
 
+Using alpha = 0.05, there is sufficient evidence that the median difference in extra hours of sleep after Drug 2 is different from 0 hours (p-value = 0.00901). After Drug 2, extra sleep hours increased by on average 1.400 hours (p-value 0.00901, 95% CI = 1.5002, 2.9499).
+
+------------------------------------------------------------------------
+
 ### One-Way ANOVA
 
-For performing a continuous outcome between 3+ groups.
+**When:** For performing a continuous outcome between 3+ groups.
+
+**Assumptions:** Continuous dependent variable, independence of observations, normality, homogeneity of variances (homoskedasticity).
+
+Null Hypothesis: All group means are not statistically different from each other.
+
+$H_0: \mu_{adelie} = \mu_{gentoo} = \mu_{chinstrap}$
+
+Alternative Hypothesis: Atleast one group of means between species of penguins is statistically different from the others.
+
+$H_0: \mu_{adelie} \ne \mu_{gentoo} \ne \mu_{chinstrap}$
 
 ```{r}
 # Checking distribution and sample size
@@ -166,11 +211,30 @@ peng_anova <- aov(bill_depth_mm ~ species,
 summary(peng_anova)
 ```
 
-**///TO DO: Add comparisons to determine which group(s) is/are significantly different from the others.**
+Using alpha = 0.05, we can reject the null hypothesis. At least one of the species group means is significantly different from the others (p-value \< 2e-16).
+
+Now that we know at least one group is different, we can perform a post-hoc Tukey HSD test to determine which group(s) are different from each other.
+
+```{r}
+tuk_peng <- TukeyHSD(peng_anova)
+tuk_peng
+```
+
+The differences between Gentoo and the other species are significantly different (p \< 0.0001 for both cases). Chinstrap and Adelie are not significantly different from each other (p = 0.893).
 
 ### Kruskal-Wallis
 
-For performing a continuous outcome between 3+ groups when anova assumptions are violated.
+**When:** For performing a continuous outcome between 3+ groups when anova assumptions are violated.
+
+**Assumptions:** Three or more independent, categorical groups, continuous or ordinal independent variable, independence of observations, similarity of distribution shapes.
+
+Null Hypothesis: All group medians are not statistically different from each other.
+
+$H_0: M_{adelie} = M_{gentoo} = M_{chinstrap}$
+
+Alternative Hypothesis: Atleast one group of medians between species of penguins is statistically different from the others.
+
+$H_0: M_{adelie} \ne M_{gentoo} \ne M_{chinstrap}$
 
 ```{r}
 # Assuming these species' bill depths violate normal distribution
@@ -178,6 +242,21 @@ For performing a continuous outcome between 3+ groups when anova assumptions are
 kruskal.test(bill_depth_mm ~ species,
              data = penguins)
 ```
+
+Using alpha = 0.05, we can reject the null hypothesis. At least one of the species group medians is significantly different from the others (p-value \< 2e-16).
+
+Similar to the ANOVA test, we must now perform a post-hoc test to determine which group is meaningfully different from the others.
+
+```{r}
+# Performing a Dunn's Test
+dunnTest(bill_depth_mm ~ species,
+         data = penguins,
+         method = "holm") # Similar to a bonferroni correction, but with less risk of Type II errors
+```
+
+The differences between Gentoo and the other species are significantly different (p \< 0.0001 for both cases). Chinstrap and Adelie are not significantly different from each other (p = 0.656).
+
+------------------------------------------------------------------------
 
 ### Pearson Correlation
 
@@ -218,6 +297,8 @@ ggplot(data = USJudgeRatings,
 cor.test(USJudgeRatings$INTG, USJudgeRatings$DMNR, method = "spearman")
 ```
 
+------------------------------------------------------------------------
+
 ### Chi-square Test of Independence
 
 For comparing the frequencies of two categorical variables
@@ -249,6 +330,8 @@ chisq.test(hair_eye_small)
 # In this case, we can then run a Fisher's Exact Test instead!
 fisher.test(hair_eye_small)
 ```
+
+------------------------------------------------------------------------
 
 ### McNemar's Test
 

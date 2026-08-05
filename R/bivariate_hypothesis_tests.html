@@ -219,14 +219,26 @@ The following objects are masked from 'package:readr':
 
     edition_get, local_edition</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding loading/datasets for example suse</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Palmer penguins</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins) <span class="co"># penguin measurements</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(FSA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'FSA' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Registered S3 methods overwritten by 'FSA':
+  method       from
+  confint.boot car 
+  hist.boot    car 
+## FSA v0.10.1. See citation('FSA') if used in publication.
+## Run fishR() for related website and fishR('IFAR') for related book.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding loading/datasets for example suse</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Palmer penguins</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins) <span class="co"># penguin measurements</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'palmerpenguins' was built under R version 4.4.3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -240,6 +252,7 @@ The following objects are masked from 'package:readr':
 # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 </div>
+<hr>
 <section id="two-sample-t-test" class="level3">
 <h3 class="anchored" data-anchor-id="two-sample-t-test">Two-Sample T-Test</h3>
 <p><strong>When:</strong> continuous outcome variable, two independent groups in predictor, and independence between observations.</p>
@@ -249,18 +262,18 @@ The following objects are masked from 'package:readr':
 <p><strong>Alternative Hypothesis:</strong> The population difference in mean bill length (mm) between the female and male groups of penguins is statistically different from 0.</p>
 <p><span class="math inline">\(H_0: \mu_{female} - \mu_{male} \ne 0\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cleaning the dataset for sake of example</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>clean_penguins <span class="ot">=</span> <span class="fu">na.omit</span>(penguins)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming independence of observations</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Observing normal distribution of groups</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> clean_penguins,</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> sex,</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="co"># changes opacity</span></span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">show.legend =</span> <span class="cn">FALSE</span> <span class="co"># removes the key to the right</span></span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cleaning the dataset for sake of example</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>clean_penguins <span class="ot">=</span> <span class="fu">na.omit</span>(penguins)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming independence of observations</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Observing normal distribution of groups</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> clean_penguins,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> sex,</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="co"># changes opacity</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">show.legend =</span> <span class="cn">FALSE</span> <span class="co"># removes the key to the right</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Picking joint bandwidth of 1.66</code></pre>
 </div>
@@ -271,30 +284,30 @@ The following objects are masked from 'package:readr':
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using the Central Limit Theorem as n for each group is &gt; 164</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking variances</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>sumstats <span class="ot">&lt;-</span> clean_penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex) <span class="sc">%&gt;%</span> </span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_summary_stats</span>(<span class="at">type =</span> <span class="st">"mean_sd"</span>) </span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>sumstats <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using the Central Limit Theorem as n for each group is &gt; 164</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking variances</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>sumstats <span class="ot">&lt;-</span> clean_penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_summary_stats</span>(<span class="at">type =</span> <span class="st">"mean_sd"</span>) </span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>sumstats <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="gkcjktnegf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gkcjktnegf table {
+<div id="lkqdctooqq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lkqdctooqq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gkcjktnegf thead, #gkcjktnegf tbody, #gkcjktnegf tfoot, #gkcjktnegf tr, #gkcjktnegf td, #gkcjktnegf th {
+#lkqdctooqq thead, #lkqdctooqq tbody, #lkqdctooqq tfoot, #lkqdctooqq tr, #lkqdctooqq td, #lkqdctooqq th {
   border-style: none;
 }
 
-#gkcjktnegf p {
+#lkqdctooqq p {
   margin: 0;
   padding: 0;
 }
 
-#gkcjktnegf .gt_table {
+#lkqdctooqq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -320,12 +333,12 @@ The following objects are masked from 'package:readr':
   border-left-color: #D3D3D3;
 }
 
-#gkcjktnegf .gt_caption {
+#lkqdctooqq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gkcjktnegf .gt_title {
+#lkqdctooqq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -337,7 +350,7 @@ The following objects are masked from 'package:readr':
   border-bottom-width: 0;
 }
 
-#gkcjktnegf .gt_subtitle {
+#lkqdctooqq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -349,7 +362,7 @@ The following objects are masked from 'package:readr':
   border-top-width: 0;
 }
 
-#gkcjktnegf .gt_heading {
+#lkqdctooqq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -361,13 +374,13 @@ The following objects are masked from 'package:readr':
   border-right-color: #D3D3D3;
 }
 
-#gkcjktnegf .gt_bottom_border {
+#lkqdctooqq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gkcjktnegf .gt_col_headings {
+#lkqdctooqq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -382,7 +395,7 @@ The following objects are masked from 'package:readr':
   border-right-color: #D3D3D3;
 }
 
-#gkcjktnegf .gt_col_heading {
+#lkqdctooqq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -402,7 +415,7 @@ The following objects are masked from 'package:readr':
   overflow-x: hidden;
 }
 
-#gkcjktnegf .gt_column_spanner_outer {
+#lkqdctooqq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -414,15 +427,15 @@ The following objects are masked from 'package:readr':
   padding-right: 4px;
 }
 
-#gkcjktnegf .gt_column_spanner_outer:first-child {
+#lkqdctooqq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gkcjktnegf .gt_column_spanner_outer:last-child {
+#lkqdctooqq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gkcjktnegf .gt_column_spanner {
+#lkqdctooqq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -434,11 +447,11 @@ The following objects are masked from 'package:readr':
   width: 100%;
 }
 
-#gkcjktnegf .gt_spanner_row {
+#lkqdctooqq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gkcjktnegf .gt_group_heading {
+#lkqdctooqq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -464,7 +477,7 @@ The following objects are masked from 'package:readr':
   text-align: left;
 }
 
-#gkcjktnegf .gt_empty_group_heading {
+#lkqdctooqq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -479,15 +492,15 @@ The following objects are masked from 'package:readr':
   vertical-align: middle;
 }
 
-#gkcjktnegf .gt_from_md > :first-child {
+#lkqdctooqq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gkcjktnegf .gt_from_md > :last-child {
+#lkqdctooqq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gkcjktnegf .gt_row {
+#lkqdctooqq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -506,7 +519,7 @@ The following objects are masked from 'package:readr':
   overflow-x: hidden;
 }
 
-#gkcjktnegf .gt_stub {
+#lkqdctooqq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -519,7 +532,7 @@ The following objects are masked from 'package:readr':
   padding-right: 5px;
 }
 
-#gkcjktnegf .gt_stub_row_group {
+#lkqdctooqq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -533,15 +546,15 @@ The following objects are masked from 'package:readr':
   vertical-align: top;
 }
 
-#gkcjktnegf .gt_row_group_first td {
+#lkqdctooqq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gkcjktnegf .gt_row_group_first th {
+#lkqdctooqq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gkcjktnegf .gt_summary_row {
+#lkqdctooqq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -551,16 +564,16 @@ The following objects are masked from 'package:readr':
   padding-right: 5px;
 }
 
-#gkcjktnegf .gt_first_summary_row {
+#lkqdctooqq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gkcjktnegf .gt_first_summary_row.thick {
+#lkqdctooqq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gkcjktnegf .gt_last_summary_row {
+#lkqdctooqq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -570,7 +583,7 @@ The following objects are masked from 'package:readr':
   border-bottom-color: #D3D3D3;
 }
 
-#gkcjktnegf .gt_grand_summary_row {
+#lkqdctooqq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -580,7 +593,7 @@ The following objects are masked from 'package:readr':
   padding-right: 5px;
 }
 
-#gkcjktnegf .gt_first_grand_summary_row {
+#lkqdctooqq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -590,7 +603,7 @@ The following objects are masked from 'package:readr':
   border-top-color: #D3D3D3;
 }
 
-#gkcjktnegf .gt_last_grand_summary_row_top {
+#lkqdctooqq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -600,11 +613,11 @@ The following objects are masked from 'package:readr':
   border-bottom-color: #D3D3D3;
 }
 
-#gkcjktnegf .gt_striped {
+#lkqdctooqq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gkcjktnegf .gt_table_body {
+#lkqdctooqq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -613,7 +626,7 @@ The following objects are masked from 'package:readr':
   border-bottom-color: #D3D3D3;
 }
 
-#gkcjktnegf .gt_footnotes {
+#lkqdctooqq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -627,7 +640,7 @@ The following objects are masked from 'package:readr':
   border-right-color: #D3D3D3;
 }
 
-#gkcjktnegf .gt_footnote {
+#lkqdctooqq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -636,7 +649,7 @@ The following objects are masked from 'package:readr':
   padding-right: 5px;
 }
 
-#gkcjktnegf .gt_sourcenotes {
+#lkqdctooqq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -650,7 +663,7 @@ The following objects are masked from 'package:readr':
   border-right-color: #D3D3D3;
 }
 
-#gkcjktnegf .gt_sourcenote {
+#lkqdctooqq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -658,72 +671,72 @@ The following objects are masked from 'package:readr':
   padding-right: 5px;
 }
 
-#gkcjktnegf .gt_left {
+#lkqdctooqq .gt_left {
   text-align: left;
 }
 
-#gkcjktnegf .gt_center {
+#lkqdctooqq .gt_center {
   text-align: center;
 }
 
-#gkcjktnegf .gt_right {
+#lkqdctooqq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gkcjktnegf .gt_font_normal {
+#lkqdctooqq .gt_font_normal {
   font-weight: normal;
 }
 
-#gkcjktnegf .gt_font_bold {
+#lkqdctooqq .gt_font_bold {
   font-weight: bold;
 }
 
-#gkcjktnegf .gt_font_italic {
+#lkqdctooqq .gt_font_italic {
   font-style: italic;
 }
 
-#gkcjktnegf .gt_super {
+#lkqdctooqq .gt_super {
   font-size: 65%;
 }
 
-#gkcjktnegf .gt_footnote_marks {
+#lkqdctooqq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gkcjktnegf .gt_asterisk {
+#lkqdctooqq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gkcjktnegf .gt_indent_1 {
+#lkqdctooqq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gkcjktnegf .gt_indent_2 {
+#lkqdctooqq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gkcjktnegf .gt_indent_3 {
+#lkqdctooqq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gkcjktnegf .gt_indent_4 {
+#lkqdctooqq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gkcjktnegf .gt_indent_5 {
+#lkqdctooqq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gkcjktnegf .katex-display {
+#lkqdctooqq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gkcjktnegf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#lkqdctooqq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -814,8 +827,8 @@ The following objects are masked from 'package:readr':
 
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Performing the test</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(bill_length_mm <span class="sc">~</span> sex, <span class="at">data =</span> penguins, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Performing the test</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(bill_length_mm <span class="sc">~</span> sex, <span class="at">data =</span> penguins, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Two Sample t-test
@@ -835,10 +848,19 @@ mean in group female   mean in group male
 </section>
 <section id="wilcoxon-rank-sum-mann-whitney" class="level3">
 <h3 class="anchored" data-anchor-id="wilcoxon-rank-sum-mann-whitney">Wilcoxon Rank-Sum (Mann-Whitney)</h3>
+<p><strong>When:</strong> continuous outcome variable, two independent groups in predictor, and independence between observations.</p>
+<p><strong>Assumptions:</strong> distribution of outcomes in each group violates normality assumptions, and variances in each group are similar.</p>
+<ul>
+<li><strong>Note:</strong> If variances are not similar, the test can still be run, but it no longer showcases median difference. Significance where variance isn’t similar means that there is <strong>stochastic dominance</strong>.</li>
+</ul>
+<p><strong>Null Hypothesis:</strong> The population difference in median bill length (mm) between the female and male groups of penguins is 0.</p>
+<p><span class="math inline">\(H_0: M_{female} - M_{male} = 0\)</span></p>
+<p><strong>Alternative Hypothesis:</strong> The population difference in median bill length (mm) between the female and male groups of penguins is statistically different from 0.</p>
+<p><span class="math inline">\(H_0: M_{female} - M_{male} \ne 0\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming that the distribution isn't normal enough for both groups for sake of example:</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(bill_length_mm <span class="sc">~</span> sex, <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming that the distribution isn't normal enough for both groups for sake of example:</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(bill_length_mm <span class="sc">~</span> sex, <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Wilcoxon rank sum test with continuity correction
@@ -847,14 +869,40 @@ data:  bill_length_mm by sex
 W = 8178, p-value = 9.901e-11
 alternative hypothesis: true location shift is not equal to 0</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Getting median and IQR for results sentence</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(penguins<span class="sc">$</span>bill_depth_mm[penguins<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"male"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 18.45</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(penguins<span class="sc">$</span>bill_depth_mm[penguins<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"male"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.175</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(penguins<span class="sc">$</span>bill_depth_mm[penguins<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"female"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 17</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(penguins<span class="sc">$</span>bill_depth_mm[penguins<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"female"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.3</code></pre>
+</div>
+</div>
+<p>Results: p-value = 9.901e-11</p>
+<p>Using alpha = 0.05, there is sufficient evidence that the population difference in median bill length (mm) between male and female penguins is different from 0 (p &lt; 0.001). The median bill length was 18.45 mm (IQR = 3.175 mm) and 17 mm (IQR = 3.3 mm) for the female and male groups, and the difference of 1.45 mm was statistically significant.</p>
+<hr>
 </section>
 <section id="paired-t-test" class="level3">
 <h3 class="anchored" data-anchor-id="paired-t-test">Paired T-Test</h3>
+<p><strong>When:</strong> For when we want to compare the means of two related groups. Continuous, dependent variable, dependent paired observations.</p>
+<p><strong>Assumptions:</strong> Independence of pairs, normality of differences.</p>
+<p>Null Hypothesis: The mean difference in extra hours of sleep after Drug 2 is 0.</p>
+<p><span class="math inline">\(H_0: \mu_d = 0\)</span></p>
+<p>Alternative Hypothesis: The mean difference in extra hours of sleep after Drug 2 is statistically different from 0</p>
+<p><span class="math inline">\(H_0: \mu_d \ne 0\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding a dataset that has data that's worth applying a paired t-test to:</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Same 10 IDs were tested with both drug types.</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sleep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding a dataset that has data that's worth applying a paired t-test to:</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Same 10 IDs were tested with both drug types.</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sleep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  extra group ID
 1   0.7     1  1
@@ -864,12 +912,12 @@ alternative hypothesis: true location shift is not equal to 0</code></pre>
 5  -0.1     1  5
 6   3.4     1  6</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Observing data in a plot</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(extra <span class="sc">~</span> group, <span class="at">data =</span> sleep, </span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Soporific Drug Effectiveness"</span>,</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Drug Group"</span>, </span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Extra Hours of Sleep"</span>,</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"lightblue"</span>, <span class="st">"lightpink"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Observing data in a plot</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(extra <span class="sc">~</span> group, <span class="at">data =</span> sleep, </span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Soporific Drug Effectiveness"</span>,</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Drug Group"</span>, </span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Extra Hours of Sleep"</span>,</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"lightblue"</span>, <span class="st">"lightpink"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -877,8 +925,8 @@ alternative hypothesis: true location shift is not equal to 0</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># And performing the paired t-test</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(sleep, <span class="fu">t.test</span>(extra[group <span class="sc">==</span> <span class="dv">1</span>], extra[group <span class="sc">==</span> <span class="dv">2</span>], <span class="at">paired =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># And performing the paired t-test</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(sleep, <span class="fu">t.test</span>(extra[group <span class="sc">==</span> <span class="dv">1</span>], extra[group <span class="sc">==</span> <span class="dv">2</span>], <span class="at">paired =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Paired t-test
@@ -892,31 +940,38 @@ sample estimates:
 mean difference 
           -1.58 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: "with()" is called an environment wrapper. It tells R to look inside 'sleep' for the variables that are mentioned inside of it. This option makes it so we don't have to type sleep$extra each time. </span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># "extra[group == 1]" tells R "the 'extra' variable, where the condtion group == 1 is TRUE"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: "with()" is called an environment wrapper. It tells R to look inside 'sleep' for the variables that are mentioned inside of it. This option makes it so we don't have to type sleep$extra each time. </span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># "extra[group == 1]" tells R "the 'extra' variable, where the condtion group == 1 is TRUE"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Using alpha = 0.05, there is sufficient evidence that the mean difference in extra hours of sleep after Drug 2 is different from 0 hours (p-value = 0.002833). After Drug 2, extra sleep hours increased by on average 1.58 hours (p-value 0.002833, 95% CI = 0.7001, 2.4599).</p>
 </section>
 <section id="wilcoxon-signed-rank" class="level3">
 <h3 class="anchored" data-anchor-id="wilcoxon-signed-rank">Wilcoxon Signed-Rank</h3>
+<p><strong>When:</strong> For when we want to compare the means of two related group, but paired differences aren’t normally distributed, dependent variable is ordinal, and/or the sample size is too small to assume normality.</p>
+<p><strong>Assumptions:</strong> Independence of pairs, paired observations, symmetric distribution of differences.</p>
+<p>Null Hypothesis: The median difference in extra hours of sleep after Drug 2 is 0.</p>
+<p><span class="math inline">\(H_0: M_d = 0\)</span></p>
+<p>Alternative Hypothesis: The median difference in extra hours of sleep after Drug 2 is statistically different from 0</p>
+<p><span class="math inline">\(H_0: Md \ne 0\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graphing distribution of differences</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>sleep_diff_tidy <span class="ot">&lt;-</span> sleep <span class="sc">%&gt;%</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">paste0</span>(<span class="st">"drug_"</span>, group)) <span class="sc">%&gt;%</span> <span class="co"># Renames 1 and 2 to drug_1 and drug_2</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> group, <span class="at">values_from =</span> extra) <span class="sc">%&gt;%</span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">difference =</span> drug_2 <span class="sc">-</span> drug_1)</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sleep_diff_tidy, <span class="fu">aes</span>(<span class="at">x =</span> difference)) <span class="sc">+</span></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)), <span class="at">bins =</span> <span class="dv">5</span>, </span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"darkblue"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Sleep Differences"</span>,</span>
-<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Values to the right of the red line mean Drug 2 outperformed Drug 1"</span>,</span>
-<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Difference in Hours (Drug 2 - Drug 1)"</span>,</span>
-<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
-<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graphing distribution of differences</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>sleep_diff_tidy <span class="ot">&lt;-</span> sleep <span class="sc">%&gt;%</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">paste0</span>(<span class="st">"drug_"</span>, group)) <span class="sc">%&gt;%</span> <span class="co"># Renames 1 and 2 to drug_1 and drug_2</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> group, <span class="at">values_from =</span> extra) <span class="sc">%&gt;%</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">difference =</span> drug_2 <span class="sc">-</span> drug_1)</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sleep_diff_tidy, <span class="fu">aes</span>(<span class="at">x =</span> difference)) <span class="sc">+</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)), <span class="at">bins =</span> <span class="dv">5</span>, </span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"darkblue"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Sleep Differences"</span>,</span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Values to the right of the red line mean Drug 2 outperformed Drug 1"</span>,</span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Difference in Hours (Drug 2 - Drug 1)"</span>,</span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -924,28 +979,40 @@ mean difference
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming the differences between ours pairs are NOT NORMALLLY DISTRIBUTED</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(sleep, <span class="fu">wilcox.test</span>(extra[group <span class="sc">==</span> <span class="dv">1</span>], extra[group <span class="sc">==</span> <span class="dv">2</span>], <span class="at">paired =</span> <span class="cn">TRUE</span>, <span class="at">exact =</span> <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming the differences between ours pairs are NOT NORMALLLY DISTRIBUTED</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(sleep, <span class="fu">wilcox.test</span>(extra[group <span class="sc">==</span> <span class="dv">1</span>], extra[group <span class="sc">==</span> <span class="dv">2</span>], <span class="at">paired =</span> <span class="cn">TRUE</span>, <span class="at">exact=</span> <span class="cn">FALSE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Wilcoxon signed rank test with continuity correction
 
 data:  extra[group == 1] and extra[group == 2]
 V = 0, p-value = 0.009091
-alternative hypothesis: true location shift is not equal to 0</code></pre>
+alternative hypothesis: true location shift is not equal to 0
+95 percent confidence interval:
+ -2.949921 -1.050018
+sample estimates:
+(pseudo)median 
+     -1.400031 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Applying exact = FALSE because patient 5 showed 0 change between drugs and patients 3 and 4 had the exact same difference between their drugs. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Applying exact = FALSE because patient 5 showed 0 change between drugs and patients 3 and 4 had the exact same difference between their drugs. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Using alpha = 0.05, there is sufficient evidence that the median difference in extra hours of sleep after Drug 2 is different from 0 hours (p-value = 0.00901). After Drug 2, extra sleep hours increased by on average 1.400 hours (p-value 0.00901, 95% CI = 1.5002, 2.9499).</p>
+<hr>
 </section>
 <section id="one-way-anova" class="level3">
 <h3 class="anchored" data-anchor-id="one-way-anova">One-Way ANOVA</h3>
-<p>For performing a continuous outcome between 3+ groups.</p>
+<p><strong>When:</strong> For performing a continuous outcome between 3+ groups.</p>
+<p><strong>Assumptions:</strong> Continuous dependent variable, independence of observations, normality, homogeneity of variances (homoskedasticity).</p>
+<p>Null Hypothesis: All group means are not statistically different from each other.</p>
+<p><span class="math inline">\(H_0: \mu_{adelie} = \mu_{gentoo} = \mu_{chinstrap}\)</span></p>
+<p>Alternative Hypothesis: Atleast one group of means between species of penguins is statistically different from the others.</p>
+<p><span class="math inline">\(H_0: \mu_{adelie} \ne \mu_{gentoo} \ne \mu_{chinstrap}\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking distribution and sample size</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> species)) <span class="sc">+</span> <span class="co"># Note that we put 'color' here instead of 'y'</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking distribution and sample size</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> species)) <span class="sc">+</span> <span class="co"># Note that we put 'color' here instead of 'y'</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
 (`stat_density()`).</code></pre>
@@ -957,16 +1024,16 @@ alternative hypothesis: true location shift is not equal to 0</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(penguins<span class="sc">$</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(penguins<span class="sc">$</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
    Adelie Chinstrap    Gentoo 
       152        68       124 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Performing an anova, given n &gt; 60 for each group and normal-appearing distributions</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>peng_anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(bill_depth_mm <span class="sc">~</span> species,</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> penguins)</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(peng_anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Performing an anova, given n &gt; 60 for each group and normal-appearing distributions</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>peng_anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(bill_depth_mm <span class="sc">~</span> species,</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> penguins)</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(peng_anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             Df Sum Sq Mean Sq F value Pr(&gt;F)    
 species       2  904.0   452.0   359.8 &lt;2e-16 ***
@@ -976,15 +1043,39 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 2 observations deleted due to missingness</code></pre>
 </div>
 </div>
+<p>Using alpha = 0.05, we can reject the null hypothesis. At least one of the species group means is significantly different from the others (p-value &lt; 2e-16).</p>
+<p>Now that we know at least one group is different, we can perform a post-hoc Tukey HSD test to determine which group(s) are different from each other.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>tuk_peng <span class="ot">&lt;-</span> <span class="fu">TukeyHSD</span>(peng_anova)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>tuk_peng</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = bill_depth_mm ~ species, data = penguins)
+
+$species
+                        diff        lwr        upr     p adj
+Chinstrap-Adelie  0.07423062 -0.3110995  0.4595607 0.8928875
+Gentoo-Adelie    -3.36424379 -3.6847143 -3.0437733 0.0000000
+Gentoo-Chinstrap -3.43847441 -3.8371903 -3.0397586 0.0000000</code></pre>
+</div>
+</div>
+<p>The differences between Gentoo and the other species are significantly different (p &lt; 0.0001 for both cases). Chinstrap and Adelie are not significantly different from each other (p = 0.893).</p>
 </section>
 <section id="kruskal-wallis" class="level3">
 <h3 class="anchored" data-anchor-id="kruskal-wallis">Kruskal-Wallis</h3>
-<p>For performing a continuous outcome between 3+ groups when anova assumptions are violated.</p>
+<p><strong>When:</strong> For performing a continuous outcome between 3+ groups when anova assumptions are violated.</p>
+<p><strong>Assumptions:</strong> Three or more independent, categorical groups, continuous or ordinal independent variable, independence of observations, similarity of distribution shapes.</p>
+<p>Null Hypothesis: All group medians are not statistically different from each other.</p>
+<p><span class="math inline">\(H_0: M_{adelie} = M_{gentoo} = M_{chinstrap}\)</span></p>
+<p>Alternative Hypothesis: Atleast one group of medians between species of penguins is statistically different from the others.</p>
+<p><span class="math inline">\(H_0: M_{adelie} \ne M_{gentoo} \ne M_{chinstrap}\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming these species' bill depths violate normal distribution</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># From the graph above and sample sizes, this isn't the case, but performing this test as an example. </span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(bill_depth_mm <span class="sc">~</span> species,</span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming these species' bill depths violate normal distribution</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="co"># From the graph above and sample sizes, this isn't the case, but performing this test as an example. </span></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(bill_depth_mm <span class="sc">~</span> species,</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Kruskal-Wallis rank sum test
@@ -993,17 +1084,59 @@ data:  bill_depth_mm by species
 Kruskal-Wallis chi-squared = 224.56, df = 2, p-value &lt; 2.2e-16</code></pre>
 </div>
 </div>
+<p>Using alpha = 0.05, we can reject the null hypothesis. At least one of the species group medians is significantly different from the others (p-value &lt; 2e-16).</p>
+<p>Similar to the ANOVA test, we must now perform a post-hoc test to determine which group is meaningfully different from the others.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Performing a Dunn's Test</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dunnTest</span>(bill_depth_mm <span class="sc">~</span> species,</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> penguins,</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"holm"</span>) <span class="co"># Similar to a bonferroni correction, but with less risk of Type II errors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Some rows deleted from 'x' and 'g' because missing data.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>  Kruskal-Wallis rank sum test
+
+data: x and g
+Kruskal-Wallis chi-squared = 224.5631, df = 2, p-value = 0
+
+                     Dunn's Pairwise Comparison of x by g                     
+                                    (Holm)                                    
+Col Mean-│
+Row Mean │     Adelie   Chinstra
+─────────┼──────────────────────
+Chinstra │  -0.444969
+         │     0.6563 
+         │
+  Gentoo │   13.72961   11.46530
+         │     0.0000*    0.0000*
+
+FWER = 0.05
+Reject Ho if p ≤ FWER with stopping rule, where p = Pr(|Z| ≥ |z|)
+Dunn (1964) Kruskal-Wallis multiple comparison
+
+  p-values adjusted with the Holm method.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          Comparison         Z      P.unadj        P.adj
+1 Adelie - Chinstrap -0.444969 6.563421e-01 6.563421e-01
+2    Adelie - Gentoo 13.729620 6.748658e-43 2.024597e-42
+3 Chinstrap - Gentoo 11.465304 1.970667e-30 3.941333e-30</code></pre>
+</div>
+</div>
+<p>The differences between Gentoo and the other species are significantly different (p &lt; 0.0001 for both cases). Chinstrap and Adelie are not significantly different from each other (p = 0.656).</p>
+<hr>
 </section>
 <section id="pearson-correlation" class="level3">
 <h3 class="anchored" data-anchor-id="pearson-correlation">Pearson Correlation</h3>
 <p>For measuring the strength of a linear relationship between two quantitative &amp; continuous variables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing the relationship</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>( <span class="at">x =</span> bill_depth_mm,</span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing the relationship</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>( <span class="at">x =</span> bill_depth_mm,</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
@@ -1018,14 +1151,14 @@ Kruskal-Wallis chi-squared = 224.56, df = 2, p-value &lt; 2.2e-16</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="bivariate_hypothesis_tests_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="bivariate_hypothesis_tests_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testing pearson correlation</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(<span class="sc">~</span> bill_depth_mm <span class="sc">+</span> body_mass_g, </span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"pearson"</span>, </span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testing pearson correlation</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(<span class="sc">~</span> bill_depth_mm <span class="sc">+</span> body_mass_g, </span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"pearson"</span>, </span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's product-moment correlation
@@ -1039,34 +1172,34 @@ sample estimates:
        cor 
 -0.4719156 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that this is a Simpson's Paradox. The species groups each have a positive correlation between bill depth and body mass, but together the correlation appears negative.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that this is a Simpson's Paradox. The species groups each have a positive correlation between bill depth and body mass, but together the correlation appears negative.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="spearman-correlation" class="level3">
 <h3 class="anchored" data-anchor-id="spearman-correlation">Spearman Correlation</h3>
 <p>For measuring the strength of a linear relationship between two continuous variables. Unlike Pearson, however, Spearman is better for monotonic relationships, ordinal data, or skewed data distributions.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"USJudgeRatings"</span>)</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co">#We'll be comparing demeanor vs integrity of judges in the US.</span></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing the relationship</span></span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> USJudgeRatings,</span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>( <span class="at">x =</span> INTG,</span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">y =</span> DMNR)) <span class="sc">+</span></span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"USJudgeRatings"</span>)</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="co">#We'll be comparing demeanor vs integrity of judges in the US.</span></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing the relationship</span></span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> USJudgeRatings,</span>
+<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>( <span class="at">x =</span> INTG,</span>
+<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">y =</span> DMNR)) <span class="sc">+</span></span>
+<span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb75-9"><a href="#cb75-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="bivariate_hypothesis_tests_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="bivariate_hypothesis_tests_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testing pearson correlation</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(USJudgeRatings<span class="sc">$</span>INTG, USJudgeRatings<span class="sc">$</span>DMNR, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testing pearson correlation</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(USJudgeRatings<span class="sc">$</span>INTG, USJudgeRatings<span class="sc">$</span>DMNR, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in cor.test.default(USJudgeRatings$INTG, USJudgeRatings$DMNR, method =
 "spearman"): Cannot compute exact p-value with ties</code></pre>
@@ -1083,14 +1216,15 @@ sample estimates:
 0.9584298 </code></pre>
 </div>
 </div>
+<hr>
 </section>
 <section id="chi-square-test-of-independence" class="level3">
 <h3 class="anchored" data-anchor-id="chi-square-test-of-independence">Chi-square Test of Independence</h3>
 <p>For comparing the frequencies of two categorical variables</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"HairEyeColor"</span>)</span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a dataset that looks at the hair and eyecolor of a sample of statistics students</span></span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(HairEyeColor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"HairEyeColor"</span>)</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a dataset that looks at the hair and eyecolor of a sample of statistics students</span></span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(HairEyeColor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>, , Sex = Male
 
@@ -1110,9 +1244,9 @@ Hair    Brown Blue Hazel Green
   Red      16    7     7     7
   Blond     4   64     5     8</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The data needs to be collapsed into a single table that isn't split by sex</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>hair_eye <span class="ot">&lt;-</span> <span class="fu">margin.table</span>(HairEyeColor, <span class="at">margin =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hair_eye)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The data needs to be collapsed into a single table that isn't split by sex</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>hair_eye <span class="ot">&lt;-</span> <span class="fu">margin.table</span>(HairEyeColor, <span class="at">margin =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hair_eye)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       Eye
 Hair    Brown Blue Hazel Green
@@ -1121,8 +1255,8 @@ Hair    Brown Blue Hazel Green
   Red      26   17    14    14
   Blond     7   94    10    16</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Then we can run the chisq test to see if hair and eye color are independent.</span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(hair_eye)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Then we can run the chisq test to see if hair and eye color are independent.</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(hair_eye)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's Chi-squared test
@@ -1136,17 +1270,17 @@ X-squared = 138.29, df = 9, p-value &lt; 2.2e-16</code></pre>
 <h3 class="anchored" data-anchor-id="fishers-exact-test">Fisher’s Exact Test</h3>
 <p>For comparing the frequencies of two categorical variables when expected cell counts are &lt;5</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can subset the hair-eye dataset to get smaller expected counts in our cells for an example.</span></span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>hair_eye_small <span class="ot">&lt;-</span> HairEyeColor[<span class="fu">c</span>(<span class="st">"Black"</span>, <span class="st">"Blond"</span>), <span class="fu">c</span>(<span class="st">"Green"</span>, <span class="st">"Hazel"</span>), <span class="st">"Female"</span>]</span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hair_eye_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can subset the hair-eye dataset to get smaller expected counts in our cells for an example.</span></span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>hair_eye_small <span class="ot">&lt;-</span> HairEyeColor[<span class="fu">c</span>(<span class="st">"Black"</span>, <span class="st">"Blond"</span>), <span class="fu">c</span>(<span class="st">"Green"</span>, <span class="st">"Hazel"</span>), <span class="st">"Female"</span>]</span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hair_eye_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       Eye
 Hair    Green Hazel
   Black     2     5
   Blond     8     5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Running a chisq.test() on a table that's too small will return a warning</span></span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(hair_eye_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Running a chisq.test() on a table that's too small will return a warning</span></span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(hair_eye_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in stats::chisq.test(x, y, ...): Chi-squared approximation may be
 incorrect</code></pre>
@@ -1158,8 +1292,8 @@ incorrect</code></pre>
 data:  hair_eye_small
 X-squared = 0.87912, df = 1, p-value = 0.3484</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In this case, we can then run a Fisher's Exact Test instead!</span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fisher.test</span>(hair_eye_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In this case, we can then run a Fisher's Exact Test instead!</span></span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fisher.test</span>(hair_eye_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Fisher's Exact Test for Count Data
@@ -1174,27 +1308,28 @@ odds ratio
  0.2689102 </code></pre>
 </div>
 </div>
+<hr>
 </section>
 <section id="mcnemars-test" class="level3">
 <h3 class="anchored" data-anchor-id="mcnemars-test">McNemar’s Test</h3>
 <p>For paired data with a categorical outcome.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Making an example dataset for this option:</span></span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>sentiment <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">5254</span>, <span class="dv">899</span>, <span class="dv">348</span>, <span class="dv">8881</span>),</span>
-<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">nrow =</span> <span class="dv">2</span>,</span>
-<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">dimnames =</span> <span class="fu">list</span>(</span>
-<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Before Class"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Understanding"</span>, <span class="st">"Confused"</span>),</span>
-<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"After Class"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Understanding"</span>, <span class="st">"Confused"</span>)</span>
-<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a>                    ))</span>
-<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a>sentiment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Making an example dataset for this option:</span></span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>sentiment <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">5254</span>, <span class="dv">899</span>, <span class="dv">348</span>, <span class="dv">8881</span>),</span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">nrow =</span> <span class="dv">2</span>,</span>
+<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">dimnames =</span> <span class="fu">list</span>(</span>
+<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Before Class"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Understanding"</span>, <span class="st">"Confused"</span>),</span>
+<span id="cb93-6"><a href="#cb93-6" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"After Class"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Understanding"</span>, <span class="st">"Confused"</span>)</span>
+<span id="cb93-7"><a href="#cb93-7" aria-hidden="true" tabindex="-1"></a>                    ))</span>
+<span id="cb93-8"><a href="#cb93-8" aria-hidden="true" tabindex="-1"></a>sentiment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               After Class
 Before Class    Understanding Confused
   Understanding          5254      348
   Confused                899     8881</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Running the test</span></span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mcnemar.test</span>(sentiment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Running the test</span></span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mcnemar.test</span>(sentiment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     McNemar's Chi-squared test with continuity correction
@@ -1208,21 +1343,21 @@ McNemar's chi-squared = 242.58, df = 1, p-value &lt; 2.2e-16</code></pre>
 <h3 class="anchored" data-anchor-id="exact-mcnemar">Exact McNemar</h3>
 <p>For paired data with a categorical outcome, but when discordant pairs (understanding -&gt; confused and vice versa) add up to less than 25</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Making an example dataset for this option:</span></span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>sentiment_xs <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">8</span>),</span>
-<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">nrow =</span> <span class="dv">2</span>,</span>
-<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">dimnames =</span> <span class="fu">list</span>(</span>
-<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Before Class"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Understanding"</span>, <span class="st">"Confused"</span>),</span>
-<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"After Class"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Understanding"</span>, <span class="st">"Confused"</span>)</span>
-<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a>                    ))</span>
-<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a>sentiment_xs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Making an example dataset for this option:</span></span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>sentiment_xs <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">8</span>),</span>
+<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">nrow =</span> <span class="dv">2</span>,</span>
+<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">dimnames =</span> <span class="fu">list</span>(</span>
+<span id="cb97-5"><a href="#cb97-5" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Before Class"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Understanding"</span>, <span class="st">"Confused"</span>),</span>
+<span id="cb97-6"><a href="#cb97-6" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"After Class"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Understanding"</span>, <span class="st">"Confused"</span>)</span>
+<span id="cb97-7"><a href="#cb97-7" aria-hidden="true" tabindex="-1"></a>                    ))</span>
+<span id="cb97-8"><a href="#cb97-8" aria-hidden="true" tabindex="-1"></a>sentiment_xs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               After Class
 Before Class    Understanding Confused
   Understanding             5        3
   Confused                  8        8</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mcnemar.exact</span>(sentiment_xs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mcnemar.exact</span>(sentiment_xs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Exact McNemar test (with central confidence intervals)
