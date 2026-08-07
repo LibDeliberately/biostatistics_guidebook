@@ -40,7 +40,7 @@ $H_0: \mu_{female} - \mu_{male} = 0$
 
 **Alternative Hypothesis:** The population difference in mean bill length (mm) between the female and male groups of penguins is statistically different from 0.
 
-$H_0: \mu_{female} - \mu_{male} \ne 0$
+$H_A: \mu_{female} - \mu_{male} \ne 0$
 
 ```{r}
 # Cleaning the dataset for sake of example
@@ -84,7 +84,7 @@ $H_0: M_{female} - M_{male} = 0$
 
 **Alternative Hypothesis:** The population difference in median bill length (mm) between the female and male groups of penguins is statistically different from 0.
 
-$H_0: M_{female} - M_{male} \ne 0$
+$H_A: M_{female} - M_{male} \ne 0$
 
 ```{r}
 # Assuming that the distribution isn't normal enough for both groups for sake of example:
@@ -117,7 +117,7 @@ $H_0: \mu_d = 0$
 
 Alternative Hypothesis: The mean difference in extra hours of sleep after Drug 2 is statistically different from 0
 
-$H_0: \mu_d \ne 0$
+$H_A: \mu_d \ne 0$
 
 ```{r}
 # Adding a dataset that has data that's worth applying a paired t-test to:
@@ -151,7 +151,7 @@ $H_0: M_d = 0$
 
 Alternative Hypothesis: The median difference in extra hours of sleep after Drug 2 is statistically different from 0
 
-$H_0: Md \ne 0$
+$H_A: Md \ne 0$
 
 ```{r}
 # Graphing distribution of differences
@@ -194,7 +194,7 @@ $H_0: \mu_{adelie} = \mu_{gentoo} = \mu_{chinstrap}$
 
 Alternative Hypothesis: Atleast one group of means between species of penguins is statistically different from the others.
 
-$H_0: \mu_{adelie} \ne \mu_{gentoo} \ne \mu_{chinstrap}$
+$H_A: \mu_{adelie} \ne \mu_{gentoo} \ne \mu_{chinstrap}$
 
 ```{r}
 # Checking distribution and sample size
@@ -234,7 +234,7 @@ $H_0: M_{adelie} = M_{gentoo} = M_{chinstrap}$
 
 Alternative Hypothesis: Atleast one group of medians between species of penguins is statistically different from the others.
 
-$H_0: M_{adelie} \ne M_{gentoo} \ne M_{chinstrap}$
+$H_A: M_{adelie} \ne M_{gentoo} \ne M_{chinstrap}$
 
 ```{r}
 # Assuming these species' bill depths violate normal distribution
@@ -260,7 +260,19 @@ The differences between Gentoo and the other species are significantly different
 
 ### Pearson Correlation
 
-For measuring the strength of a linear relationship between two quantitative & continuous variables.
+**When:** For measuring the strength and direction of a linear relationship between two quantitative & continuous variables.
+
+**Assumptions:** Two continuous variables, a roughly linear relationship, normal distribution, no extreme outliers, independence of observations.
+
+Null Hypothesis: There is no linear relationship between the two variables in the population
+
+$H_0: p = 0$
+
+*(p is the Pearson correlation coefficient that ranges from -1 to 1, with extrema indicating a perfect positive/negative relationship between the two variables).*
+
+Alternative Hypothesis: There is a significant linear relationship between the two variables in the population.
+
+$H_A: p \ne 0$
 
 ```{r}
 # Visualizing the relationship
@@ -270,17 +282,50 @@ ggplot(data = penguins,
   geom_point() +
   geom_smooth(method = "lm")
 
+# Note that this is a ***Simpson's Paradox***. The species groups each have a seemingly positive correlation between bill depth and body mass, but together the correlation appears negative.
+# For sake of proper analysis, I'll be looking at only one species of penguin here.
+adelie <- penguins %>% 
+  filter(species == "Adelie")
+nrow(adelie) # should be 152
+
+# Visualizing the relationship among Adelie only
+ggplot(data = adelie,
+       aes( x = bill_depth_mm,
+            y = body_mass_g)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+# This tells quite a different story, doesn't it?
+# Visualizing data is a **VERY** important aspect of analysis. 
+
 # Testing pearson correlation
 cor.test(~ bill_depth_mm + body_mass_g, 
          method = "pearson", 
-         data = penguins)
+         data = adelie)
 
-# Note that this is a Simpson's Paradox. The species groups each have a positive correlation between bill depth and body mass, but together the correlation appears negative.
+
 ```
+
+A Pearson correlation coefficient was computed to assess the linear relationship between bill depth (mm) and body mass (g) among Adelie penguins. There was a statistically significant, moderate positive correlation between the two variables, r(149) = 0.5761, p 9.942e-15. This indicates that Adelie penguins with greater bill depth also tended to weigh more.
+
+P.S. at this point, it helps to see the penguins we've been working with:
+
+![](images/Adélie-Chinstrap-and-gentoo-penguin-species.jpg)
 
 ### Spearman Correlation
 
-For measuring the strength of a linear relationship between two continuous variables. Unlike Pearson, however, Spearman is better for monotonic relationships, ordinal data, or skewed data distributions.
+**When:** For measuring the strength of a linear relationship between two continuous variables. Unlike Pearson, however, Spearman is better for monotonic relationships, ordinal data, or skewed data distributions.
+
+**Assumptions:** Two ordinal or continuous variables, monotonic relationship, data represents paired observations.
+
+Null Hypothesis: There is no monotonic relationship between the two variables in the population
+
+$H_0: p_s = 0$
+
+*(p is the Pearson correlation coefficient that ranges from -1 to 1, with extrema indicating a perfect positive/negative relationship between the two variables).*
+
+Alternative Hypothesis: There is a significant monotonic relationship between the two variables in the population.
+
+$H_A: p_s \ne 0$
 
 ```{r}
 data("USJudgeRatings")
@@ -295,7 +340,13 @@ ggplot(data = USJudgeRatings,
 
 # Testing pearson correlation
 cor.test(USJudgeRatings$INTG, USJudgeRatings$DMNR, method = "spearman")
+
+# Getting the df for results reporting.
+df <- nrow(USJudgeRatings) - 2
+df
 ```
+
+A Spearman rank-order correlation was computed to assess the monotonic relationship between judge integrity and demeanor. There was a statistically significant, strong positive correlation between these variables r_s(41) = 0.9584, p \< 2.2e-16. This demonstrates that higher ranks in a judge's integrity are strongly associated with higher ranks in a judge's demeanor.
 
 ------------------------------------------------------------------------
 
