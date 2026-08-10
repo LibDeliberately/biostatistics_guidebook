@@ -352,7 +352,17 @@ A Spearman rank-order correlation was computed to assess the monotonic relations
 
 ### Chi-square Test of Independence
 
-For comparing the frequencies of two categorical variables
+**When:** For comparing the frequencies of two categorical variables
+
+**Assumptions:** Independent observations, mutually exclusive categories, expected cell frequencies must be at least 5 in 80% of cells, no cell can have an expected count below 1.
+
+Null Hypothesis: The two variables are not related
+
+$H_0: p_{ij} = p_i * p_j$ for all categories
+
+Alternative Hypothesis: The two variables are related (dependent)
+
+$H_0: p_{ij} \ne p_i * p_j$ for at least 1 category.
 
 ```{r}
 data("HairEyeColor")
@@ -363,12 +373,52 @@ hair_eye <- margin.table(HairEyeColor, margin = c(1,2))
 head(hair_eye)
 
 # Then we can run the chisq test to see if hair and eye color are independent.
-chisq.test(hair_eye)
+hair_and_eye_results <- chisq.test(hair_eye)
+hair_and_eye_results
 ```
+
+A Chi-Square test of independence was performed to examine the relation between eye color and hair color. The relation between these variables was significant, $\chi^2$ (9, N = 592) = 138.29, p \< 2.2e-16.
+
+*At this point with a smaller table (e.g., a 2x2, we'd have a sense of which combination is more likely than the others. Since our table is a 4x4, that pattern is less clear. In a larger contingency table like this, our results only let us know that a pattern exists. To find more information, we need additional testing.*
+
+```{r}
+resids <- hair_and_eye_results$stdres
+print(resids)
+
+# Any cell that has a |value| more extreme than 1.96 is significant at alpha 0.05.
+sig_cells <- abs(resids) > 1.96
+print(sig_cells)
+```
+
+... Adjusted standardized residuals were calculated to evaluate specific cell patterns using a critical threshold of \|z\| \> 1.96. Inspection of residuals revealed a complex pattern where most but not all cells deviated significantly from expected values. Below, significant cells are summarized. Assuming expected random distributions:
+
+-   Brown eyes and black hair was observed significantly more often than inspected (Z = 6.14).
+
+-   Blue eyes and black hair was observed significantly less often than expected ( Z = -4.15).
+
+-   Green eyes and black hair was observed significantly less often than expected ( Z = -2.29).
+
+-   Brown eyes and brown hair was observed significantly more often than inspected (Z = 2.16).
+
+-   Blue eyes and brown hair was observed significantly less often than expected ( Z = -3.40).
+
+-   Brown eyes and hazel hair was observed significantly more often than inspected (Z = 2.05).
+
+-   Blue eyes and red hair was observed significantly less often than expected ( Z = -2.31).
+
+-   Green eyes and red hair was observed significantly more often than inspected (Z = 2.58).
+
+-   Brown eyes and blonde hair was observed significantly less often than expected ( Z = -8.33).
+
+-   Blue eyes and blonde hair was observed significantly more often than expected (Z = 9.97)
+
+-   Hazel eyes and blonde hair was observed significantly less often than expected (Z = -2.74)
+
+Otherwise, cells did not significantly deviate from expected values.
 
 ### Fisher's Exact Test
 
-For comparing the frequencies of two categorical variables when expected cell counts are \<5
+**When:** For comparing the frequencies of two categorical variables when expected cell counts are \<5
 
 ```{r}
 # We can subset the hair-eye dataset to get smaller expected counts in our cells for an example.
