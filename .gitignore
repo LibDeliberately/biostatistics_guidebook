@@ -1,0 +1,9 @@
+# Cursor / AI editor (local only — not part of the public guidebook)
+.cursor/
+.cursorrules
+.cursorignore
+*.canvas.tsx
+
+# Cursor / VS Code workspace metadata
+.vscode/
+*.code-workspace
