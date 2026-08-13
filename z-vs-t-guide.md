@@ -1,28 +1,28 @@
 # Choosing Between a *z*-Test and a *t*-Test
 
-This guide helps you decide whether a **z-test** or a **t-test** is the right reference distribution when you are doing hypothesis testing for a mean (and, briefly, for a proportion).
+When we are doing hypothesis testing for a mean (and, briefly, for a proportion), this guide is how I decide whether a **z-test** or a **t-test** is the right reference distribution.
 
 ---
 
 ## What *z* and *t* Are
 
-Statisticians use *z* and *t* as **standardized test statistics**. You turn a sample result (a mean, a difference in means, a proportion) into a number that says how many **standard errors** you are from the null value. Then you compare that number to a known distribution to get a *p*-value or decide whether it clears a critical value.
+Statisticians use *z* and *t* as **standardized test statistics**. We turn a sample result (a mean, a difference in means, a proportion) into a number that says how many **standard errors** we are from the null value. Then we compare that number to a known distribution to get a *p*-value or decide whether it clears a critical value.
 
-- ***z*** refers to the **standard normal** distribution. You use it when the sampling variability is treated as **known**. Classic case: testing a mean when the population standard deviation σ is known. Large-sample tests for proportions also use *z*.
-- ***t*** refers to **Student’s *t* distribution**, which depends on **degrees of freedom**. You use it when variability is **estimated from the sample** (you plug in *s* instead of σ). The *t* distribution has heavier tails than the normal, especially with small samples. As *n* gets large, *t* looks almost the same as *z*.
+- ***z*** refers to the **standard normal** distribution. We use it when the sampling variability is treated as **known**. Classic case: testing a mean when the population standard deviation σ is known. Large-sample tests for proportions also use *z*.
+- ***t*** refers to **Student’s *t* distribution**, which depends on **degrees of freedom**. We use it when variability is **estimated from the sample** (we plug in *s* instead of σ). The *t* distribution has heavier tails than the normal, especially with small samples. As *n* gets large, *t* looks almost the same as *z*.
 
-In software and papers, you usually see the test statistic (*z* or *t*), the degrees of freedom when it is a *t*-test, and the *p*-value. The logic underneath is the same: is this sample result surprising under the null?
+In software and papers, we usually see the test statistic (*z* or *t*), the degrees of freedom when it is a *t*-test, and the *p*-value. The logic underneath is the same: is this sample result surprising under the null?
 
 ---
 
 ## The One Question That Matters
 
-For tests about **means**, ask:
+For tests about **means**, we ask:
 
 **Do I know the population standard deviation σ, or only the sample standard deviation *s*?**
 
 - **σ known** → *z*-test  
-- **σ unknown** (you estimate it with *s*) → *t*-test  
+- **σ unknown** (we estimate it with *s*) → *t*-test  
 
 In practice, σ is almost never known from real data. So for means, the default is a *t*-test.
 
@@ -44,45 +44,43 @@ In practice, σ is almost never known from real data. So for means, the default 
 
 ## Why *t* Exists
 
-When you replace σ with *s*, you add extra uncertainty. The *t* distribution accounts for that. With small degrees of freedom, critical values are larger (wider intervals, harder to reject the null) than the corresponding *z* cutoffs. With large *n*, that extra uncertainty fades and *t* ≈ *z*.
+When we replace σ with *s*, we add extra uncertainty. The *t* distribution accounts for that. With small degrees of freedom, critical values are larger (wider intervals, harder to reject the null) than the corresponding *z* cutoffs. With large *n*, that extra uncertainty fades and *t* ≈ *z*. That’s why I’ll reach for *t* for means almost every time I only have sample SDs.
 
 ---
 
 ## One-Sample *z*-Test (Mean)
 
-**When to use it**  
-Compare a sample mean to a hypothesized value (for example, mean systolic BP vs. a known population target) when the **population** standard deviation σ is known.
+**When:** Compare a sample mean to a hypothesized value (for example, mean systolic BP in mmHg vs. a known population target) when the **population** standard deviation σ is known. One continuous outcome; hypothesized mean under the null; known population σ.
 
-**Requirements**  
-- One continuous outcome  
-- A hypothesized mean under the null  
-- Known population σ  
+**Assumptions:** Observations are independent. The outcome is approximately normal, or *n* is large enough for the sampling distribution of the mean to be roughly normal.
 
-**Assumptions**  
-- Observations are independent  
-- The outcome is approximately normal, or *n* is large enough for the sampling distribution of the mean to be roughly normal  
+**Null Hypothesis:** The population mean equals the hypothesized value.
 
-**If significant, what can you say?**  
-There is evidence that the **population mean** differs from the hypothesized value. Report the sample mean, the difference from the null value, and a confidence interval. Do not claim a cause unless the study design supports that.
+$H_0: \mu = \mu_0$
+
+**Alternative Hypothesis:** The population mean differs from the hypothesized value (two-sided form).
+
+$H_A: \mu \ne \mu_0$
+
+Using alpha = 0.05, a significant result means there is sufficient evidence that the **population mean** differs from the hypothesized value. Report the sample mean, the difference from the null value, and a confidence interval (with units). Do not claim a cause unless the study design supports that.
 
 ---
 
 ## One-Sample *t*-Test (Mean)
 
-**When to use it**  
-Same setup as the one-sample *z*-test, but σ is **unknown** and you estimate it with the sample SD *s*. This is the usual case.
+**When:** Same setup as the one-sample *z*-test, but σ is **unknown** and we estimate it with the sample SD *s*. This is the usual case.
 
-**Requirements**  
-- One continuous outcome  
-- A hypothesized mean under the null  
-- Sample SD used in place of σ  
+**Assumptions:** Observations are independent. The outcome is approximately normal, or *n* is large enough for the sampling distribution of the mean to be roughly normal. Sample SD is used in place of σ.
 
-**Assumptions**  
-- Observations are independent  
-- The outcome is approximately normal, or *n* is large enough for the sampling distribution of the mean to be roughly normal  
+**Null Hypothesis:** The population mean equals the hypothesized value.
 
-**If significant, what can you say?**  
-Same interpretation as the one-sample *z*-test: evidence that the population mean differs from the hypothesized value. Report the mean difference and its confidence interval (the interval will use *t* critical values).
+$H_0: \mu = \mu_0$
+
+**Alternative Hypothesis:** The population mean differs from the hypothesized value (two-sided form).
+
+$H_A: \mu \ne \mu_0$
+
+Using alpha = 0.05, interpretation matches the one-sample *z*-test: there is sufficient evidence that the population mean differs from the hypothesized value. Report the mean difference and its confidence interval (the interval will use *t* critical values).
 
 ---
 
@@ -99,7 +97,7 @@ For help choosing between independent, paired, ANOVA, and nonparametric options,
 
 ## Proportions Use *z* (Large Samples)
 
-Tests and confidence intervals for a **proportion** (or a difference in proportions) commonly use a *z* (normal) approximation when the sample is large enough that expected counts are not too small. That is a different setup from testing a **mean** with unknown σ. Do not treat “we used *z*” for a proportion as a reason to use *z* for means when you only have *s*.
+Tests and confidence intervals for a **proportion** (or a difference in proportions) commonly use a *z* (normal) approximation when the sample is large enough that expected counts are not too small. That is a different setup from testing a **mean** with unknown σ. Do not treat “we used *z*” for a proportion as a reason to use *z* for means when we only have *s*.
 
 ---
 

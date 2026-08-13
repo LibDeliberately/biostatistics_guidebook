@@ -1,6 +1,6 @@
 # Fundamentals Reference
 
-A quick-reference outline for statistics, R, SQL, Python, and SAS. Use this document to locate core concepts, common syntax, and typical workflows.
+A quick-reference outline I keep for statistics, R, SQL, Python, and SAS. When I need to find a core concept, a common bit of syntax, or a typical workflow without digging through notes, this is where I look.
 
 ---
 
@@ -86,11 +86,11 @@ A quick-reference outline for statistics, R, SQL, Python, and SAS. Use this docu
 ### Getting Started
 
 ```r
-# Install and load packages
+# Install once; load each session
 install.packages("dplyr")
 library(dplyr)
 
-# Help
+# Looking up how a function works
 ?mean
 help(lm)
 ```
@@ -108,11 +108,11 @@ help(lm)
 ### Import / Export
 
 ```r
-# CSV
+# CSV — base R read/write
 data <- read.csv("file.csv")
 write.csv(data, "output.csv", row.names = FALSE)
 
-# Excel (readxl package)
+# Excel needs readxl
 library(readxl)
 data <- read_excel("file.xlsx", sheet = 1)
 ```
@@ -120,6 +120,7 @@ data <- read_excel("file.xlsx", sheet = 1)
 ### Data Manipulation (dplyr)
 
 ```r
+# Pipe steps: filter rows → keep columns → create a variable → summarize by group
 data %>%
   filter(age >= 18) %>%
   select(id, age, sex, outcome) %>%
@@ -152,17 +153,17 @@ ggplot(data, aes(x = group, y = value, fill = group)) +
 ### Statistical Tests
 
 ```r
-# t-test
+# Two-sample t-test: continuous outcome by a grouping variable
 t.test(outcome ~ group, data = data)
 
-# Chi-square
+# Chi-square on a contingency table of two categorical variables
 chisq.test(table(data$var1, data$var2))
 
-# Linear regression
+# Linear regression — continuous outcome
 model <- lm(outcome ~ age + sex, data = data)
 summary(model)
 
-# Logistic regression
+# Logistic regression — binary outcome (family = binomial is the key piece)
 glm(outcome ~ age + sex, data = data, family = binomial)
 ```
 
@@ -489,7 +490,7 @@ RUN;
 
 ## Notes
 
-- Always document your data dictionary, analysis plan, and software versions.
-- Handle missing data explicitly; do not assume defaults are appropriate.
+- Document the data dictionary, analysis plan, and software versions—future-you (and collaborators) will thank you.
+- Handle missing data explicitly; do not assume the software’s defaults are doing what you want.
 - Report effect sizes and confidence intervals, not just *p*-values.
-- Validate results by cross-checking across tools when possible.
+- When results matter, it’s worth cross-checking across tools if you can.

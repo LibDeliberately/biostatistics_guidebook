@@ -1,6 +1,6 @@
 # Choosing Between One-Way and Two-Way ANOVA
 
-This guide helps you decide whether a **one-way** or **two-way** ANOVA is the right hypothesis test when you want to compare means of a continuous outcome across groups.
+When we want to compare means of a continuous outcome across groups, this is how I decide whether a **one-way** or **two-way** ANOVA is the right hypothesis test.
 
 ---
 
@@ -19,14 +19,14 @@ If you only have two groups and one factor, a two-sample *t*-test is usually eno
 
 ## The One Question That Matters
 
-Ask:
+We ask:
 
 **Am I comparing means across levels of one grouping variable, or do I need to account for two grouping variables at once?**
 
-- **One categorical factor** (and you are not bringing a second factor into the analysis) → **one-way ANOVA**
-- **Two categorical factors** (you care about both, or about whether one effect depends on the other) → **two-way ANOVA**
+- **One categorical factor** (and we are not bringing a second factor into the analysis) → **one-way ANOVA**
+- **Two categorical factors** (we care about both, or about whether one effect depends on the other) → **two-way ANOVA**
 
-If a second factor is sitting in your design—even as a “nuisance” variable you want to adjust for—ignoring it and running a one-way ANOVA on the first factor alone can give a misleading picture. In that case, a two-way ANOVA (or another multivariable approach) is usually more appropriate.
+If a second factor is sitting in the design—even as a “nuisance” variable we want to adjust for—ignoring it and running a one-way ANOVA on the first factor alone can give a misleading picture. In that case, I’ll usually reach for a two-way ANOVA (or another multivariable approach).
 
 ---
 
@@ -40,7 +40,7 @@ If a second factor is sitting in your design—even as a “nuisance” variable
 | One factor, but normality / equal-variance assumptions fail | Kruskal–Wallis (see [bivariate-hypothesis-test-guide.md](bivariate-hypothesis-test-guide.md)) |
 | Only two groups on a single factor | Two-sample *t*-test (or Wilcoxon rank-sum), not ANOVA |
 
-**Tip:** If your research question mentions “does the effect of A depend on B?” you are asking about an **interaction**, which is a two-way ANOVA question.
+**Tip:** If the research question mentions “does the effect of A depend on B?” we are asking about an **interaction**, which is a two-way ANOVA question.
 
 ---
 
@@ -133,11 +133,11 @@ Using alpha = 0.05:
 1. Outcome = bill length (continuous).  
 2. Factors of interest = species **and** sex → **two** categorical factors.  
 3. Research question explicitly asks whether the species pattern depends on sex → that is an **interaction** question.  
-4. Choose **two-way ANOVA** with species, sex, and species × sex.  
+4. I’ll choose **two-way ANOVA** with species, sex, and species × sex.  
 5. Interpret in order: interaction first; then main effects if the interaction is not important; then pairwise or simple-effects follow-ups as needed.  
 6. Report cell means / differences and CIs, not only which *p*-values cleared 0.05.
 
-If the question had been only “Do species differ in mean bill length?” with no second factor in the analysis plan, **one-way ANOVA** by species would be the matching choice.
+If the question had been only “Do species differ in mean bill length?” with no second factor in the analysis plan, **one-way ANOVA** by species would be the matching choice—and I’d stop there.
 
 ---
 
