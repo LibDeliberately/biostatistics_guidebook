@@ -1,0 +1,36 @@
+---
+title: "Data Management Example"
+author: "Olivia Dobbs"
+format: html
+editor: visual
+---
+
+## Loading Dataset & Libraries
+
+Loading all libraries necessary:
+
+```{r}
+library(dplyr)
+library(tidyverse)
+```
+
+Loading csv and viewing
+
+```{r}
+exp_patient <- read_csv("../data/inpatient_patients_example.csv")
+
+head(exp_patient)
+```
+
+```{r}
+table(exp_patient$icd9)
+table(exp_patient$icd10)
+```
+
+## Step 1: Filtering by a CSV
+
+Let's say we're interested in a sample that only includes our diagnoses of interest ( ):
+
+## Step 2: Obtaining Length of Stay
+
+Let's say we're interested in knowing how long our sample patients were at their respective hospitals before discharge:
