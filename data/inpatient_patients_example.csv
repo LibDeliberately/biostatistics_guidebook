@@ -1,0 +1,1001 @@
+patient_id,hospital_id,age,sex,gender,race,ethnicity,state,payer,admission_date,discharge_date,discharge_disposition,icd9,icd10,total_charges
+P509866,H02,23,Male,Man,White,Not Hispanic or Latino,PA,Commercial,2024-10-19,2024-10-19,Home,185,,6422.05
+P377646,H03,64,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2025-01-17,2025-01-19,Home,,K80.20,
+P695041,H01,75,Female,Woman,Asian,Not Hispanic or Latino,OH,Commercial,2025-10-24,2025-11-01,Home,,K80.20,45696.58
+P656627,H09,57,Female,Woman,White,Not Hispanic or Latino,AZ,Medicare,2019-07-02,2019-07-03,Home with home health,,N39.0,15723.71
+P237052,H03,72,Female,Woman,White,Not Hispanic or Latino,TX,Medicare,2019-03-03,2019-03-04,SNF,,E11.9,6129.74
+P299658,H06,66,Male,Man,Asian,Not Hispanic or Latino,FL,Medicaid,2022-11-20,2022-11-24,Home,553.3,,
+P714573,H01,77,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Self-pay,2020-10-04,2020-10-08,SNF,,F32.9,24396.74
+P821267,H09,41,Female,Woman,Some Other Race,Hispanic or Latino,AZ,Medicaid,2022-12-25,2022-12-28,Home,,K85.90,10094.21
+P364121,H03,43,Male,Man,White,Hispanic or Latino,TX,Commercial,2025-02-08,2025-02-10,Home,,C50.919,14983.24
+P138401,H01,31,Male,Man,White,Hispanic or Latino,OH,Commercial,2025-05-09,2025-05-13,Home with home health,,M81.0,13192.47
+P159928,H05,69,Female,Woman,White,Not Hispanic or Latino,NY,Medicare,2024-01-05,2024-01-06,Home,,J44.0,8527.61
+P657622,H01,36,Male,Man,White,Not Hispanic or Latino,OH,Commercial,2019-10-31,2019-11-04,AMA,,C50.919,26834.79
+P449929,H06,75,Female,Woman,White,Not Hispanic or Latino,FL,Medicare,2025-09-26,2025-09-26,Home with home health,493.90,,7492.62
+P203052,H02,71,Male,Man,Some Other Race,Hispanic or Latino,PA,Medicare,2021-09-17,2021-09-19,Home,780.60,,22038.96
+P261544,H02,56,Male,Man,White,Not Hispanic or Latino,PA,Self-pay,2023-04-25,2023-04-27,Home,415.19,,6225.75
+P397954,H03,76,Male,Man,White,Not Hispanic or Latino,TX,Medicare,2024-08-14,2024-08-14,Transfer,,J96.00,
+P466030,H09,45,Female,Woman,White,Not Hispanic or Latino,AZ,Self-pay,2023-10-25,2023-11-01,Home,,M51.26,33441.96
+P928779,H04,32,Male,Man,White,,CA,Medicare,2023-05-24,2023-05-25,Home,553.3,,
+P608555,H02,69,Male,Man,White,Not Hispanic or Latino,PA,Medicare,2023-08-30,2023-09-03,Home,486,,18534.56
+P101558,H01,45,Male,Man,White,Not Hispanic or Latino,OH,Self-pay,2024-08-29,2024-09-08,Home,,I21.9,30051.64
+P283445,H02,26,Female,Non-binary,Black or African American,Not Hispanic or Latino,PA,Commercial,2022-09-25,2022-09-25,Home,599.0,,6513.29
+P348485,H03,82,Female,Woman,White,Not Hispanic or Latino,TX,Medicare,2023-05-27,2023-05-29,SNF,,N39.0,13613.73
+P800247,H01,26,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2025-07-16,2025-07-18,Home,,J12.82,15501.00
+P958063,H07,38,Male,Man,White,Not Hispanic or Latino,IL,Medicaid,2022-04-12,2022-04-15,Home with home health,,S72.001A,40440.29
+P947983,H05,58,Female,Woman,Some Other Race,Hispanic or Latino,NY,Commercial,2024-09-02,2024-09-05,Home,,C34.90,
+P788641,H03,61,Female,Woman,Some Other Race,Not Hispanic or Latino,TX,Commercial,2024-08-15,2024-08-27,SNF,,N17.9,
+P350645,H04,63,Female,Woman,Black or African American,Not Hispanic or Latino,NY,Medicare,2020-01-08,2020-01-10,Home,540.9,,15746.06
+P346686,H04,26,Male,Man,Asian,Not Hispanic or Latino,CA,Commercial,2024-08-06,2024-08-11,SNF,008.45,,16487.11
+P472625,H02,79,Female,Woman,White,Not Hispanic or Latino,PA,Medicaid,2022-06-05,2022-06-08,Expired,564.00,,15910.65
+P357990,H02,69,Female,Woman,White,Not Hispanic or Latino,PA,Other,2020-10-24,2020-10-27,Transfer,578.9,,19850.88
+P697401,H01,78,Male,Man,White,,OH,Medicare,2024-12-27,2024-12-30,Home,,I47.2,9186.96
+P858205,H01,38,Male,Man,Black or African American,Not Hispanic or Latino,OH,Commercial,2020-02-09,2020-02-12,Home,,J44.1,22931.20
+P371066,H04,50,Female,Woman,Some Other Race,Hispanic or Latino,CA,Self-pay,2019-10-26,2019-11-06,Home,276.1,,82835.61
+P926777,H06,65,Female,Woman,White,Not Hispanic or Latino,FL,Medicare,2019-04-05,2019-04-08,SNF,427.1,,13903.24
+P172340,H03,60,Female,Woman,Native Hawaiian or Other Pacific Islander,Hispanic or Latino,TX,Commercial,2023-09-24,2023-09-27,Home,,K35.80,15811.93
+P136724,H03,86,Female,Woman,White,Hispanic or Latino,TX,Medicare,2023-03-20,2023-03-24,Home,,E87.1,17253.74
+P401838,H06,29,Male,Man,Asian,Not Hispanic or Latino,FL,Self-pay,2021-01-07,2021-01-12,Home,311,,25659.91
+P796017,H05,70,Male,Man,White,Not Hispanic or Latino,NY,Self-pay,2019-01-02,2019-01-04,Home,,I50.9,10731.26
+P767758,H09,60,Male,Man,White,,AZ,Medicare,2019-05-31,2019-06-02,Home,,M17.9,9797.35
+P455416,H01,83,Male,Man,Asian,Not Hispanic or Latino,OH,Commercial,2022-02-14,2022-02-17,Expired,,E78.5,14427.52
+P970602,H05,54,Male,Man,Some Other Race,Hispanic or Latino,NY,Medicare,2024-03-18,2024-03-21,Home,,T81.4XXA,5588.28
+P708821,H07,62,Male,Man,White,Not Hispanic or Latino,IL,Medicaid,2023-07-27,2023-07-29,Transfer,,K85.90,13570.85
+P666267,H04,88,Male,Man,White,Not Hispanic or Latino,CA,Medicare,2024-04-10,2024-04-12,SNF,311,,10880.88
+P428591,H03,49,Female,Woman,White,Not Hispanic or Latino,CO,Commercial,2025-03-06,2025-03-12,Home with home health,,R10.9,30595.68
+P128024,H04,55,Male,Man,White,Not Hispanic or Latino,CA,Self-pay,2022-09-26,2022-10-08,Home with home health,250.00,,47886.98
+P993658,H01,59,Male,Man,Two or More Races,Not Hispanic or Latino,OH,Medicaid,2021-01-29,2021-02-03,Home,,J18.9,
+P264082,H01,59,Female,Woman,American Indian or Alaska Native,Unknown,OH,Medicaid,2021-09-13,2021-09-16,Home,,J12.82,27326.08
+P969962,H01,72,Female,Woman,Some Other Race,Hispanic or Latino,OH,Medicare,2020-04-08,2020-04-14,Home,,I21.9,55699.62
+P847892,H05,42,Male,Man,Some Other Race,Hispanic or Latino,NY,Medicaid,2025-07-04,2025-07-05,Home,,N20.0,
+P346930,H05,82,Female,Non-binary,White,Not Hispanic or Latino,NY,Medicare,2021-12-26,2021-12-30,Expired,,D64.9,15859.63
+P543404,H08,71,Male,Man,White,Not Hispanic or Latino,GA,Commercial,2022-09-03,2022-09-03,Home with home health,493.90,,
+P259677,H05,72,Female,Woman,White,Not Hispanic or Latino,NY,Commercial,2020-09-01,2020-09-03,Expired,,K21.9,10696.09
+P978638,H01,35,Female,Woman,White,Not Hispanic or Latino,OH,Medicaid,2022-01-31,2022-02-05,Home,,I12.9,17673.88
+P640190,H06,40,Female,Woman,Some Other Race,Hispanic or Latino,FL,Medicaid,2022-11-16,2022-11-18,Home,715.90,,18850.38
+P882739,H07,82,Female,Woman,White,Not Hispanic or Latino,IL,Medicare,2025-08-01,2025-08-08,Home,,I61.9,44161.67
+P790936,H09,7,Male,Man,White,Hispanic or Latino,AZ,Medicaid,2025-06-05,2025-06-07,Expired,,L89.154,13911.05
+P639339,H06,56,Female,Woman,White,Not Hispanic or Latino,VA,Commercial,2023-02-13,2023-02-16,Home,434.91,,
+P515590,H09,59,Female,Woman,Black or African American,Not Hispanic or Latino,AZ,Commercial,2019-04-17,2019-04-20,Home,,J18.9,14831.28
+P551695,H08,1,Female,Woman,Two or More Races,Not Hispanic or Latino,GA,,2020-01-16,2020-01-19,Home,577.0,,13967.13
+P810381,H02,77,Male,Man,Asian,Not Hispanic or Latino,PA,Commercial,2022-10-25,2022-11-08,Home,403.90,,40660.08
+P790962,H02,48,Male,Man,White,Not Hispanic or Latino,PA,Self-pay,2019-04-23,2019-05-03,Home,486,,
+P618587,H01,65,Male,Man,Some Other Race,Not Hispanic or Latino,OH,Commercial,2024-09-01,2024-09-01,SNF,,E11.65,2720.07
+P705924,H07,79,Female,Woman,White,Not Hispanic or Latino,IL,Medicare,2025-04-10,2025-04-10,AMA,,A41.9,6921.12
+P971305,H10,61,Male,Man,White,Not Hispanic or Latino,MA,Commercial,2025-07-09,2025-07-09,Home,434.91,,3995.72
+P436065,H09,34,Female,Woman,White,Hispanic or Latino,AZ,Self-pay,2019-04-13,2019-04-15,Home,,J45.909,9254.68
+P111810,H09,30,Male,Man,White,Not Hispanic or Latino,AZ,Commercial,2019-04-22,2019-04-23,Home,,N17.0,7104.18
+P260769,H03,67,Female,Woman,Some Other Race,Hispanic or Latino,TX,Medicare,2025-06-13,2025-06-14,Home,,N17.0,5334.89
+P171926,H04,56,Male,Man,White,Not Hispanic or Latino,AL,Commercial,2024-07-21,2024-07-22,Home,311,,
+P956552,H01,31,Female,Woman,Black or African American,Unknown,OH,Self-pay,2022-10-21,2022-10-24,AMA,,R55,30762.76
+P934235,H09,52,Male,Man,White,Not Hispanic or Latino,GA,Commercial,2020-05-23,2020-05-23,Home,,I63.9,2366.41
+P256281,H04,70,Male,Man,Asian,Not Hispanic or Latino,CA,Commercial,2019-05-09,2019-05-11,Home with home health,786.50,,16865.78
+P253346,H03,20,Female,Woman,White,Not Hispanic or Latino,TX,,2023-03-19,2023-03-24,Home,,J96.00,17945.08
+P536483,H07,75,Female,Woman,White,Not Hispanic or Latino,IL,Medicare,2022-12-22,2022-12-30,Home,,I26.99,52729.68
+P629888,H01,73,Female,Woman,Asian,Not Hispanic or Latino,OH,Medicare,2022-12-03,2022-12-09,Home with home health,,F32.9,83324.86
+P359394,H01,51,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2023-09-15,2023-09-18,AMA,,L03.115,12166.00
+P953260,H04,58,Female,Woman,White,Not Hispanic or Latino,CA,Commercial,2024-11-08,2024-11-13,Home,410.91,,22227.13
+P909154,H06,67,Female,Woman,Black or African American,Not Hispanic or Latino,FL,Commercial,2021-03-12,2021-03-14,Home,707.03,,13561.42
+P114312,H06,36,Male,Man,White,Not Hispanic or Latino,FL,Commercial,2020-10-20,2020-10-30,Home,530.81,,43033.94
+P971633,H10,55,Female,Woman,American Indian or Alaska Native,Not Hispanic or Latino,CO,Commercial,2019-09-16,2019-09-20,Home,560.9,,
+P657363,H08,15,Male,Man,White,Not Hispanic or Latino,GA,Medicaid,2022-03-18,2022-03-19,Home,786.50,,9946.86
+P896398,H10,80,Male,Man,White,Not Hispanic or Latino,MA,Medicare,2023-09-25,2023-09-29,Home with home health,414.01,,43403.60
+P310555,H08,71,Male,Man,White,Not Hispanic or Latino,GA,Medicare,2023-10-12,2023-10-15,Home,008.45,,25246.04
+P638358,H08,77,Female,Woman,White,Unknown,GA,Medicare,2021-08-12,2021-08-14,Home,415.19,,
+P596704,H05,27,Male,Man,Two or More Races,Not Hispanic or Latino,NY,Medicare,2020-09-07,2020-09-14,Home,,C50.919,31776.62
+P117601,H10,39,Female,Woman,Some Other Race,Hispanic or Latino,MA,Commercial,2021-05-17,2021-05-21,Transfer,276.1,,
+P919944,H04,38,Female,Woman,Black or African American,Not Hispanic or Latino,CA,Medicaid,2021-09-23,2021-10-02,Home,250.02,,46132.65
+P879125,H08,64,Female,Woman,Black or African American,Not Hispanic or Latino,MI,Medicare,2020-12-26,2020-12-26,Home,722.10,,
+P967159,H08,68,Male,Man,White,Not Hispanic or Latino,GA,Medicare,2020-09-06,2020-09-06,Home,486,,5798.85
+P812761,H03,9,Female,Woman,Black or African American,Hispanic or Latino,TX,Commercial,2023-07-19,2023-07-29,Home,,M81.0,26556.78
+P123019,H09,65,Female,Woman,Asian,Not Hispanic or Latino,AZ,Medicare,2023-03-20,2023-03-20,Home,,L89.154,5880.88
+P957921,H03,73,Female,Woman,White,Not Hispanic or Latino,TX,Medicare,2023-11-12,2023-11-18,Home with home health,,J69.0,
+P942298,H03,63,Female,Woman,Black or African American,Not Hispanic or Latino,TX,Commercial,2020-07-08,2020-07-11,Home,,I47.2,18504.03
+P528137,H08,64,Female,Woman,Asian,Not Hispanic or Latino,GA,Self-pay,2024-10-05,2024-10-06,Transfer,599.0,,6527.92
+P515169,H02,47,Female,Woman,Two or More Races,Not Hispanic or Latino,PA,Commercial,2023-02-20,2023-02-24,Home,414.01,,11846.05
+P100853,H08,32,Male,Man,Black or African American,Hispanic or Latino,GA,Self-pay,2024-04-22,2024-04-22,Home,272.4,,5714.50
+P318349,H07,67,Female,Woman,White,Not Hispanic or Latino,IL,Commercial,2019-04-28,2019-05-11,Home,,K92.2,32894.69
+P845345,H08,31,Male,Man,White,Not Hispanic or Latino,GA,Commercial,2024-10-20,2024-10-26,Expired,410.91,,22903.07
+P923868,H04,37,Male,Man,Some Other Race,Not Hispanic or Latino,CA,Medicaid,2019-06-01,2019-06-11,Home with home health,491.21,,39238.01
+P601214,H09,38,Female,Woman,Black or African American,Not Hispanic or Latino,AZ,Medicare,2019-01-28,2019-02-02,Home,,I25.10,35338.62
+P273365,H08,31,Female,Woman,White,Unknown,GA,Medicare,2023-05-08,2023-05-12,Home,008.45,,27048.60
+P187638,H07,50,Female,Woman,American Indian or Alaska Native,Not Hispanic or Latino,IL,Commercial,2022-07-31,2022-07-31,Home,,E11.9,6603.97
+P547086,H07,94,Female,Woman,White,Not Hispanic or Latino,IL,,2019-08-03,2019-08-09,Home,,I10,22926.86
+P993661,H06,47,Female,Woman,Black or African American,Not Hispanic or Latino,FL,Commercial,2019-01-01,2019-01-02,Home,415.19,,16604.87
+P857950,H07,52,Male,Man,Black or African American,Not Hispanic or Latino,IL,Commercial,2024-02-25,2024-02-27,Home,,I47.2,13259.85
+P302140,H04,56,Male,Man,White,Not Hispanic or Latino,CA,Medicaid,2020-07-08,2020-07-11,Home,560.9,,17624.73
+P389556,H01,89,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2019-01-26,2019-01-28,Home with home health,,J12.82,8826.13
+P739964,H08,26,Female,Woman,White,Not Hispanic or Latino,NY,Self-pay,2022-05-01,2022-05-02,Home,276.51,,9017.03
+P870306,H03,61,Female,Woman,White,Hispanic or Latino,TX,Self-pay,2024-06-06,2024-06-10,Expired,,C61,21342.20
+P274891,H06,70,Male,Man,Asian,Not Hispanic or Latino,FL,Medicare,2023-05-09,2023-05-12,Home,496,,16610.24
+P641973,H04,21,Male,Man,Some Other Race,Not Hispanic or Latino,CA,Commercial,2025-01-27,2025-02-06,Home,540.9,,66829.37
+P943326,H01,82,Male,Man,American Indian or Alaska Native,Not Hispanic or Latino,OH,Medicare,2020-01-06,2020-01-17,SNF,,I50.9,68204.11
+P144096,H04,66,Male,Man,Some Other Race,Not Hispanic or Latino,CA,Medicare,2023-01-05,2023-01-06,Home with home health,569.3,,12938.36
+P596652,H05,51,Male,Man,Some Other Race,Hispanic or Latino,NY,Commercial,2024-04-23,2024-04-30,Home,,I63.9,31839.32
+P217787,H03,44,Male,Man,Some Other Race,Hispanic or Latino,TX,Medicaid,2021-04-25,2021-04-27,Home,,C61,23031.20
+P664708,H02,86,Male,Man,Native Hawaiian or Other Pacific Islander,Hispanic or Latino,PA,Medicare,2021-12-29,2022-01-06,Home,427.31,,
+P644574,H03,59,Female,Woman,Black or African American,Not Hispanic or Latino,TX,Commercial,2023-09-23,2023-09-27,Home,,J44.1,32339.10
+P283051,H04,49,Female,Woman,Black or African American,Unknown,CA,Commercial,2022-12-11,2023-01-08,Home with home health,780.60,,98338.54
+P305245,H08,18,Female,Woman,Some Other Race,Hispanic or Latino,GA,Medicaid,2022-11-23,2022-11-29,AMA,434.91,,32078.11
+P388438,H01,35,Male,Man,White,Not Hispanic or Latino,MA,Commercial,2021-05-29,2021-06-02,Home,,E11.65,22040.38
+P246637,H02,39,Male,Man,White,Not Hispanic or Latino,PA,Commercial,2021-01-14,2021-01-20,Home,995.91,,35715.61
+P910778,H04,54,Female,Woman,White,Not Hispanic or Latino,CA,Commercial,2022-03-02,2022-03-06,Home,250.02,,
+P429077,H01,28,Female,Woman,White,Unknown,OH,Self-pay,2019-09-19,2019-09-24,Home with home health,,A41.9,17365.73
+P152533,H09,77,Male,Man,Black or African American,Not Hispanic or Latino,AZ,Medicare,2019-12-30,2020-01-11,Home with home health,,J69.0,25575.20
+P459277,H03,47,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2025-08-27,2025-08-28,Home,,C61,6519.32
+P427892,H03,43,Male,Man,Black or African American,Not Hispanic or Latino,TX,Commercial,2022-07-20,2022-07-25,SNF,,D64.9,21819.78
+P921751,H04,72,Male,Man,White,Not Hispanic or Latino,CA,Self-pay,2022-04-01,2022-04-03,Home,592.0,,19335.43
+P853453,H01,61,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Commercial,2019-03-24,2019-04-05,Home,,E87.1,44993.52
+P675897,H01,79,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2025-03-06,2025-03-08,Home,,N17.9,
+P774176,H01,62,Male,Man,Black or African American,Not Hispanic or Latino,OH,Commercial,2023-04-25,2023-04-26,Home,,K92.2,5678.85
+P427422,H02,38,Male,Man,White,Not Hispanic or Latino,PA,Commercial,2021-03-07,2021-03-09,Home,995.91,,11581.22
+P324158,H04,81,Female,Woman,White,Not Hispanic or Latino,CA,Medicare,2019-01-01,2019-01-05,Home,250.02,,43226.11
+P527688,H06,57,Female,Woman,White,Not Hispanic or Latino,FL,Commercial,2023-05-15,2023-05-21,Transfer,415.19,,19139.74
+P305692,H06,66,Male,Man,Some Other Race,Hispanic or Latino,FL,Medicare,2023-02-22,2023-02-22,Home,496,,7485.14
+P149610,H02,37,Male,Man,White,Not Hispanic or Latino,PA,Self-pay,2020-06-10,2020-06-10,Home,403.90,,5981.17
+P193173,H04,27,Male,Man,White,Not Hispanic or Latino,CA,Commercial,2022-09-30,2022-10-02,Home,569.3,,8953.01
+P962680,H03,55,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2025-09-23,2025-09-28,Home with home health,,I48.91,12814.62
+P224569,H02,72,Male,Man,Some Other Race,Hispanic or Latino,PA,Medicare,2025-07-01,2025-07-07,Home,569.3,,
+P833504,H05,31,Male,Man,Asian,Not Hispanic or Latino,WI,Medicaid,2019-09-14,2019-09-18,Transfer,,I47.2,10343.91
+P985904,H08,65,Female,Woman,White,Not Hispanic or Latino,GA,Medicare,2020-06-07,2020-06-09,Transfer,560.9,,20674.84
+P198000,H06,56,Female,Woman,White,Not Hispanic or Latino,FL,Commercial,2022-11-05,2022-11-08,Home,733.00,,16141.56
+P250228,H01,72,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Medicare,2022-02-15,2022-02-18,Home,,K85.90,15214.07
+P263655,H06,46,Male,Man,Black or African American,Not Hispanic or Latino,FL,Commercial,2024-07-13,2024-07-17,Home,431,,20067.38
+P383573,H05,36,Female,Woman,White,Not Hispanic or Latino,NY,Commercial,2025-01-19,2025-01-28,Home with home health,,A04.72,50646.01
+P914690,H03,71,Male,Man,Some Other Race,Hispanic or Latino,TX,Medicaid,2025-02-22,2025-02-27,SNF,,N17.9,18860.82
+P179180,H02,59,Female,Woman,White,Not Hispanic or Latino,PA,Commercial,2021-07-18,2021-07-22,Expired,162.9,,22099.38
+P352321,H06,76,Male,Man,Asian,Not Hispanic or Latino,FL,Medicaid,2020-11-19,2020-11-21,Home with home health,780.60,,11223.39
+P135947,H06,82,Male,Man,White,Not Hispanic or Latino,FL,Commercial,2019-11-19,2019-11-24,Home with home health,250.02,,20137.44
+P631416,H01,23,Male,Man,White,Not Hispanic or Latino,OH,Medicaid,2019-12-16,2019-12-18,Home,,I48.91,7157.37
+P620452,H03,13,Male,Man,White,Hispanic or Latino,TX,Commercial,2019-05-19,2019-05-26,Home,,E86.0,16912.06
+P993124,H04,82,Male,Man,Two or More Races,Not Hispanic or Latino,CA,,2019-05-11,2019-05-29,Home,584.5,,57295.31
+P426676,H02,46,Female,Woman,White,Hispanic or Latino,IL,Commercial,2021-05-22,2021-05-23,Home,995.91,,5061.37
+P562453,H02,65,Male,Man,White,Not Hispanic or Latino,PA,Other,2020-08-06,2020-08-06,Home,410.91,,3993.35
+P622789,H03,81,Female,Woman,Some Other Race,Hispanic or Latino,TX,Other,2020-08-21,2020-08-26,SNF,,J45.909,23047.89
+P701430,H06,52,Male,Man,White,,FL,Commercial,2021-04-07,2021-04-12,Home,553.3,,33711.18
+P887846,H08,75,Female,Woman,Black or African American,Not Hispanic or Latino,GA,Medicare,2023-12-19,2023-12-23,Expired,403.90,,15212.15
+P556862,H01,85,Male,Man,Some Other Race,Not Hispanic or Latino,FL,Medicare,2023-11-23,2023-11-25,Expired,,I61.9,14636.48
+P464477,H01,50,Male,Man,White,Not Hispanic or Latino,OH,Self-pay,2019-07-07,2019-07-10,Home,,E87.1,13756.86
+P689802,H03,42,Female,Woman,Asian,Not Hispanic or Latino,TX,Other,2022-05-16,2022-05-18,Home,,I61.9,14433.04
+P772237,H10,57,Female,Woman,Asian,Not Hispanic or Latino,MA,Commercial,2019-07-09,2019-07-21,Home with home health,493.90,,77500.05
+P220508,H01,65,Male,Man,White,Not Hispanic or Latino,OH,Medicare,2024-04-09,2024-04-11,Home,,K62.5,12647.55
+P402686,H05,46,Male,Man,Some Other Race,Not Hispanic or Latino,NY,Self-pay,2025-07-22,2025-07-24,Transfer,,I12.9,10533.98
+P480720,H01,65,Female,Woman,White,Not Hispanic or Latino,IL,Medicaid,2024-03-30,2024-04-01,Home,,M51.26,8881.37
+P482293,H06,81,Male,Prefer not to say,Two or More Races,Not Hispanic or Latino,FL,Medicare,2023-09-10,2023-09-12,Home,434.91,,11003.54
+P211327,H06,72,Female,Woman,White,Not Hispanic or Latino,FL,Medicare,2020-06-27,2020-06-27,SNF,722.10,,3947.29
+P251724,H01,67,Female,Woman,White,Not Hispanic or Latino,OH,Other,2023-08-08,2023-08-08,Home,,C61,4672.30
+P410877,H01,80,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2019-01-22,2019-01-27,Home,,I63.9,32465.90
+P163416,H09,65,Female,Woman,Black or African American,Not Hispanic or Latino,AZ,Medicare,2019-02-20,2019-02-21,SNF,,I21.9,
+P503554,H01,57,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2019-11-10,2019-11-16,Transfer,,K44.9,26547.82
+P514268,H09,30,Male,Man,White,Not Hispanic or Latino,AZ,Medicaid,2022-10-09,2022-10-18,Home,,I26.99,48208.67
+P253888,H02,50,Female,Woman,White,Not Hispanic or Latino,PA,Commercial,2022-06-01,2022-06-05,Home,250.00,,
+P296689,H08,66,Male,Man,White,Not Hispanic or Latino,GA,Medicare,2020-01-12,2020-01-18,Home with home health,162.9,,49802.68
+P337389,H06,46,Female,Woman,Black or African American,Not Hispanic or Latino,FL,Self-pay,2024-01-01,2024-01-03,Transfer,250.02,,14696.17
+P710918,H02,80,Female,Woman,White,Not Hispanic or Latino,CO,Medicare,2023-01-16,2023-01-19,Home with home health,427.31,,8736.87
+P723069,H06,74,Female,Woman,White,Not Hispanic or Latino,FL,Medicare,2023-07-23,2023-07-26,AMA,250.02,,11438.58
+P383085,H01,44,Male,Man,White,Not Hispanic or Latino,OH,Self-pay,2019-06-12,2019-06-13,Home with home health,,I26.99,9096.99
+P196997,H04,69,Female,Woman,Black or African American,Not Hispanic or Latino,CA,Self-pay,2022-04-30,2022-05-07,SNF,486,,32081.80
+P296459,H06,63,Male,Man,White,Not Hispanic or Latino,FL,Medicaid,2022-05-10,2022-05-14,Home,428.0,,15147.99
+P884876,H05,59,Female,Woman,White,Not Hispanic or Latino,NY,Other,2021-11-14,2021-11-19,Expired,,E11.65,23147.33
+P942132,H09,68,Male,Prefer not to say,White,Not Hispanic or Latino,AZ,Medicare,2019-05-11,2019-05-20,Home,,S72.001A,34124.70
+P897690,H01,94,Male,Man,White,Not Hispanic or Latino,OH,Medicare,2025-04-17,2025-04-17,SNF,,E11.65,4496.03
+P738360,H04,62,Female,Woman,Some Other Race,Hispanic or Latino,IN,Medicaid,2022-08-22,2022-08-25,Home,780.2,,9488.14
+P252599,H03,17,Male,Man,White,Not Hispanic or Latino,TX,Commercial,2024-11-07,2024-11-12,Home,,R07.9,15179.89
+P360352,H07,48,Male,Man,Black or African American,Not Hispanic or Latino,IL,Medicaid,2023-09-07,2023-09-10,Home,,E11.9,
+P455058,H09,54,Male,Man,White,Not Hispanic or Latino,AZ,Medicaid,2024-09-06,2024-09-08,Home,,I47.2,12033.84
+P991917,H03,81,Female,Woman,White,Not Hispanic or Latino,TX,Medicare,2020-03-14,2020-03-19,SNF,,D64.9,12479.36
+P604797,H06,68,Female,Woman,White,Not Hispanic or Latino,FL,Medicare,2022-10-01,2022-10-12,Expired,584.5,,55931.16
+P378633,H08,41,Female,Woman,Two or More Races,Not Hispanic or Latino,GA,Medicaid,2023-08-30,2023-09-01,Home,428.0,,14805.08
+P965815,H01,54,Female,Woman,Two or More Races,Not Hispanic or Latino,OH,Commercial,2025-01-15,2025-01-18,Home,,I48.91,17757.83
+P541617,H04,65,Female,Woman,White,Not Hispanic or Latino,CA,Medicare,2021-05-27,2021-05-30,Home,707.03,,6874.56
+P487857,H04,63,Female,Woman,White,Hispanic or Latino,CA,Self-pay,2022-03-07,2022-03-10,Home,008.45,,31903.25
+P568187,H07,75,Female,Non-binary,White,Not Hispanic or Latino,IL,,2024-04-07,2024-04-12,Home,,S72.001A,13835.40
+P807933,H05,69,Female,Woman,Black or African American,Not Hispanic or Latino,NY,Medicare,2024-02-22,2024-02-27,SNF,,R10.9,26473.39
+P782454,H06,59,Male,Man,Some Other Race,Hispanic or Latino,FL,Other,2023-04-28,2023-05-01,Home,410.71,,31112.97
+P274313,H08,78,Male,Man,Some Other Race,Not Hispanic or Latino,GA,Other,2020-05-18,2020-05-23,Home,285.9,,19893.38
+P976209,H04,43,Female,Woman,White,Hispanic or Latino,CA,Self-pay,2024-03-16,2024-03-20,Home,574.20,,28885.75
+P234252,H01,92,Male,Man,White,Hispanic or Latino,OH,Medicaid,2025-05-04,2025-05-06,Home,,K21.9,7380.29
+P188805,H07,65,Male,Man,White,Not Hispanic or Latino,IL,Self-pay,2024-02-05,2024-02-06,Home,,I25.10,6581.85
+P407983,H02,49,Female,Woman,Some Other Race,Not Hispanic or Latino,PA,Medicaid,2021-04-24,2021-04-27,Home,493.90,,11960.90
+P198648,H05,75,Female,Woman,White,,MI,Self-pay,2019-02-04,2019-02-04,Home,,K35.80,4117.86
+P217068,H04,58,Female,Woman,White,Hispanic or Latino,IN,Commercial,2024-10-09,2024-10-12,Home,434.91,,15239.56
+P111542,H09,20,Male,Man,White,Not Hispanic or Latino,AZ,Medicare,2024-05-01,2024-05-06,Home,,R07.9,39129.39
+P377417,H06,62,Male,Man,Some Other Race,Hispanic or Latino,FL,Commercial,2019-08-23,2019-08-26,Home,174.9,,33774.72
+P111015,H06,87,Female,Woman,Some Other Race,Not Hispanic or Latino,FL,Commercial,2023-01-11,2023-01-14,Home with home health,577.0,,21294.60
+P709046,H06,42,Female,Woman,White,Not Hispanic or Latino,FL,Medicaid,2021-03-31,2021-04-01,Home,780.60,,9797.48
+P480301,H07,64,Male,Man,White,Not Hispanic or Latino,IL,Commercial,2019-04-28,2019-04-30,Home,,A04.72,11011.88
+P153071,H03,60,Male,Man,Some Other Race,Hispanic or Latino,TX,Commercial,2019-04-03,2019-04-06,Home,,N20.0,16038.24
+P630567,H05,70,Female,Woman,White,Not Hispanic or Latino,NY,Medicaid,2023-05-20,2023-05-21,Home,,J45.909,6656.01
+P154384,H03,79,Female,Woman,Black or African American,Not Hispanic or Latino,TX,Commercial,2025-03-30,2025-04-09,Home,,I61.9,59955.11
+P441348,H03,50,Male,Man,American Indian or Alaska Native,Hispanic or Latino,TX,Commercial,2024-10-27,2024-10-29,Home,,K56.609,9354.99
+P173220,H04,23,Male,Man,Some Other Race,Hispanic or Latino,CA,Medicaid,2019-05-17,2019-05-19,Home,174.9,,13354.15
+P467744,H05,23,Male,Man,White,Not Hispanic or Latino,NY,Medicaid,2021-11-18,2021-11-19,Home,,J12.82,10528.48
+P403369,H04,54,Female,Woman,Some Other Race,Hispanic or Latino,CA,Self-pay,2022-04-12,2022-04-12,Home,780.60,,5407.79
+P542654,H01,32,Female,Woman,White,Not Hispanic or Latino,OH,Medicaid,2020-04-13,2020-04-15,Home,,L03.115,10744.45
+P592371,H02,38,Male,Man,Asian,Not Hispanic or Latino,PA,Medicaid,2025-08-16,2025-08-19,Home,410.71,,9112.58
+P597852,H10,47,Female,Woman,Black or African American,Not Hispanic or Latino,MA,Commercial,2021-12-30,2022-01-07,Home,276.51,,17695.60
+P868660,H04,69,Female,Woman,White,Not Hispanic or Latino,CA,Medicare,2024-04-27,2024-05-10,Transfer,574.20,,58574.47
+P454562,H06,76,Female,Woman,White,Not Hispanic or Latino,FL,Medicare,2020-08-01,2020-08-03,Home,577.0,,7675.68
+P497123,H01,75,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2023-09-12,2023-09-26,Home,,J45.909,99411.86
+P221689,H10,48,Male,Man,Black or African American,,MA,Commercial,2019-11-19,2019-11-22,Home,493.90,,17018.88
+P772439,H01,67,Male,Man,White,Hispanic or Latino,MA,Medicaid,2024-06-07,2024-06-15,Home,,N17.9,27343.30
+P817013,H06,39,Female,Woman,Native Hawaiian or Other Pacific Islander,Not Hispanic or Latino,FL,Commercial,2023-09-27,2023-10-05,Home,780.2,,36574.80
+P828442,H07,51,Male,Man,White,Not Hispanic or Latino,IL,Commercial,2022-11-09,2022-11-10,Home,,J69.0,5272.88
+P674841,H03,81,Male,Man,Asian,Not Hispanic or Latino,TX,Medicare,2025-02-15,2025-02-16,Home,,K92.2,4140.78
+P383319,H02,82,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2019-03-08,2019-03-11,SNF,789.00,,21696.59
+P765876,H01,81,Male,Man,Two or More Races,Not Hispanic or Latino,OH,Medicare,2020-02-13,2020-02-16,Home,,R55,17649.60
+P762531,H08,61,Male,Man,White,Hispanic or Latino,GA,Commercial,2019-11-08,2019-11-08,Home,410.71,,6102.27
+P215586,H09,18,Female,Woman,Some Other Race,Hispanic or Latino,AZ,Medicaid,2021-03-15,2021-03-15,Home with home health,,N17.9,4738.99
+P737553,H06,81,Female,Woman,Black or African American,Not Hispanic or Latino,FL,Medicare,2025-10-23,2025-10-29,AMA,707.03,,28706.53
+P725705,H05,41,Female,Woman,Some Other Race,Not Hispanic or Latino,NY,Medicare,2023-08-26,2023-08-30,Home,,E78.5,20183.63
+P553483,H01,39,Male,Man,White,Not Hispanic or Latino,OH,Medicaid,2020-10-25,2020-10-28,Home,,I10,20230.46
+P212336,H05,40,Female,Woman,White,Not Hispanic or Latino,NY,Commercial,2022-01-23,2022-01-26,Home,,C50.919,7755.61
+P986798,H04,79,Female,Woman,White,Not Hispanic or Latino,CA,Medicare,2020-03-27,2020-03-29,Home,569.3,,16263.64
+P556144,H05,60,Female,Woman,White,Not Hispanic or Latino,NY,Commercial,2022-03-30,2022-04-03,Home,,N17.9,23885.36
+P557044,H06,77,Male,Man,White,Not Hispanic or Latino,FL,Medicare,2024-03-21,2024-03-21,Home,577.0,,5399.59
+P569864,H01,52,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Commercial,2022-05-22,2022-05-24,Expired,,I48.91,15372.91
+P629919,H02,64,Male,Man,Some Other Race,Hispanic or Latino,PA,Commercial,2024-11-16,2024-11-16,Home,272.4,,7913.96
+P740986,H10,58,Female,Woman,White,,MA,Commercial,2019-11-15,2019-11-21,SNF,553.3,,
+P954905,H03,58,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2019-04-03,2019-04-04,Home,,E78.5,11954.19
+P452949,H07,31,Female,Woman,White,Not Hispanic or Latino,IL,Medicaid,2023-07-10,2023-07-12,Home with home health,,I47.2,17067.59
+P446003,H04,92,Male,Man,White,Not Hispanic or Latino,CA,Medicaid,2025-09-09,2025-09-13,SNF,507.0,,25311.64
+P768953,H02,57,Male,Man,White,Not Hispanic or Latino,PA,Medicaid,2024-02-26,2024-03-03,Home with home health,998.59,,25484.56
+P894928,H10,54,Female,Woman,White,Not Hispanic or Latino,MI,Commercial,2022-11-14,2022-11-16,Transfer,584.5,,
+P113347,H06,60,Female,Woman,Asian,Not Hispanic or Latino,FL,Commercial,2025-10-05,2025-10-09,Home,250.00,,19143.65
+P999510,H05,52,Female,Woman,White,Not Hispanic or Latino,NY,Medicare,2025-10-19,2025-10-25,Transfer,,A41.9,13515.66
+P593129,H04,60,Male,Man,Black or African American,Not Hispanic or Latino,CA,Commercial,2021-04-25,2021-05-01,Home with home health,414.01,,25582.89
+P252930,H01,62,Male,Man,White,Not Hispanic or Latino,OH,Self-pay,2021-01-14,2021-01-19,Transfer,,R07.9,25623.83
+P381525,H08,38,Female,Woman,Black or African American,,GA,Commercial,2022-12-18,2022-12-20,Home,410.71,,10221.50
+P939533,H06,95,Male,Man,Black or African American,Not Hispanic or Latino,FL,Medicare,2019-11-10,2019-11-20,Home,434.91,,40950.43
+P623007,H01,78,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Medicaid,2020-07-22,2020-07-23,Home,,A04.72,4951.29
+P850893,H04,38,Male,Man,Some Other Race,Hispanic or Latino,CA,Commercial,2024-08-29,2024-08-30,AMA,998.59,,5751.27
+P899873,H02,59,Female,Woman,Black or African American,Not Hispanic or Latino,PA,Medicaid,2025-08-04,2025-08-08,Transfer,401.9,,26931.57
+P952400,H08,95,Female,Woman,White,Not Hispanic or Latino,GA,Medicare,2022-03-18,2022-03-21,Home,584.9,,13068.70
+P925857,H01,66,Male,Man,White,Not Hispanic or Latino,OH,Medicare,2023-09-30,2023-10-08,Home with home health,,K62.5,58400.79
+P334475,H02,74,Female,Woman,White,Not Hispanic or Latino,PA,Commercial,2021-12-20,2021-12-21,Home,434.91,,
+P415385,H02,77,Male,Man,White,Not Hispanic or Latino,PA,Medicare,2021-10-11,2021-10-13,SNF,250.02,,5409.29
+P723976,H10,76,Male,Man,Some Other Race,Hispanic or Latino,MA,Commercial,2025-04-17,2025-04-21,Home,715.90,,21748.57
+P220298,H02,65,Male,Man,White,Not Hispanic or Latino,PA,Medicare,2022-01-08,2022-01-10,Transfer,311,,10393.82
+P414527,H07,95,Female,Woman,White,Not Hispanic or Latino,IL,Medicare,2020-12-16,2020-12-22,Home,,J69.0,13925.34
+P703436,H03,85,Female,Woman,Two or More Races,Hispanic or Latino,NJ,Medicare,2023-08-17,2023-08-18,Transfer,,J12.82,7181.24
+P481015,H04,39,Female,Woman,White,Not Hispanic or Latino,MD,Medicaid,2020-09-14,2020-09-18,SNF,496,,23541.04
+P857965,H04,58,Male,Man,Black or African American,Not Hispanic or Latino,CA,Other,2024-06-13,2024-06-19,Transfer,707.03,,45886.64
+P398778,H01,15,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Commercial,2020-03-04,2020-03-06,Home,,J69.0,16708.71
+P263719,H07,69,Male,Man,White,,IL,Medicare,2025-06-13,2025-06-14,Home,,N39.0,10977.89
+P713026,H01,92,Male,Man,White,Hispanic or Latino,WI,Medicare,2022-10-19,2022-10-22,SNF,,N17.9,9880.53
+P876931,H04,59,Female,Woman,Some Other Race,Not Hispanic or Latino,CA,Commercial,2021-06-10,2021-06-11,Home,518.81,,7911.64
+P794608,H03,28,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2024-06-22,2024-06-24,Home with home health,,M51.26,6875.21
+P309521,H02,67,Female,Woman,Some Other Race,,PA,Medicare,2022-07-14,2022-07-16,Home,276.1,,6144.81
+P564616,H05,95,Male,Man,White,Not Hispanic or Latino,NY,Commercial,2020-11-22,2020-11-26,SNF,,I21.9,29960.98
+P130533,H02,70,Female,Woman,White,Not Hispanic or Latino,PA,Commercial,2024-03-14,2024-03-17,Home with home health,733.00,,21379.66
+P550478,H04,81,Male,Man,White,Hispanic or Latino,CA,Medicare,2024-09-27,2024-10-25,Home with home health,410.71,,175404.03
+P218458,H01,28,Male,Man,White,Not Hispanic or Latino,OH,Medicaid,2020-06-06,2020-06-09,Home,,F32.9,18994.24
+P830523,H03,25,Female,Woman,Black or African American,Not Hispanic or Latino,TX,Commercial,2019-03-21,2019-03-22,Home with home health,,E87.1,5122.07
+P585557,H01,63,Male,Man,Some Other Race,Hispanic or Latino,NJ,Commercial,2024-11-28,2024-11-29,Home,,J44.1,10200.60
+P668385,H06,68,Male,Man,White,Hispanic or Latino,FL,,2022-02-12,2022-02-14,Home,518.81,,24999.09
+P557064,H02,52,Unknown,Prefer not to say,White,Not Hispanic or Latino,PA,Commercial,2023-02-14,2023-02-16,Home,995.91,,15069.95
+P956647,H09,77,Female,Woman,White,Hispanic or Latino,AZ,Commercial,2023-01-02,2023-01-04,Home,,I21.9,12364.95
+P418278,H01,62,Female,Woman,White,Not Hispanic or Latino,OH,Medicaid,2025-04-08,2025-04-10,Home,,N17.9,15438.58
+P475847,H02,95,Female,Woman,Native Hawaiian or Other Pacific Islander,Not Hispanic or Latino,PA,Commercial,2020-11-29,2020-11-30,SNF,507.0,,8891.37
+P968822,H06,63,Female,Woman,Some Other Race,Hispanic or Latino,FL,Other,2023-03-14,2023-03-20,Home with home health,250.00,,27273.99
+P941935,H08,68,Female,Woman,White,Not Hispanic or Latino,GA,Medicare,2021-04-09,2021-04-18,Home,574.20,,45714.08
+P904253,H03,58,Male,Man,White,Not Hispanic or Latino,IL,Commercial,2019-11-09,2019-11-12,Home,,L03.115,10688.28
+P554650,H01,30,Female,Woman,White,Not Hispanic or Latino,OH,,2022-06-21,2022-06-22,Home,,E11.9,
+P877220,H01,62,Male,Man,Asian,Not Hispanic or Latino,OH,Commercial,2019-09-24,2019-09-25,Home with home health,,K85.90,4339.02
+P979669,H04,60,Female,Woman,White,Not Hispanic or Latino,CA,Medicare,2020-12-06,2020-12-11,Home,995.91,,27004.28
+P949054,H04,65,Male,Man,White,Not Hispanic or Latino,CA,Other,2019-09-14,2019-09-25,Home,722.10,,70223.37
+P128953,H07,31,Female,Woman,White,Not Hispanic or Latino,IL,Commercial,2025-08-23,2025-08-31,Home,,N17.0,
+P238511,H05,34,Male,Man,White,Hispanic or Latino,NY,Self-pay,2022-02-02,2022-02-02,Home,,I10,7510.05
+P603826,H05,56,Male,Man,White,Not Hispanic or Latino,NY,Commercial,2021-06-18,2021-06-20,Home,,I50.9,18695.06
+P299198,H02,64,Female,Woman,Black or African American,Not Hispanic or Latino,NC,Medicare,2024-09-20,2024-09-22,Home,707.03,,10260.81
+P199379,H08,58,Female,Woman,Asian,Not Hispanic or Latino,GA,Medicaid,2021-04-06,2021-04-09,Transfer,491.21,,20928.29
+P492054,H05,87,Female,Woman,White,Not Hispanic or Latino,NY,Medicare,2022-01-28,2022-01-30,Transfer,,N18.6,12172.21
+P207826,H02,80,Female,Woman,White,Not Hispanic or Latino,PA,Commercial,2025-07-14,2025-07-16,Home,414.01,,13788.92
+P596568,H01,62,Male,Man,White,Not Hispanic or Latino,OH,Commercial,2021-08-10,2021-08-15,Home,,I47.2,16521.24
+P199182,H10,60,Male,Prefer not to say,White,Not Hispanic or Latino,PA,,2025-01-28,2025-01-31,AMA,427.31,,18023.74
+P850232,H10,53,Female,Woman,White,Not Hispanic or Latino,MA,Commercial,2022-11-23,2022-11-26,Home,428.0,,16564.73
+P612328,H06,36,Female,Woman,Black or African American,Not Hispanic or Latino,FL,Medicaid,2024-01-19,2024-01-29,Home,410.91,,27657.99
+P445155,H09,68,Female,Woman,White,Not Hispanic or Latino,AZ,Medicare,2021-12-18,2022-01-05,Transfer,,M51.26,58716.31
+P631864,H05,65,Female,Woman,Some Other Race,Hispanic or Latino,NY,Commercial,2021-03-30,2021-04-01,Home,,T81.4XXA,9026.77
+P263552,H04,92,Female,Woman,White,Not Hispanic or Latino,CA,Commercial,2025-10-06,2025-10-06,Home with home health,715.90,,3264.40
+P239916,H07,82,Male,Man,Black or African American,Not Hispanic or Latino,IL,Medicare,2020-11-28,2020-12-03,SNF,,K35.80,21049.50
+P633834,H06,59,Male,Man,White,Not Hispanic or Latino,NY,Medicaid,2020-05-20,2020-05-21,Home,414.01,,8961.37
+P552385,H01,48,Female,Woman,White,Hispanic or Latino,OH,Commercial,2024-01-22,2024-01-23,Home,,M17.9,9697.72
+P898239,H03,86,Female,Woman,Black or African American,Not Hispanic or Latino,TX,Medicare,2022-06-11,2022-06-14,Home with home health,,I26.99,18651.56
+P836603,H10,42,Female,Woman,Some Other Race,Hispanic or Latino,MA,Medicaid,2025-01-11,2025-01-15,Home,715.90,,14733.65
+P445677,H04,74,Female,Woman,White,Not Hispanic or Latino,CA,Medicare,2022-10-13,2022-10-16,Expired,410.91,,15326.85
+P462546,H07,76,Male,Man,Asian,Not Hispanic or Latino,IL,Medicare,2022-09-02,2022-09-04,Home,,L89.154,14541.63
+P931482,H07,56,Male,Man,White,Not Hispanic or Latino,IL,Commercial,2019-09-05,2019-09-08,Home,,R55,24728.76
+P352387,H02,51,Male,Man,White,Hispanic or Latino,PA,Medicaid,2023-11-01,2023-11-02,Transfer,599.0,,9371.29
+P436912,H09,41,Male,Man,White,Unknown,AZ,Medicaid,2021-09-24,2021-09-30,Transfer,,R55,19218.95
+P443906,H01,91,Male,Man,White,Hispanic or Latino,OH,Medicare,2023-08-04,2023-08-04,SNF,,F32.9,6855.16
+P540971,H01,58,Male,Man,White,Not Hispanic or Latino,OH,Self-pay,2022-04-05,2022-04-08,Expired,,I26.99,19363.61
+P272117,H02,58,Male,Man,Asian,Not Hispanic or Latino,PA,,2022-04-23,2022-04-30,Home,414.01,,29019.17
+P663037,H05,77,Female,Woman,White,Not Hispanic or Latino,NY,Commercial,2020-04-19,2020-04-25,SNF,,L89.154,45114.60
+P422422,H10,72,Female,Woman,Black or African American,Not Hispanic or Latino,MA,Commercial,2023-06-18,2023-06-19,Home,733.00,,8286.18
+P158678,H07,74,Female,Prefer not to say,White,Not Hispanic or Latino,IL,Medicare,2023-04-17,2023-04-19,Home,,N20.0,11810.84
+P179065,H02,43,Female,Woman,White,Not Hispanic or Latino,PA,Other,2023-10-01,2023-10-05,Home,599.0,,15758.12
+P586025,H08,81,Male,Man,Black or African American,Not Hispanic or Latino,GA,Medicare,2022-11-15,2022-11-22,Home,276.51,,34292.99
+P559353,H03,69,Female,Woman,Black or African American,Hispanic or Latino,TX,Medicare,2020-11-24,2020-12-02,Home,,E87.1,28969.27
+P354734,H04,84,Female,Woman,White,Not Hispanic or Latino,CA,Medicare,2023-10-18,2023-10-29,Home,415.19,,33104.15
+P332587,H05,22,Female,Woman,White,Not Hispanic or Latino,NY,Medicaid,2020-07-16,2020-07-17,Home with home health,,C61,9542.24
+P964472,H08,88,Female,Woman,Asian,Not Hispanic or Latino,GA,Medicare,2022-10-31,2022-11-03,Home,786.50,,17502.61
+P685711,H09,83,Female,Woman,White,Not Hispanic or Latino,AZ,Other,2019-04-24,2019-04-25,AMA,,K44.9,9581.40
+P802548,H04,51,Male,Man,White,Not Hispanic or Latino,CA,Commercial,2022-09-02,2022-09-05,SNF,311,,16705.09
+P141169,H04,65,Female,Woman,White,,CA,Other,2024-10-20,2024-10-27,Home,403.90,,26019.87
+P662359,H03,78,Male,Man,Black or African American,Not Hispanic or Latino,TX,Commercial,2024-07-31,2024-08-04,AMA,,K56.609,17964.01
+P685612,H04,61,Female,Woman,White,Not Hispanic or Latino,CA,Medicaid,2023-04-22,2023-05-17,Home,272.4,,66268.02
+P267721,H01,66,Male,Man,White,Not Hispanic or Latino,OH,Medicare,2021-03-01,2021-03-05,Home,,I25.10,22433.00
+P197583,H05,55,Male,Man,White,Not Hispanic or Latino,NY,Medicaid,2022-11-10,2022-11-11,Home,,M17.9,8698.45
+P503777,H02,60,Male,Man,American Indian or Alaska Native,Not Hispanic or Latino,PA,Medicaid,2020-01-29,2020-01-31,Home,496,,7938.19
+P905535,H01,62,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2022-09-09,2022-09-10,SNF,,T81.4XXA,8167.36
+P732261,H03,49,Female,Woman,White,Not Hispanic or Latino,TX,,2024-07-09,2024-07-15,Home with home health,,A41.9,43362.67
+P538812,H09,68,Female,Woman,White,Not Hispanic or Latino,AZ,Medicare,2022-01-27,2022-02-01,Home,,J44.0,12206.72
+P174172,H05,95,Female,Woman,White,Not Hispanic or Latino,NY,Commercial,2025-08-29,2025-09-02,SNF,,I48.91,21640.80
+P816422,H08,70,Female,Woman,White,Not Hispanic or Latino,GA,Self-pay,2022-06-10,2022-06-14,Home,553.3,,
+P774964,H03,40,Male,Man,White,Not Hispanic or Latino,TX,Medicaid,2019-01-11,2019-01-13,Home,,R50.9,8506.24
+P895884,H02,49,Female,Woman,White,Not Hispanic or Latino,PA,Commercial,2019-07-25,2019-07-28,Expired,428.0,,16576.77
+P758274,H04,51,Male,Man,Asian,Not Hispanic or Latino,CA,Commercial,2019-01-05,2019-01-08,Home,599.0,,8678.88
+P853163,H06,78,Female,Woman,White,Not Hispanic or Latino,FL,Other,2025-09-21,2025-10-03,Home,530.81,,40354.41
+P772467,H04,59,Male,Man,White,Hispanic or Latino,CA,Medicaid,2025-10-28,2025-10-31,Home,428.0,,20784.51
+P243838,H05,38,Male,Man,White,Not Hispanic or Latino,NY,Medicaid,2025-01-02,2025-01-05,Home,,N17.9,20904.27
+P283848,H02,70,Unknown,Woman,White,Not Hispanic or Latino,PA,Medicare,2024-12-21,2024-12-21,Home,682.6,,6410.04
+P300848,H07,95,Male,Man,White,Not Hispanic or Latino,IL,Medicare,2021-10-02,2021-10-06,Home,,C34.90,13684.45
+P238447,H06,95,Female,Woman,Some Other Race,Hispanic or Latino,FL,Commercial,2020-12-17,2020-12-25,Home with home health,584.9,,40278.13
+P713966,H03,50,Male,Man,White,Not Hispanic or Latino,TX,Medicare,2025-06-29,2025-07-01,Home with home health,,J44.1,12128.63
+P927861,H07,54,Female,Woman,White,Not Hispanic or Latino,IL,Commercial,2019-02-21,2019-03-15,SNF,,J96.00,42663.82
+P346864,H05,49,Female,Woman,White,Not Hispanic or Latino,NY,Medicaid,2024-12-25,2024-12-26,Home,,N17.0,16236.39
+P638409,H03,52,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2024-05-27,2024-05-30,Home,,I10,16019.52
+P552656,H06,49,Male,Man,Some Other Race,Hispanic or Latino,FL,Commercial,2020-09-04,2020-09-07,Home,820.8,,
+P491047,H07,35,Female,Woman,White,Hispanic or Latino,IL,Medicaid,2021-08-07,2021-08-09,Home,,J96.00,10666.76
+P148761,H04,68,Female,Woman,Some Other Race,Not Hispanic or Latino,CA,Medicare,2019-07-28,2019-07-31,Home,577.0,,16433.98
+P894334,H01,53,Male,Man,White,Not Hispanic or Latino,OH,Commercial,2022-04-27,2022-05-02,SNF,,M51.26,20412.22
+P448730,H03,57,Female,Woman,White,Not Hispanic or Latino,TX,Medicare,2019-11-27,2019-11-27,Home,,J44.1,6184.31
+P463377,H01,49,Male,Man,White,Not Hispanic or Latino,OH,Commercial,2022-12-09,2022-12-09,Home,,E11.9,10461.91
+P485853,H02,40,Male,Man,Some Other Race,Hispanic or Latino,PA,Self-pay,2021-02-14,2021-02-15,Home,569.3,,6767.67
+P444709,H07,71,Female,Woman,Black or African American,Not Hispanic or Latino,IL,Medicare,2019-07-23,2019-07-28,Home,,I26.99,24215.59
+P317141,H01,54,Female,Woman,White,Hispanic or Latino,OH,Other,2019-09-19,2019-09-23,Home,,M51.26,14015.17
+P587044,H03,46,Male,Non-binary,White,,TX,Medicaid,2021-02-13,2021-02-15,Home,,J96.00,10756.00
+P474562,H03,53,Male,Man,White,Hispanic or Latino,TX,Commercial,2020-12-14,2020-12-16,AMA,,I47.2,11830.61
+P674556,H02,87,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2020-03-20,2020-03-30,Home with home health,428.0,,58464.99
+P239470,H07,51,Male,Man,Black or African American,Not Hispanic or Latino,IL,Commercial,2020-03-02,2020-03-04,Home,,I50.9,14555.81
+P485874,H03,76,Female,Prefer not to say,White,Not Hispanic or Latino,TX,Medicare,2022-06-23,2022-06-25,Home,,I61.9,12328.79
+P856466,H06,83,Female,Woman,White,Not Hispanic or Latino,FL,Commercial,2024-12-21,2024-12-24,Home with home health,530.81,,24300.07
+P963584,H01,49,Male,Man,White,Hispanic or Latino,OH,Commercial,2022-12-05,2022-12-05,AMA,,K44.9,5568.37
+P479934,H02,72,Female,Woman,White,Hispanic or Latino,PA,Medicare,2024-10-27,2024-10-31,SNF,276.51,,16809.95
+P264171,H06,47,Female,Woman,White,Not Hispanic or Latino,FL,Other,2025-09-23,2025-09-26,Home,584.9,,
+P967600,H01,44,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2021-10-05,2021-10-07,Home,,N39.0,12700.43
+P891795,H05,95,Male,Man,White,Not Hispanic or Latino,NY,Self-pay,2024-11-15,2024-11-19,Home,,C61,27032.16
+P405859,H07,59,Male,Man,White,Not Hispanic or Latino,IL,Commercial,2024-03-17,2024-04-01,Home,,E87.1,
+P664588,H07,80,Male,Man,Asian,Not Hispanic or Latino,IL,Medicare,2022-08-21,2022-08-21,Home,,K62.5,8061.37
+P538326,H04,70,Female,Woman,Asian,Unknown,CA,Medicaid,2020-01-15,2020-01-19,SNF,403.90,,19530.30
+P115915,H04,68,Female,Woman,White,Not Hispanic or Latino,CA,Commercial,2025-03-14,2025-03-16,Transfer,820.8,,9585.25
+P481749,H06,56,Female,Woman,White,Not Hispanic or Latino,FL,Medicaid,2024-06-22,2024-06-26,SNF,780.2,,26881.71
+P745182,H02,45,Male,Man,Black or African American,Not Hispanic or Latino,PA,Commercial,2019-07-13,2019-07-16,Home,431,,16205.80
+P779781,H02,93,Female,Woman,White,Not Hispanic or Latino,PA,Other,2022-09-19,2022-09-21,Home,250.02,,9175.64
+P754066,H05,54,Female,Woman,White,Not Hispanic or Latino,NY,,2020-08-20,2020-08-23,SNF,,N17.0,15537.47
+P393970,H06,66,Female,Woman,Asian,Not Hispanic or Latino,FL,Self-pay,2022-03-25,2022-03-29,Home,540.9,,18610.15
+P997136,H02,55,Male,Man,White,Not Hispanic or Latino,PA,Commercial,2021-01-23,2021-01-23,Home,428.0,,4209.23
+P435337,H02,89,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2020-12-26,2021-01-02,SNF,780.2,,
+P413324,H09,78,Female,Woman,White,Not Hispanic or Latino,AZ,Medicare,2020-08-22,2020-08-24,Home with home health,,C34.90,12439.61
+P389176,H04,55,Male,Man,Asian,Not Hispanic or Latino,WI,Self-pay,2023-05-30,2023-05-31,Home,715.90,,
+P233276,H07,37,Male,Man,White,Hispanic or Latino,IL,Medicare,2022-06-10,2022-06-14,Home,,I10,11840.02
+P620285,H02,79,Female,Woman,White,Hispanic or Latino,PA,Medicaid,2021-02-10,2021-02-13,SNF,564.00,,21393.38
+P528567,H06,54,Male,Man,White,Not Hispanic or Latino,FL,Medicare,2023-09-16,2023-09-18,Home,540.9,,15944.64
+P864802,H04,52,Male,Man,Black or African American,Not Hispanic or Latino,CA,Medicaid,2019-04-06,2019-04-20,Home,574.20,,66318.40
+P776654,H01,70,Male,Man,White,Not Hispanic or Latino,OH,Medicaid,2021-10-27,2021-10-27,SNF,,N39.0,
+P734076,H09,43,Female,Prefer not to say,White,Not Hispanic or Latino,AZ,Medicare,2024-12-01,2024-12-01,Transfer,,I10,10897.52
+P377846,H08,88,Female,Woman,White,Unknown,GA,Commercial,2024-04-09,2024-04-16,Home,401.9,,29901.49
+P147701,H05,40,Male,Man,White,Not Hispanic or Latino,OH,Medicare,2022-12-06,2022-12-09,Home,,J12.82,16458.45
+P460193,H01,54,Male,Man,Black or African American,Hispanic or Latino,OH,Commercial,2024-05-23,2024-05-25,Home,,I10,22790.24
+P474724,H03,46,Female,Woman,White,Not Hispanic or Latino,TX,Medicaid,2024-09-26,2024-11-22,Home,,A04.72,169199.26
+P394083,H01,88,Male,Man,White,Not Hispanic or Latino,WA,Medicare,2019-12-22,2019-12-25,Home,,K44.9,23062.97
+P564726,H03,20,Female,Woman,White,Hispanic or Latino,TX,Commercial,2021-01-25,2021-01-30,Home,,E87.1,
+P788567,H03,59,Female,Woman,White,Hispanic or Latino,TX,Self-pay,2022-08-11,2022-08-12,Home,,M17.9,7038.71
+P185519,H05,67,Female,Woman,White,Not Hispanic or Latino,NY,Medicaid,2023-07-17,2023-07-19,Home with home health,,D64.9,14828.89
+P545858,H03,93,Male,Man,Some Other Race,Hispanic or Latino,TX,Medicaid,2025-10-12,2025-10-12,SNF,,K44.9,6063.92
+P328158,H07,38,Male,Man,White,Not Hispanic or Latino,IL,Medicaid,2020-08-18,2020-08-21,Home,,K44.9,13772.97
+P867592,H07,95,Female,Woman,Black or African American,Not Hispanic or Latino,IL,Medicare,2019-06-14,2019-06-18,Transfer,,E11.65,30465.31
+P354895,H05,81,Female,Woman,White,Not Hispanic or Latino,NY,Medicare,2020-07-02,2020-07-05,SNF,,N17.9,20012.43
+P428070,H04,38,Female,Woman,Black or African American,Not Hispanic or Latino,CA,Commercial,2022-01-21,2022-01-28,Home,174.9,,39362.71
+P138915,H07,55,Female,Woman,Some Other Race,,IL,Medicaid,2020-04-01,2020-04-03,Home,,E78.5,21630.89
+P172160,H07,63,Female,Woman,Black or African American,Not Hispanic or Latino,IL,Medicaid,2022-09-07,2022-09-14,Home,,J96.00,26770.74
+P296980,H01,59,Female,Woman,White,Not Hispanic or Latino,OH,Self-pay,2019-02-23,2019-02-27,Home with home health,,F32.9,11957.81
+P184203,H02,75,Female,Woman,Some Other Race,Not Hispanic or Latino,PA,Medicare,2022-08-25,2022-08-26,Home with home health,401.9,,9037.99
+P760583,H05,31,Female,Woman,Some Other Race,,NY,Commercial,2019-12-31,2020-01-11,Home,,I48.91,67824.71
+P874972,H02,95,Female,Woman,Asian,Not Hispanic or Latino,PA,Medicare,2021-11-11,2021-11-20,Home,038.9,,45209.29
+P202948,H02,44,Male,Man,Black or African American,Not Hispanic or Latino,PA,Commercial,2024-05-02,2024-05-05,Home with home health,415.19,,29731.63
+P949860,H06,31,Male,Man,White,Not Hispanic or Latino,FL,Medicaid,2019-04-24,2019-04-27,Home,401.9,,32756.22
+P947401,H09,53,Male,Man,White,Not Hispanic or Latino,AZ,Medicare,2024-10-02,2024-10-02,Home,,E87.1,6391.02
+P158655,H10,37,Male,Man,White,Not Hispanic or Latino,NC,Commercial,2022-01-13,2022-01-14,Home,569.3,,6225.83
+P450597,H02,57,Male,Man,White,Not Hispanic or Latino,PA,Commercial,2023-10-19,2023-10-21,Home,008.45,,10699.29
+P151019,H03,28,Female,Woman,White,Hispanic or Latino,TX,,2023-01-28,2023-02-01,Home,,N20.0,
+P253527,H02,80,Male,Man,Black or African American,Not Hispanic or Latino,PA,Other,2021-01-01,2021-01-03,Home,493.90,,10103.67
+P760766,H03,45,Male,Man,White,Not Hispanic or Latino,TX,Self-pay,2020-02-24,2020-02-27,Home,,R10.9,20462.89
+P744212,H01,59,Female,Woman,White,Not Hispanic or Latino,OH,Medicaid,2023-10-20,2023-10-20,Home,,C50.919,7574.95
+P769026,H01,43,Female,Woman,White,Not Hispanic or Latino,OH,Other,2021-11-08,2021-11-13,Home,,I12.9,27369.22
+P178566,H08,89,Female,Woman,White,Not Hispanic or Latino,GA,Medicare,2023-03-18,2023-03-19,Home,250.02,,
+P999066,H06,61,Male,Man,Black or African American,Not Hispanic or Latino,FL,Commercial,2023-05-23,2023-05-23,Home,276.51,,5181.18
+P361795,H02,48,Male,Man,White,Not Hispanic or Latino,PA,Commercial,2019-08-30,2019-09-13,Home,403.90,,70030.62
+P120638,H09,77,Female,Woman,Some Other Race,Not Hispanic or Latino,AZ,Medicare,2024-12-30,2025-01-03,Home,,N20.0,19943.87
+P517283,H02,65,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2025-09-08,2025-09-10,SNF,250.00,,22470.70
+P780239,H02,64,Female,Woman,Asian,Not Hispanic or Latino,PA,Commercial,2024-01-04,2024-01-05,Home,410.91,,6762.69
+P964133,H02,56,Female,Woman,Black or African American,Not Hispanic or Latino,PA,Medicare,2021-11-13,2021-11-26,Home,599.0,,62131.48
+P625286,H08,61,Female,Woman,White,Hispanic or Latino,GA,Commercial,2022-02-04,2022-02-06,Home,530.81,,12482.93
+P515641,H01,39,Male,Man,Black or African American,Not Hispanic or Latino,OH,Medicaid,2019-05-16,2019-05-18,Home,,E78.5,
+P865938,H04,71,Female,Woman,White,Not Hispanic or Latino,CA,,2023-06-21,2023-06-25,Home,185,,18344.63
+P475587,H08,49,Female,Woman,Asian,Not Hispanic or Latino,GA,Medicaid,2022-01-28,2022-02-08,Home,250.00,,52657.82
+P776723,H04,90,Male,Man,White,Hispanic or Latino,CA,Medicare,2019-06-16,2019-06-28,Home with home health,414.01,,70633.13
+P478072,H02,53,Male,Man,Asian,Not Hispanic or Latino,PA,Commercial,2025-07-25,2025-07-27,Home,780.60,,9798.24
+P903638,H04,46,Male,Man,White,Hispanic or Latino,CA,Medicare,2019-08-07,2019-08-12,Home with home health,415.19,,23871.26
+P617380,H01,51,Female,Woman,White,Not Hispanic or Latino,CA,Commercial,2024-09-13,2024-09-14,Home,,I21.9,9224.55
+P440197,H01,51,Male,Man,Black or African American,Not Hispanic or Latino,OH,Medicaid,2024-10-03,2024-10-06,Home,,I61.9,17851.36
+P175358,H04,55,Female,Woman,White,Not Hispanic or Latino,CA,Commercial,2021-08-28,2021-09-06,Home,403.90,,35797.93
+P678180,H10,85,Male,Man,White,Not Hispanic or Latino,MA,Medicare,2019-01-03,2019-01-05,Home,038.9,,7517.58
+P898847,H07,53,Female,Woman,White,Not Hispanic or Latino,NJ,Medicaid,2022-12-27,2022-12-28,Transfer,,J44.1,3453.15
+P453300,H07,74,Male,Man,White,Hispanic or Latino,NC,Medicare,2024-08-14,2024-08-15,Home,,L89.154,7093.14
+P568991,H10,62,Male,Man,White,Not Hispanic or Latino,MA,Self-pay,2023-07-23,2023-07-24,Home,250.02,,6452.43
+P903498,H01,70,Female,Woman,White,,OH,Commercial,2024-08-17,2024-08-19,Expired,,I12.9,12606.82
+P439792,H05,58,Female,Woman,White,Hispanic or Latino,CO,Commercial,2020-11-14,2020-11-24,Home,,E86.0,49686.25
+P167663,H06,63,Female,Woman,White,Not Hispanic or Latino,FL,Commercial,2022-01-14,2022-01-16,Home,414.01,,11812.99
+P857184,H03,75,Male,Man,White,Not Hispanic or Latino,TX,Self-pay,2019-08-03,2019-08-03,Home,,K56.609,4629.64
+P442456,H06,51,Male,Man,White,Not Hispanic or Latino,IL,Medicaid,2024-10-22,2024-10-24,Home,995.91,,7763.46
+P217439,H06,79,Female,Woman,Some Other Race,Not Hispanic or Latino,FL,Commercial,2021-10-29,2021-11-11,Home,410.71,,52653.18
+P113491,H08,55,Male,Man,Some Other Race,Not Hispanic or Latino,GA,Commercial,2023-05-01,2023-05-08,Home,998.59,,29337.19
+P468732,H04,46,Male,Man,White,Not Hispanic or Latino,CA,Medicaid,2019-07-26,2019-07-29,Home,574.20,,
+P108566,H06,81,Female,Woman,White,Not Hispanic or Latino,FL,Medicare,2022-10-31,2022-11-05,Home with home health,410.91,,
+P742477,H01,95,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Commercial,2024-07-21,2024-07-22,Home,,E78.5,9978.35
+P292258,H06,52,Female,Woman,White,Not Hispanic or Latino,FL,Commercial,2020-11-20,2020-11-25,Home,428.0,,29553.45
+P895468,H08,33,Female,Woman,Black or African American,Not Hispanic or Latino,GA,Medicaid,2023-08-28,2023-09-03,Home,995.91,,31681.85
+P851202,H04,60,Male,Man,White,Not Hispanic or Latino,CA,Medicaid,2024-04-09,2024-04-14,Home,569.3,,26305.78
+P934207,H04,50,Female,Woman,White,Unknown,NY,Other,2024-07-23,2024-07-28,Transfer,584.5,,32702.09
+P759266,H03,79,Male,Man,White,Not Hispanic or Latino,TX,Medicaid,2025-09-03,2025-09-05,Home,,N20.0,
+P374105,H09,89,Female,Woman,Some Other Race,Hispanic or Latino,AZ,Medicare,2023-07-29,2023-08-05,SNF,,M51.26,19671.56
+P440535,H01,40,Male,Man,Black or African American,Not Hispanic or Latino,OH,Other,2023-07-28,2023-08-03,Home,,K59.00,34381.40
+P765065,H10,43,Male,Man,White,Not Hispanic or Latino,MA,Commercial,2024-01-24,2024-01-26,Home,540.9,,12691.28
+P623816,H06,60,Male,Prefer not to say,Two or More Races,Not Hispanic or Latino,FL,Commercial,2022-06-16,2022-06-22,Home with home health,715.90,,25330.99
+P812831,H06,68,Male,Prefer not to say,White,Not Hispanic or Latino,FL,Commercial,2025-07-09,2025-07-12,Home with home health,574.20,,
+P395763,H03,67,Male,Man,Asian,Not Hispanic or Latino,TX,Medicare,2021-12-23,2021-12-28,Transfer,,D64.9,18980.26
+P946811,H02,52,Female,Woman,White,Not Hispanic or Latino,IN,Commercial,2020-08-31,2020-09-02,Home,569.3,,11382.28
+P971499,H03,74,Male,Man,White,Not Hispanic or Latino,TX,Medicare,2025-09-08,2025-09-08,Transfer,,K92.2,5081.82
+P297462,H03,84,Female,Woman,White,Not Hispanic or Latino,WA,Medicare,2023-07-21,2023-07-23,Home,,J69.0,10293.67
+P446834,H10,59,Male,Man,Some Other Race,Not Hispanic or Latino,MA,Commercial,2020-06-09,2020-06-17,Home,780.2,,13708.85
+P375664,H01,75,Male,Man,Asian,Not Hispanic or Latino,OH,Medicare,2019-12-07,2019-12-08,Home,,N17.9,8706.92
+P923882,H03,88,Male,Man,Two or More Races,Hispanic or Latino,CO,Medicare,2019-12-11,2019-12-14,Home,,E11.9,16863.32
+P957421,H04,55,Female,Woman,White,Not Hispanic or Latino,CA,Self-pay,2023-05-16,2023-05-24,Home,250.02,,25449.09
+P373696,H05,59,Female,Woman,Black or African American,Not Hispanic or Latino,NY,Medicaid,2019-07-24,2019-07-24,Home,,I26.99,4644.44
+P377240,H02,59,Male,Man,Black or African American,Not Hispanic or Latino,PA,Commercial,2021-01-28,2021-01-31,Home,276.51,,22622.51
+P183388,H03,86,Female,Woman,White,Not Hispanic or Latino,TX,Medicare,2023-06-29,2023-07-09,Home,,K56.609,54483.92
+P941714,H03,54,Female,Woman,Black or African American,Not Hispanic or Latino,TX,Medicaid,2020-12-08,2020-12-11,Home,,E78.5,5859.66
+P858984,H06,50,Male,Man,White,Not Hispanic or Latino,FL,Commercial,2024-08-07,2024-08-09,Home,276.51,,17843.87
+P368366,H08,75,Male,Man,White,Not Hispanic or Latino,GA,Other,2022-02-02,2022-02-09,Home with home health,584.9,,22376.15
+P348380,H04,62,Male,Man,Black or African American,Not Hispanic or Latino,CA,Other,2022-09-20,2022-09-24,Home with home health,285.9,,18941.21
+P268162,H02,23,Male,Man,Some Other Race,Not Hispanic or Latino,PA,Commercial,2023-05-04,2023-05-12,Home with home health,162.9,,86332.09
+P547335,H09,48,Female,Woman,White,Not Hispanic or Latino,AZ,Self-pay,2019-08-25,2019-08-31,Home,,K62.5,30004.42
+P531564,H03,43,Female,Woman,White,Unknown,TX,Commercial,2025-10-24,2025-10-26,Home with home health,,N20.0,12276.29
+P416576,H02,95,Female,Woman,Native Hawaiian or Other Pacific Islander,Hispanic or Latino,PA,Medicaid,2022-11-29,2022-12-03,SNF,733.00,,10698.67
+P463263,H05,29,Male,Man,White,Not Hispanic or Latino,NY,Medicaid,2022-06-15,2022-06-17,Home,,N18.6,10970.33
+P482125,H07,58,Female,Woman,White,Hispanic or Latino,IL,Commercial,2023-01-12,2023-01-13,Home,,J18.9,4523.28
+P318106,H04,33,Female,Woman,Some Other Race,Hispanic or Latino,CA,Medicaid,2019-02-06,2019-02-08,Home with home health,553.3,,13108.56
+P835034,H09,77,Female,Woman,White,Not Hispanic or Latino,AZ,Medicare,2022-05-27,2022-05-29,Home with home health,,N17.9,28740.57
+P559255,H01,62,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Commercial,2019-03-04,2019-03-05,Home,,I21.4,14351.14
+P462127,H01,95,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2020-02-27,2020-03-01,Home with home health,,M51.26,14009.78
+P428284,H01,73,Female,Woman,White,Hispanic or Latino,OH,Medicare,2022-04-06,2022-04-07,SNF,,K44.9,7522.75
+P266658,H09,71,Female,Woman,White,Not Hispanic or Latino,AZ,Medicare,2025-04-21,2025-04-24,Home,,E11.65,16324.30
+P663197,H02,70,Male,Man,Black or African American,Not Hispanic or Latino,PA,Self-pay,2024-09-14,2024-09-14,Home,272.4,,4922.05
+P756012,H08,0,Male,Man,Two or More Races,Not Hispanic or Latino,GA,Commercial,2022-04-05,2022-04-07,Home,715.90,,13988.85
+P632967,H05,64,Female,Woman,White,Hispanic or Latino,NY,Commercial,2020-08-15,2020-08-16,SNF,,I21.4,5052.01
+P937251,H08,41,Female,Woman,Some Other Race,Hispanic or Latino,GA,Self-pay,2020-09-01,2020-09-04,Home,276.1,,14494.65
+P901744,H08,94,Female,Woman,White,Not Hispanic or Latino,GA,Medicare,2023-08-04,2023-08-07,Home with home health,584.5,,17116.04
+P578144,H06,78,Female,Woman,White,Hispanic or Latino,FL,Other,2020-04-29,2020-04-29,Expired,820.8,,3013.34
+P235046,H04,51,Female,Woman,White,Hispanic or Latino,CA,Commercial,2021-08-25,2021-08-31,Home with home health,789.00,,45200.70
+P608777,H05,74,Female,Woman,Black or African American,Not Hispanic or Latino,NY,,2022-03-06,2022-03-10,Home,,K44.9,24636.97
+P293378,H01,95,Male,Man,Black or African American,Not Hispanic or Latino,OH,Medicare,2023-08-09,2023-08-09,Home,,K44.9,3582.59
+P170214,H01,56,Female,Woman,White,Hispanic or Latino,OH,Commercial,2022-09-13,2022-09-20,Home,,A41.9,10837.21
+P952879,H04,73,Male,Man,White,Unknown,CA,Medicare,2020-10-17,2020-10-20,Home,414.01,,9056.38
+P159669,H10,70,Male,Man,White,Hispanic or Latino,MA,Medicare,2019-02-18,2019-02-27,Expired,789.00,,61733.52
+P481120,H01,11,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Commercial,2019-09-21,2019-09-23,Home,,T81.4XXA,11485.68
+P275969,H04,58,Female,Woman,White,Not Hispanic or Latino,CA,Medicaid,2021-10-23,2021-10-27,Home,707.03,,14458.04
+P903992,H01,13,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2023-02-11,2023-02-11,Home,,J96.00,6134.46
+P204525,H03,76,Male,Man,Some Other Race,Not Hispanic or Latino,TX,Medicare,2024-03-15,2024-03-20,Home with home health,,K56.609,18994.72
+P191021,H03,22,Male,Man,Some Other Race,Hispanic or Latino,TX,Other,2019-04-11,2019-04-13,Home,,T81.4XXA,17011.18
+P901109,H10,58,Female,Woman,Two or More Races,Not Hispanic or Latino,MA,Self-pay,2020-02-01,2020-02-02,Home,722.10,,10433.19
+P764735,H08,84,Male,Man,Some Other Race,Hispanic or Latino,GA,Medicare,2022-06-15,2022-06-23,Home,733.00,,34070.66
+P467449,H01,49,Female,Woman,White,Not Hispanic or Latino,OH,Medicaid,2022-12-29,2022-12-30,Home,,J18.9,
+P483143,H10,73,Female,Woman,Black or African American,Hispanic or Latino,MA,Medicare,2023-06-14,2023-06-16,SNF,491.21,,10646.71
+P830680,H03,55,Female,Woman,White,Not Hispanic or Latino,TX,Medicaid,2025-08-21,2025-08-22,Home,,E86.0,9649.67
+P683128,H08,65,Male,Man,White,Not Hispanic or Latino,GA,Medicaid,2025-03-05,2025-03-09,Home with home health,486,,14547.34
+P531023,H03,68,Female,Woman,White,Not Hispanic or Latino,TX,Medicare,2021-10-07,2021-10-11,Home,,J44.0,22402.52
+P776163,H01,67,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2024-07-26,2024-07-29,Home with home health,,K80.20,
+P765686,H03,46,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2021-12-27,2021-12-27,SNF,,N39.0,4498.95
+P493910,H08,35,Female,Woman,Black or African American,Not Hispanic or Latino,GA,,2025-05-10,2025-05-13,Home,250.00,,21529.62
+P664049,H01,37,Male,Man,White,Not Hispanic or Latino,OH,Commercial,2020-09-21,2020-09-26,Home,,I26.99,30052.45
+P563852,H06,77,Male,Man,White,Not Hispanic or Latino,FL,Medicaid,2020-09-23,2020-10-01,SNF,540.9,,29165.08
+P727036,H08,57,Female,Woman,Black or African American,Not Hispanic or Latino,GA,Other,2019-12-27,2019-12-29,Home,584.9,,9571.05
+P502848,H09,58,Male,Man,White,Not Hispanic or Latino,AZ,,2021-04-21,2021-04-22,SNF,,C61,4084.20
+P675878,H05,67,Female,Woman,White,Not Hispanic or Latino,WA,Medicare,2024-01-01,2024-01-08,Home,,K59.00,32770.08
+P461072,H08,74,Female,Woman,White,Hispanic or Latino,GA,Medicare,2024-05-27,2024-05-28,Transfer,592.0,,7082.55
+P770956,H04,45,Male,Man,Black or African American,Not Hispanic or Latino,CA,Self-pay,2024-01-19,2024-01-22,Home with home health,496,,
+P955438,H05,79,Male,Man,White,Not Hispanic or Latino,NY,Medicare,2024-08-16,2024-08-19,Home,,N18.6,14746.05
+P803265,H01,65,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2019-05-11,2019-05-15,Home,,J45.909,23934.33
+P490441,H01,34,Female,Woman,Asian,Not Hispanic or Latino,GA,Commercial,2021-04-20,2021-04-21,Home,,S72.001A,6254.09
+P758265,H03,50,Female,Woman,White,Not Hispanic or Latino,TX,,2022-03-01,2022-03-01,Home,,N39.0,6144.87
+P739742,H05,95,Male,Man,White,Not Hispanic or Latino,NY,Medicare,2023-04-24,2023-05-14,Home with home health,,J12.82,56010.39
+P723383,H01,78,Female,Woman,White,Not Hispanic or Latino,OH,Other,2021-07-17,2021-07-23,SNF,,I50.9,38820.03
+P111352,H07,34,Female,Prefer not to say,White,Not Hispanic or Latino,IL,Commercial,2021-08-15,2021-08-18,Home,,T81.4XXA,
+P625497,H03,21,Male,Man,Black or African American,Not Hispanic or Latino,TX,Commercial,2020-12-03,2020-12-09,Home,,N18.6,20950.30
+P285671,H05,43,Male,Man,White,Not Hispanic or Latino,NY,Medicaid,2021-07-10,2021-07-27,Home,,J12.82,130616.70
+P688148,H03,45,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2021-06-26,2021-06-28,Home,,S72.001A,12697.20
+P916740,H02,32,Female,Woman,White,Not Hispanic or Latino,PA,Commercial,2024-06-06,2024-06-09,Home,780.60,,13626.30
+P440365,H09,40,Female,Woman,White,Hispanic or Latino,OH,Commercial,2021-06-17,2021-06-19,Home with home health,,K85.90,16120.61
+P707050,H10,40,Male,Man,White,Not Hispanic or Latino,MA,Commercial,2024-07-02,2024-07-02,Home,560.9,,4153.61
+P160135,H07,40,Female,Woman,White,Not Hispanic or Latino,IL,Commercial,2022-11-20,2022-12-03,Home,,R10.9,41271.44
+P463978,H02,80,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2021-09-22,2021-09-26,SNF,415.19,,20793.54
+P386115,H10,59,Male,Man,White,Not Hispanic or Latino,MA,Medicaid,2020-05-04,2020-05-08,Home,599.0,,30533.85
+P158700,H04,32,Male,Man,White,Not Hispanic or Latino,CA,Commercial,2022-04-06,2022-04-06,Home,584.5,,5709.35
+P349545,H03,39,Female,Woman,Black or African American,Not Hispanic or Latino,TX,Commercial,2025-02-20,2025-02-25,Home,,S72.001A,23083.26
+P856963,H04,60,Male,Man,Some Other Race,Hispanic or Latino,CA,Medicaid,2025-01-28,2025-01-29,Home,493.90,,4939.24
+P632054,H03,71,Female,Woman,Asian,Unknown,TX,Medicare,2019-09-27,2019-09-27,Transfer,,E11.9,6831.36
+P721576,H05,29,Male,Man,White,Not Hispanic or Latino,NY,Self-pay,2021-07-26,2021-07-26,Home,,I48.91,4165.34
+P476815,H06,89,Male,Man,White,Not Hispanic or Latino,FL,Medicare,2023-06-10,2023-06-11,SNF,162.9,,3787.25
+P870877,H04,53,Male,Man,White,Not Hispanic or Latino,CA,Medicare,2021-05-19,2021-05-27,Transfer,491.21,,32750.48
+P969907,H05,67,Male,Man,White,Not Hispanic or Latino,NY,Medicare,2020-11-23,2020-11-26,Transfer,,D64.9,13228.34
+P351246,H02,94,Male,Non-binary,Asian,Not Hispanic or Latino,PA,Commercial,2025-03-30,2025-04-01,Home with home health,578.9,,18360.48
+P436023,H01,60,Male,Man,White,Not Hispanic or Latino,OH,Commercial,2024-01-02,2024-01-03,AMA,,K85.90,12035.83
+P558025,H02,33,Male,Man,White,Not Hispanic or Latino,PA,Commercial,2023-02-18,2023-02-18,Home,707.03,,6198.89
+P949823,H06,42,Female,Woman,White,Not Hispanic or Latino,FL,Commercial,2019-02-03,2019-02-07,Home,250.02,,28395.44
+P762861,H02,19,Female,Woman,Asian,Not Hispanic or Latino,NJ,Commercial,2020-10-31,2020-11-07,Transfer,428.0,,25702.26
+P462225,H01,61,Female,Woman,White,Hispanic or Latino,OH,Commercial,2023-07-04,2023-07-08,Home,,N17.9,32570.77
+P167079,H10,43,Male,Man,White,Not Hispanic or Latino,MA,Commercial,2023-07-03,2023-07-10,Home,174.9,,25019.64
+P354000,H01,53,Male,Man,White,Not Hispanic or Latino,OH,Other,2021-08-17,2021-08-24,Home,,I61.9,28411.00
+P548699,H02,72,Male,Man,Black or African American,Not Hispanic or Latino,CA,Medicare,2023-02-21,2023-02-23,Expired,995.91,,8642.02
+P726517,H03,58,Male,Man,White,Not Hispanic or Latino,TX,Commercial,2024-02-09,2024-02-09,Home,,A41.9,3002.10
+P850113,H01,27,Male,Man,White,,OH,Self-pay,2020-02-29,2020-03-06,Transfer,,M51.26,
+P905785,H05,51,Male,Man,Black or African American,Not Hispanic or Latino,NY,Medicaid,2025-07-07,2025-07-09,Home,,K44.9,7976.40
+P957841,H03,54,Female,Woman,White,Not Hispanic or Latino,TX,Other,2020-04-10,2020-04-13,Transfer,,R07.9,6295.11
+P750072,H02,61,Female,Woman,Black or African American,Not Hispanic or Latino,PA,Commercial,2022-01-18,2022-01-20,Home,403.90,,14267.05
+P251701,H05,67,Female,Woman,White,Not Hispanic or Latino,NY,,2019-12-09,2019-12-13,Home with home health,,E87.1,15580.15
+P952795,H09,51,Male,Man,White,Not Hispanic or Latino,AZ,Self-pay,2021-05-18,2021-05-24,Home,,J96.00,31266.13
+P511272,H05,66,Female,Woman,White,Not Hispanic or Latino,NY,,2019-02-03,2019-02-07,Expired,,N17.9,11109.93
+P958133,H05,81,Male,Man,Some Other Race,Not Hispanic or Latino,NY,Commercial,2023-08-08,2023-08-12,Home with home health,,N17.9,
+P292977,H07,53,Male,Man,White,Not Hispanic or Latino,IL,Medicare,2019-06-10,2019-06-29,Home,,I50.9,79457.78
+P384698,H08,4,Female,Woman,Two or More Races,Hispanic or Latino,GA,Medicaid,2022-04-19,2022-04-26,Home with home health,008.45,,45956.13
+P351756,H03,65,Female,Non-binary,Some Other Race,Hispanic or Latino,TX,Medicare,2019-08-20,2019-08-21,Home,,K56.609,13729.71
+P918924,H02,59,Male,Man,White,Not Hispanic or Latino,PA,Other,2021-05-21,2021-05-24,Home,491.21,,16671.81
+P585870,H02,36,Female,Woman,White,Hispanic or Latino,MD,Commercial,2021-06-15,2021-06-21,AMA,578.9,,
+P936354,H04,57,Male,Man,White,Not Hispanic or Latino,CA,Commercial,2021-07-11,2021-07-12,Home,403.90,,6305.28
+P550257,H09,63,Female,Woman,Black or African American,Hispanic or Latino,AZ,Medicaid,2024-08-31,2024-09-05,Home,,L89.154,20673.76
+P443572,H01,43,Female,Woman,White,Not Hispanic or Latino,OH,Medicaid,2021-01-06,2021-01-13,Home,,E87.1,39721.84
+P241434,H02,83,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2024-05-30,2024-06-05,Home,403.90,,29225.11
+P179124,H01,32,Male,Man,White,Hispanic or Latino,OH,Other,2020-05-11,2020-05-13,Home,,J45.909,11302.40
+P630938,H06,61,Male,Man,White,Not Hispanic or Latino,FL,Medicaid,2019-05-04,2019-05-07,Home,722.10,,27027.82
+P355937,H05,37,Female,Woman,White,Not Hispanic or Latino,CA,Self-pay,2025-08-21,2025-09-03,Home,,I26.99,36235.04
+P995277,H09,67,Male,Man,White,Hispanic or Latino,AZ,Medicare,2024-11-29,2024-12-05,Home with home health,,J44.1,20113.67
+P958538,H10,82,Male,Man,Asian,Not Hispanic or Latino,MA,Other,2024-11-03,2024-11-05,Home,403.90,,13924.25
+P223959,H01,36,Male,Man,Two or More Races,Not Hispanic or Latino,OH,Self-pay,2022-07-20,2022-07-21,Home,,M17.9,12804.48
+P968933,H08,64,Male,Man,White,Not Hispanic or Latino,GA,Other,2023-10-23,2023-10-24,Home,276.51,,7441.01
+P701017,H05,95,Female,Woman,White,Not Hispanic or Latino,NY,Self-pay,2019-01-02,2019-01-08,SNF,,R10.9,27276.30
+P412530,H03,74,Male,Man,White,,TX,Medicare,2023-08-15,2023-08-20,Home with home health,,K59.00,17214.19
+P237719,H01,66,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2025-02-18,2025-02-22,Home,,M17.9,20899.78
+P808905,H05,56,Female,Woman,Some Other Race,Hispanic or Latino,NY,Commercial,2023-01-17,2023-01-20,Home,,I26.99,17777.59
+P956535,H05,55,Female,Woman,White,Not Hispanic or Latino,NY,Commercial,2021-10-10,2021-10-13,Home,,J44.0,27901.16
+P302904,H01,63,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2025-04-02,2025-04-05,Home,,K62.5,
+P139503,H05,58,Male,Man,White,Not Hispanic or Latino,NY,Medicare,2023-09-28,2023-10-02,Home,,E11.9,15348.93
+P471444,H04,0,Female,Woman,Asian,Not Hispanic or Latino,CA,Medicaid,2020-12-27,2020-12-29,Home,415.19,,12305.88
+P398719,H01,50,Female,Woman,White,Hispanic or Latino,OH,Medicaid,2021-04-14,2021-04-17,Home,,D64.9,12486.59
+P473042,H09,41,Male,Man,White,Not Hispanic or Latino,AZ,Commercial,2025-01-26,2025-01-27,Home,,R10.9,8615.70
+P217531,H09,94,Female,Woman,Two or More Races,Not Hispanic or Latino,AZ,Medicare,2022-04-18,2022-04-23,SNF,,E11.9,13152.37
+P292298,H10,68,Male,Man,Black or African American,Not Hispanic or Latino,MA,Medicare,2024-07-18,2024-07-19,Home,780.2,,4608.26
+P356156,H08,59,Male,Man,White,Not Hispanic or Latino,GA,Medicaid,2019-06-27,2019-07-03,SNF,493.90,,19747.16
+P773347,H01,19,Male,Man,White,,OH,Commercial,2019-10-31,2019-11-11,Home,,K44.9,85784.65
+P140219,H03,53,Female,Woman,Native Hawaiian or Other Pacific Islander,Hispanic or Latino,TX,,2025-08-16,2025-08-20,Home,,L89.154,25791.83
+P861961,H02,85,Female,Woman,White,Not Hispanic or Latino,NC,Medicare,2020-05-03,2020-05-15,Home with home health,733.00,,40382.86
+P955887,H06,32,Male,Man,Asian,Not Hispanic or Latino,FL,Medicaid,2020-08-18,2020-08-19,Home,038.9,,11575.75
+P707498,H03,25,Female,Non-binary,White,Not Hispanic or Latino,TX,Medicaid,2023-11-18,2023-11-21,Home,,F32.9,17110.07
+P447721,H03,81,Female,Woman,Some Other Race,,TX,Medicare,2022-01-13,2022-01-15,Home with home health,,J12.82,10735.62
+P738199,H01,65,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Commercial,2022-09-21,2022-09-22,Home,,I21.9,8073.77
+P796455,H01,76,Female,Woman,Some Other Race,Not Hispanic or Latino,OH,Medicare,2020-12-10,2020-12-13,Home,,R55,10742.30
+P996025,H01,62,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2025-03-02,2025-03-05,Home,,K62.5,17033.18
+P278725,H09,54,Female,Woman,Black or African American,Not Hispanic or Latino,AZ,Medicare,2019-10-14,2019-10-17,Home,,E86.0,10707.21
+P304538,H01,61,Male,Man,White,Not Hispanic or Latino,OH,Self-pay,2022-05-20,2022-05-26,Home,,I26.99,23551.39
+P939161,H01,62,Female,Woman,Some Other Race,Hispanic or Latino,OH,Medicaid,2020-06-14,2020-06-15,Home,,I50.9,14565.36
+P665589,H02,50,Female,Woman,Asian,Not Hispanic or Latino,PA,,2024-12-07,2024-12-07,Expired,401.9,,6233.50
+P268521,H03,68,Female,Woman,White,Hispanic or Latino,TX,Commercial,2023-02-12,2023-02-15,Home,,I47.2,11591.98
+P438109,H01,41,Female,Woman,White,Not Hispanic or Latino,OH,Medicaid,2024-07-07,2024-07-09,Home,,I63.9,24299.17
+P478873,H09,24,Female,Woman,White,Not Hispanic or Latino,AZ,Medicaid,2025-04-08,2025-04-11,Home,,K35.80,13835.78
+P317162,H02,7,Female,Woman,White,Not Hispanic or Latino,PA,Commercial,2025-07-01,2025-07-05,Home,272.4,,17779.24
+P626772,H02,41,Female,Woman,White,Not Hispanic or Latino,PA,Medicaid,2020-06-20,2020-06-23,Home,585.6,,5896.60
+P752510,H03,63,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2024-05-19,2024-05-21,Home,,K59.00,9602.51
+P361197,H04,89,Female,Woman,Asian,Not Hispanic or Latino,NY,Medicare,2020-06-29,2020-07-01,Home with home health,995.91,,16125.68
+P358323,H02,22,Female,Woman,White,Not Hispanic or Latino,PA,Other,2019-02-05,2019-02-09,AMA,722.10,,27539.50
+P660390,H08,51,Female,Woman,Black or African American,Not Hispanic or Latino,WI,Self-pay,2019-06-17,2019-06-20,Home,715.90,,13761.53
+P168366,H03,63,Male,Man,Some Other Race,Not Hispanic or Latino,TX,Medicaid,2023-06-25,2023-07-06,Home,,C61,86427.56
+P966088,H08,84,Female,Woman,White,Not Hispanic or Latino,GA,Self-pay,2023-10-30,2023-11-06,Expired,682.6,,37693.44
+P750298,H03,93,Male,Man,White,Not Hispanic or Latino,TX,Medicare,2023-05-04,2023-05-22,Home,,I21.4,74074.82
+P344035,H01,75,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Medicare,2025-08-20,2025-08-21,SNF,,A41.9,7804.88
+P314127,H09,71,Male,Man,Some Other Race,Hispanic or Latino,AZ,,2023-08-27,2023-08-27,Home,,D64.9,4305.22
+P298540,H07,87,Female,Woman,White,Not Hispanic or Latino,IL,Commercial,2022-07-27,2022-07-28,Home,,N18.6,7536.06
+P429532,H05,68,Male,Man,White,Not Hispanic or Latino,NY,Medicare,2019-04-25,2019-04-29,Home,,J45.909,22385.72
+P699365,H04,38,Male,Man,White,Hispanic or Latino,CA,Medicaid,2024-12-17,2024-12-22,Home,276.51,,21896.76
+P279060,H04,71,Female,Woman,White,Not Hispanic or Latino,CA,Medicare,2023-06-06,2023-06-08,Home,162.9,,11439.22
+P169489,H02,47,Female,Woman,White,Not Hispanic or Latino,PA,Self-pay,2021-10-12,2021-10-21,Home,569.3,,112297.23
+P217366,H03,31,Female,Woman,White,Not Hispanic or Latino,TX,Medicaid,2020-05-10,2020-05-10,Home,,A41.9,7164.73
+P916814,H08,55,Female,Woman,White,Hispanic or Latino,NJ,Medicaid,2022-03-05,2022-03-05,Home with home health,585.6,,10792.54
+P222139,H09,28,Male,Man,White,Hispanic or Latino,AZ,Other,2020-03-19,2020-03-25,Home,,D64.9,21879.55
+P166236,H05,25,Male,Man,White,Hispanic or Latino,NY,Medicare,2021-04-24,2021-04-28,SNF,,I25.10,22296.79
+P705731,H03,58,Female,Woman,White,,TX,Commercial,2022-10-12,2022-10-16,Home,,L89.154,31299.84
+P162141,H01,69,Female,Woman,Some Other Race,Not Hispanic or Latino,OH,Medicare,2021-09-20,2021-09-28,Home,,E86.0,19219.67
+P988760,H07,32,Male,Man,Black or African American,Not Hispanic or Latino,CA,Commercial,2020-01-23,2020-01-24,Home,,I21.9,6819.55
+P527401,H08,52,Female,Woman,White,Not Hispanic or Latino,GA,Commercial,2023-02-11,2023-02-16,Home,174.9,,25288.21
+P780774,H06,69,Female,Woman,Some Other Race,Hispanic or Latino,FL,Medicare,2025-10-15,2025-10-16,Home,715.90,,9693.20
+P486554,H09,18,Male,Man,White,Not Hispanic or Latino,AZ,Medicaid,2021-12-23,2021-12-26,Home with home health,,L03.115,13875.93
+P840387,H01,38,Female,Woman,White,Not Hispanic or Latino,OH,Self-pay,2020-10-29,2020-11-05,Home,,C61,35233.57
+P960767,H01,46,Male,Prefer not to say,White,Unknown,OH,Medicaid,2022-07-04,2022-07-04,Home,,I48.91,4377.05
+P690896,H07,49,Female,Woman,White,Not Hispanic or Latino,IL,Other,2019-04-30,2019-05-04,Home with home health,,R07.9,24553.83
+P418225,H10,55,Female,Woman,White,Not Hispanic or Latino,MA,Medicaid,2020-08-01,2020-08-01,Home,403.90,,5221.25
+P647125,H09,32,Female,Woman,Some Other Race,Hispanic or Latino,AZ,Commercial,2024-05-15,2024-05-25,Home,,N17.9,30949.86
+P316970,H02,82,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2021-02-11,2021-02-17,Home,574.20,,33324.71
+P160381,H03,55,Male,Man,Native Hawaiian or Other Pacific Islander,Not Hispanic or Latino,TX,Medicaid,2024-04-06,2024-04-10,Transfer,,M17.9,
+P418797,H04,22,Female,Woman,White,Not Hispanic or Latino,CA,Commercial,2024-01-29,2024-02-09,Home with home health,496,,54717.14
+P720358,H05,87,Male,Man,White,Not Hispanic or Latino,NY,Medicare,2020-12-26,2020-12-28,Expired,,K62.5,12441.25
+P683840,H05,43,Female,Woman,White,Not Hispanic or Latino,NY,Other,2023-04-30,2023-05-02,SNF,,K80.20,11584.80
+P978752,H08,57,Female,Woman,White,Not Hispanic or Latino,GA,Commercial,2023-10-05,2023-10-11,Home,540.9,,31274.95
+P647747,H06,52,Male,Man,Some Other Race,,FL,Commercial,2021-08-01,2021-08-03,Home,250.00,,7720.06
+P635217,H07,38,Female,Woman,White,Not Hispanic or Latino,AZ,Commercial,2022-03-23,2022-03-26,Home,,K92.2,23905.46
+P715700,H01,63,Female,Woman,Asian,Hispanic or Latino,AL,Commercial,2024-02-01,2024-02-06,SNF,,A41.9,21044.15
+P575949,H08,60,Female,Woman,Black or African American,Not Hispanic or Latino,GA,Commercial,2020-03-01,2020-03-06,Home,311,,31310.78
+P413557,H02,64,Male,Man,White,,PA,Medicaid,2022-01-09,2022-01-11,AMA,780.60,,5948.02
+P848623,H02,50,Male,Man,White,Not Hispanic or Latino,PA,Self-pay,2024-03-15,2024-03-20,SNF,008.45,,37540.75
+P582834,H01,38,Male,Man,Two or More Races,Hispanic or Latino,OH,Medicaid,2020-07-06,2020-07-09,Home,,N17.0,17779.89
+P917405,H05,78,Female,Woman,White,Not Hispanic or Latino,NY,,2024-12-23,2024-12-30,Home,,K85.90,
+P637070,H07,60,Female,Woman,White,Not Hispanic or Latino,AZ,Medicaid,2019-07-13,2019-07-13,Home,,K59.00,4635.12
+P490713,H01,69,Male,Man,White,Not Hispanic or Latino,OH,Medicare,2019-12-07,2019-12-10,Home,,N20.0,26536.62
+P644071,H03,82,Female,Woman,White,Hispanic or Latino,TX,Medicare,2024-09-02,2024-09-05,Home with home health,,S72.001A,17110.24
+P980378,H01,51,Female,Woman,White,Not Hispanic or Latino,OH,Medicaid,2024-07-15,2024-07-17,Transfer,,A41.9,5639.58
+P119746,H07,95,Female,Woman,White,Not Hispanic or Latino,IL,Self-pay,2020-01-06,2020-01-15,Expired,,I21.4,39765.85
+P224435,H01,44,Unknown,Non-binary,White,Not Hispanic or Latino,OH,Commercial,2024-06-30,2024-07-01,Home,,I21.9,7987.55
+P495336,H05,20,Male,Man,Black or African American,Not Hispanic or Latino,NY,Medicare,2021-06-20,2021-06-23,Home,,E87.1,14962.40
+P891947,H01,61,Male,Man,White,Not Hispanic or Latino,OH,Medicaid,2020-12-18,2020-12-20,Home,,A04.72,12057.81
+P296936,H02,62,Male,Man,Some Other Race,Hispanic or Latino,PA,Medicaid,2024-02-21,2024-02-23,Home,491.21,,
+P687817,H06,60,Male,Man,Native Hawaiian or Other Pacific Islander,,FL,Self-pay,2023-10-21,2023-11-06,Home,540.9,,66340.38
+P828819,H02,31,Female,Woman,Black or African American,Hispanic or Latino,PA,Medicaid,2021-01-09,2021-01-10,Home,401.9,,11910.45
+P952651,H08,64,Male,Man,White,Not Hispanic or Latino,GA,Commercial,2023-04-16,2023-04-20,Home,491.21,,39653.68
+P334024,H05,73,Male,Man,White,Not Hispanic or Latino,NY,Medicare,2024-12-28,2024-12-29,Transfer,,I48.91,10215.76
+P561182,H01,72,Female,Woman,White,,OH,Commercial,2023-11-17,2023-11-19,Home,,J12.82,11993.30
+P411679,H01,55,Female,Woman,White,Not Hispanic or Latino,OH,Medicaid,2019-07-28,2019-07-29,Home,,K56.609,
+P370160,H03,41,Female,Woman,Black or African American,,TX,Self-pay,2023-04-21,2023-04-30,Home,,M51.26,61902.95
+P930807,H03,64,Female,Woman,White,Not Hispanic or Latino,TX,Other,2024-09-16,2024-09-19,Home,,J44.0,11582.78
+P765116,H05,21,Female,Woman,White,Not Hispanic or Latino,NY,Commercial,2025-06-02,2025-06-12,Home with home health,,K80.20,71186.12
+P354016,H04,56,Female,Woman,White,Not Hispanic or Latino,CA,Medicaid,2023-04-29,2023-05-02,Home,820.8,,9869.41
+P956688,H07,42,Male,Man,Some Other Race,Hispanic or Latino,IL,Commercial,2023-11-27,2023-11-28,Transfer,,D64.9,11346.92
+P861333,H02,42,Male,Man,Black or African American,Not Hispanic or Latino,PA,Medicaid,2021-02-08,2021-02-10,Home with home health,780.2,,12610.24
+P320627,H03,45,Male,Man,White,Hispanic or Latino,TX,Medicare,2020-11-07,2020-11-11,Home,,J44.0,19355.30
+P742468,H01,24,Male,Man,White,Not Hispanic or Latino,OH,Medicaid,2019-04-18,2019-04-23,Home,,N17.0,25932.69
+P202515,H05,48,Male,Man,White,Not Hispanic or Latino,NY,Self-pay,2023-02-24,2023-02-26,Home,,C50.919,12699.16
+P459407,H02,44,Female,Woman,American Indian or Alaska Native,Hispanic or Latino,PA,Medicaid,2025-02-18,2025-02-21,Home,427.31,,35522.08
+P775533,H02,95,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2019-02-25,2019-02-25,Home,415.19,,6324.78
+P361629,H03,56,Male,Man,White,Not Hispanic or Latino,TX,Commercial,2022-11-10,2022-11-15,Home,,J12.82,18239.29
+P938840,H09,49,Female,Woman,White,Not Hispanic or Latino,AZ,Medicaid,2024-03-15,2024-04-04,Home,,E87.1,120539.75
+P183248,H07,48,Male,Man,Asian,Not Hispanic or Latino,NJ,Commercial,2022-03-28,2022-03-30,Home,,K85.90,11325.40
+P428720,H06,26,Female,Woman,Two or More Races,Not Hispanic or Latino,NC,Medicaid,2021-01-23,2021-01-26,Home,272.4,,16304.76
+P848608,H02,71,Male,Man,White,Not Hispanic or Latino,PA,Medicare,2020-01-04,2020-01-08,Transfer,584.5,,17573.13
+P254005,H05,46,Female,Woman,Black or African American,Not Hispanic or Latino,NY,Medicaid,2022-04-14,2022-04-18,Home with home health,,K35.80,18727.34
+P798206,H04,52,Male,Man,Asian,Not Hispanic or Latino,CA,Commercial,2020-10-14,2020-10-15,Home,491.21,,5631.52
+P275820,H06,71,Female,Woman,White,Not Hispanic or Latino,FL,Medicaid,2023-09-24,2023-09-24,Home,780.2,,8542.78
+P112720,H07,41,Female,Woman,White,Hispanic or Latino,IL,Commercial,2021-10-28,2021-10-31,Home,,K44.9,22190.23
+P129648,H06,51,Female,Woman,Black or African American,Not Hispanic or Latino,FL,Commercial,2020-02-08,2020-02-23,Home,998.59,,43782.58
+P276433,H03,87,Male,Man,Asian,Not Hispanic or Latino,TX,Medicare,2020-07-13,2020-07-18,SNF,,J12.82,34559.13
+P595148,H03,25,Male,Man,White,Not Hispanic or Latino,TX,Medicaid,2020-11-03,2020-11-04,Home,,M81.0,6702.04
+P556150,H01,54,Female,Woman,White,Unknown,OH,Commercial,2022-06-16,2022-06-17,Home,,I63.9,5119.05
+P146047,H01,41,Male,Man,Two or More Races,Not Hispanic or Latino,OH,Self-pay,2024-05-28,2024-05-31,Home,,K21.9,18516.69
+P459448,H01,95,Female,Woman,White,Unknown,MD,Medicare,2023-05-26,2023-06-04,Home,,I10,27686.24
+P367641,H08,83,Male,Man,White,Not Hispanic or Latino,GA,Commercial,2024-04-13,2024-04-15,Home,789.00,,17489.49
+P448310,H09,95,Female,Prefer not to say,White,Not Hispanic or Latino,AZ,,2020-07-03,2020-07-04,Home with home health,,E86.0,3713.83
+P225157,H05,62,Female,Woman,White,Not Hispanic or Latino,NY,Commercial,2023-08-28,2023-09-02,Home,,J69.0,22646.28
+P467083,H01,78,Male,Man,White,Not Hispanic or Latino,OH,Medicare,2022-07-29,2022-08-06,Home with home health,,E86.0,32080.48
+P628180,H02,36,Female,Woman,White,Not Hispanic or Latino,FL,Commercial,2019-12-25,2019-12-27,Home,427.31,,15638.75
+P253961,H02,43,Male,Man,White,Not Hispanic or Latino,PA,Self-pay,2023-02-17,2023-02-18,Home,507.0,,5925.48
+P682645,H08,69,Female,Woman,White,Not Hispanic or Latino,GA,Medicare,2022-11-12,2022-11-20,Transfer,008.45,,26438.98
+P809587,H02,65,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2025-06-13,2025-06-16,Home with home health,415.19,,15725.41
+P288780,H01,95,Male,Man,White,Not Hispanic or Latino,OH,Medicare,2024-06-19,2024-06-21,Home with home health,,D64.9,8603.15
+P743424,H08,59,Female,Woman,White,Not Hispanic or Latino,GA,Medicaid,2023-03-08,2023-03-10,Home with home health,008.45,,10916.75
+P106150,H03,38,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2024-04-08,2024-04-11,SNF,,K92.2,18115.97
+P236216,H02,44,Female,Woman,White,Hispanic or Latino,NJ,Commercial,2022-11-27,2022-12-03,Home,507.0,,13855.34
+P958156,H01,95,Male,Man,White,Not Hispanic or Latino,OH,Other,2020-11-08,2020-11-22,Home,,J44.1,133023.82
+P164785,H05,92,Male,Man,Black or African American,Not Hispanic or Latino,NY,Medicare,2023-12-28,2024-01-05,Transfer,,A41.9,49538.99
+P435632,H04,4,Male,Man,White,Not Hispanic or Latino,CA,Commercial,2019-08-05,2019-08-07,Home,008.45,,13083.67
+P777507,H04,16,Female,Woman,White,Not Hispanic or Latino,CA,Commercial,2021-11-12,2021-11-16,Home,722.10,,15907.44
+P397579,H02,64,Female,Woman,White,Not Hispanic or Latino,PA,Medicaid,2022-08-29,2022-08-30,Home,491.21,,9458.25
+P578319,H03,42,Female,Woman,Asian,Not Hispanic or Latino,TX,Medicaid,2025-02-15,2025-02-15,Home,,K62.5,10964.77
+P865431,H05,50,Female,Woman,White,Not Hispanic or Latino,NY,Medicaid,2024-04-29,2024-05-07,Home with home health,,C50.919,27460.49
+P949238,H04,71,Female,Woman,White,Not Hispanic or Latino,CA,Medicare,2022-01-24,2022-01-26,Home with home health,995.91,,10780.29
+P956339,H06,45,Female,Woman,White,,FL,Commercial,2022-07-05,2022-07-06,Home with home health,434.91,,
+P312871,H08,76,Male,Man,White,,GA,Medicare,2024-10-25,2024-10-27,Home,780.60,,13529.90
+P424490,H01,72,Male,Man,White,Not Hispanic or Latino,OH,Medicare,2020-01-04,2020-01-10,SNF,,J69.0,38269.89
+P826284,H02,59,Male,Man,White,Not Hispanic or Latino,PA,Self-pay,2020-02-19,2020-02-22,Home,428.0,,14954.77
+P725683,H07,21,Female,Woman,White,Not Hispanic or Latino,IL,Medicaid,2021-03-30,2021-04-02,Home,,N17.9,20108.86
+P494231,H03,56,Female,Woman,Some Other Race,Hispanic or Latino,TX,Commercial,2021-11-21,2021-11-25,Home,,K44.9,17622.04
+P341015,H07,59,Male,Man,White,,IL,Commercial,2020-12-22,2020-12-22,Home,,F32.9,5619.90
+P631984,H02,51,Male,Man,White,Not Hispanic or Latino,PA,Medicaid,2020-04-19,2020-04-23,Home,486,,26831.25
+P299007,H10,48,Female,Non-binary,White,Not Hispanic or Latino,OH,Commercial,2024-05-05,2024-05-07,Home,715.90,,
+P148989,H02,86,Male,Man,White,Not Hispanic or Latino,PA,Medicare,2019-09-04,2019-09-06,Home,431,,12263.94
+P981008,H04,32,Female,Woman,White,Not Hispanic or Latino,CA,Medicare,2019-10-16,2019-10-18,Transfer,276.1,,8746.62
+P267499,H05,51,Male,Man,White,Not Hispanic or Latino,NY,Self-pay,2023-10-30,2023-11-02,Home with home health,,I61.9,12953.91
+P457403,H10,61,Male,Man,White,Not Hispanic or Latino,MA,Commercial,2019-12-29,2020-01-04,Home,722.10,,31226.31
+P573642,H10,57,Male,Man,White,Hispanic or Latino,MA,Commercial,2024-02-16,2024-02-18,Home,564.00,,11122.57
+P831980,H03,95,Male,Man,Asian,,TX,,2022-02-11,2022-02-13,Home,,M81.0,15284.50
+P925317,H02,56,Female,Woman,White,Unknown,WI,Medicaid,2022-04-10,2022-04-15,Home,427.1,,18740.09
+P919945,H01,45,Male,Man,Black or African American,Not Hispanic or Latino,OH,Commercial,2025-02-15,2025-02-17,Home,,I21.9,11141.30
+P828818,H09,86,Female,Woman,White,Not Hispanic or Latino,AZ,Medicaid,2019-08-18,2019-08-19,Home with home health,,K62.5,10012.87
+P126452,H08,37,Female,Woman,White,Unknown,NJ,Commercial,2020-05-05,2020-05-08,Home with home health,780.2,,23823.46
+P318523,H07,59,Male,Man,Some Other Race,Hispanic or Latino,IL,Commercial,2020-05-06,2020-05-09,Home,,I61.9,34566.97
+P924259,H05,67,Male,Man,White,,NY,Medicaid,2019-11-19,2019-11-20,SNF,,S72.001A,
+P490025,H09,84,Female,Woman,White,Not Hispanic or Latino,AZ,Medicare,2021-04-20,2021-04-20,Home,,M17.9,3642.81
+P224430,H02,82,Female,Woman,Some Other Race,Not Hispanic or Latino,PA,Medicare,2020-04-29,2020-05-01,Home,998.59,,8141.78
+P946095,H01,44,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2024-10-06,2024-10-07,Home,,T81.4XXA,12362.61
+P120472,H01,72,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2019-03-09,2019-03-16,Home with home health,,N17.0,19276.97
+P525839,H04,79,Male,Man,Black or African American,Not Hispanic or Latino,CA,Medicare,2024-01-31,2024-02-02,Home,577.0,,9756.50
+P343916,H04,14,Male,Man,White,Hispanic or Latino,CA,Medicaid,2022-06-12,2022-06-14,Home,569.3,,16719.82
+P739669,H03,33,Male,Man,Two or More Races,Hispanic or Latino,TX,Medicaid,2024-11-18,2024-11-22,Home,,C61,21293.70
+P380270,H01,50,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2024-01-24,2024-01-25,Home with home health,,K21.9,4877.75
+P673827,H02,60,Male,Man,White,Not Hispanic or Latino,PA,Commercial,2020-02-02,2020-02-07,Home,507.0,,69553.57
+P576334,H03,64,Male,Man,White,Not Hispanic or Latino,TX,Commercial,2020-08-25,2020-09-01,Home,,J44.1,56069.03
+P583305,H01,28,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2022-08-03,2022-08-09,Home,,A41.9,9161.18
+P915195,H04,41,Female,Woman,White,Not Hispanic or Latino,CA,Other,2019-01-10,2019-01-16,Home,414.01,,49269.56
+P551531,H02,57,Female,Woman,Some Other Race,Hispanic or Latino,PA,Commercial,2020-01-10,2020-01-11,Home,560.9,,11988.19
+P398959,H05,91,Male,Man,White,Hispanic or Latino,NY,Medicare,2025-07-08,2025-07-11,Home,,M51.26,8475.86
+P758430,H06,74,Female,Woman,Asian,Not Hispanic or Latino,FL,Medicare,2021-05-24,2021-05-28,Home,496,,13864.91
+P898494,H07,67,Female,Woman,Black or African American,Not Hispanic or Latino,IL,Medicare,2021-09-02,2021-09-04,Home with home health,,M81.0,
+P153834,H02,74,Male,Man,White,Hispanic or Latino,PA,Other,2021-11-19,2021-11-25,SNF,682.6,,20011.63
+P222352,H10,46,Male,Man,White,Not Hispanic or Latino,MA,Self-pay,2020-10-07,2020-10-12,Home,564.00,,52218.94
+P265645,H03,60,Female,Woman,White,Not Hispanic or Latino,TX,Medicaid,2020-10-14,2020-10-18,Home,,J69.0,
+P280213,H03,50,Female,Prefer not to say,American Indian or Alaska Native,Not Hispanic or Latino,TX,Medicaid,2021-07-08,2021-07-11,Home,,K44.9,22557.62
+P435532,H06,68,Female,Woman,White,Not Hispanic or Latino,FL,Medicare,2022-12-01,2022-12-05,Home,715.90,,
+P747203,H07,67,Male,Man,Some Other Race,Hispanic or Latino,IL,,2021-03-06,2021-03-08,AMA,,J44.0,
+P994974,H07,68,Male,Man,White,Not Hispanic or Latino,IL,Medicare,2022-05-18,2022-05-19,Home,,R07.9,8904.51
+P476610,H05,79,Male,Man,Black or African American,Not Hispanic or Latino,NY,Medicare,2023-12-05,2023-12-09,Home,,I61.9,24965.12
+P608729,H04,0,Female,Woman,White,Not Hispanic or Latino,CO,Other,2025-04-21,2025-04-26,Home,285.9,,32802.88
+P294103,H02,55,Female,Woman,Two or More Races,Hispanic or Latino,PA,Commercial,2022-03-20,2022-03-24,Home,185,,15450.51
+P583514,H10,55,Male,Man,White,Not Hispanic or Latino,MA,Other,2025-10-03,2025-10-03,Home,162.9,,7709.19
+P644597,H08,86,Male,Man,Asian,Not Hispanic or Latino,GA,Medicare,2019-01-31,2019-02-02,Home,584.5,,10226.00
+P124205,H05,50,Male,Man,White,Not Hispanic or Latino,NY,Medicaid,2021-04-20,2021-04-24,Home,,K92.2,22281.41
+P717736,H01,24,Female,Prefer not to say,Two or More Races,Hispanic or Latino,CA,Commercial,2019-08-25,2019-08-26,Home,,M81.0,9440.38
+P923812,H07,51,Male,Man,White,Not Hispanic or Latino,IL,Medicaid,2022-04-14,2022-04-19,Home,,J44.1,29721.92
+P450922,H09,64,Female,Woman,White,Not Hispanic or Latino,AZ,Medicare,2019-01-12,2019-01-18,Home,,K44.9,27228.90
+P232987,H02,66,Male,Man,White,Not Hispanic or Latino,PA,Medicare,2020-04-02,2020-04-03,Home,414.01,,9499.95
+P803320,H06,37,Female,Woman,Black or African American,Not Hispanic or Latino,FL,Commercial,2025-02-08,2025-02-12,Home,008.45,,28643.49
+P931602,H09,56,Female,Woman,Black or African American,Not Hispanic or Latino,AZ,Other,2022-02-07,2022-02-09,Transfer,,I63.9,18392.62
+P710780,H01,31,Female,Woman,Asian,Not Hispanic or Latino,OH,Commercial,2020-12-28,2020-12-31,SNF,,R50.9,25754.67
+P748624,H03,57,Male,Man,White,Not Hispanic or Latino,TX,Commercial,2023-09-29,2023-10-03,Home,,N18.6,20184.64
+P755941,H03,73,Female,Woman,Some Other Race,Hispanic or Latino,WI,Medicare,2022-05-14,2022-05-18,Home,,I25.10,16292.78
+P557272,H03,61,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2020-08-10,2020-08-10,Home,,K80.20,7425.04
+P853341,H01,71,Female,Woman,Some Other Race,Hispanic or Latino,OH,Medicaid,2019-01-03,2019-01-06,Home with home health,,I10,18931.32
+P720731,H04,74,Male,Man,Some Other Race,Hispanic or Latino,CA,Commercial,2021-01-30,2021-01-31,Home,574.20,,5174.85
+P645139,H07,74,Female,Woman,White,Not Hispanic or Latino,IL,Medicare,2022-10-17,2022-10-22,Home,,J96.00,27023.32
+P771650,H02,95,Female,Woman,Black or African American,Hispanic or Latino,PA,Medicare,2020-01-28,2020-02-06,Home with home health,162.9,,61390.85
+P199573,H01,19,Female,Woman,White,Not Hispanic or Latino,OH,Self-pay,2024-11-21,2024-11-27,Home,,I63.9,70808.97
+P305041,H06,69,Male,Man,Two or More Races,Not Hispanic or Latino,FL,Commercial,2023-10-12,2023-10-17,Home,427.1,,13450.78
+P748350,H10,56,Male,Man,White,Not Hispanic or Latino,PA,Commercial,2022-12-14,2022-12-20,SNF,998.59,,25027.60
+P984102,H04,62,Male,Man,Black or African American,Not Hispanic or Latino,CA,Commercial,2021-01-03,2021-01-15,Home,584.9,,31825.84
+P612717,H10,69,Female,Woman,White,Not Hispanic or Latino,MA,Medicare,2019-07-28,2019-07-31,Home,592.0,,18913.13
+P304247,H06,61,Female,Woman,White,Not Hispanic or Latino,FL,Other,2025-04-29,2025-04-30,Home,715.90,,11785.42
+P844598,H06,95,Male,Man,Some Other Race,Hispanic or Latino,MD,Medicaid,2023-12-28,2023-12-29,Home,008.45,,8436.91
+P932722,H03,72,Female,Woman,Two or More Races,Not Hispanic or Latino,TX,,2024-12-21,2024-12-23,Home with home health,,K85.90,14257.78
+P305488,H05,34,Male,Man,White,Not Hispanic or Latino,NY,Commercial,2019-01-19,2019-01-22,Home,,M17.9,11224.51
+P493225,H04,56,Male,Man,White,Not Hispanic or Latino,CA,Self-pay,2024-09-26,2024-09-29,Home,820.8,,
+P330818,H10,49,Male,Man,Asian,Not Hispanic or Latino,MA,Commercial,2019-03-01,2019-03-03,Home,786.50,,
+P282102,H05,87,Female,Woman,White,Hispanic or Latino,NY,Medicare,2019-09-20,2019-09-24,Home with home health,,I63.9,16366.92
+P465161,H09,70,Male,Man,Asian,Not Hispanic or Latino,AZ,Medicare,2022-10-27,2022-10-28,Expired,,I12.9,11634.79
+P923137,H06,64,Male,Man,White,Not Hispanic or Latino,FL,Commercial,2025-09-05,2025-09-18,Home with home health,592.0,,28634.57
+P541889,H03,24,Female,Woman,White,Not Hispanic or Latino,TX,Medicare,2021-03-12,2021-03-15,Home,,E87.1,16499.69
+P381293,H05,20,Male,Man,White,Unknown,CO,Commercial,2025-03-27,2025-03-30,Home,,K85.90,15528.82
+P464904,H03,39,Male,Man,Asian,Not Hispanic or Latino,TX,Commercial,2019-10-13,2019-10-15,Home,,M17.9,8734.17
+P290837,H03,75,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2019-07-21,2019-07-22,Home,,K59.00,10781.56
+P956624,H02,57,Female,Woman,Some Other Race,Hispanic or Latino,PA,Medicaid,2022-02-10,2022-02-12,Home,722.10,,14258.18
+P464623,H01,0,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Commercial,2021-10-12,2021-10-28,Home,,N18.6,50309.93
+P661834,H04,45,Female,Woman,White,Not Hispanic or Latino,GA,Medicare,2024-04-21,2024-04-23,Home,518.81,,8109.66
+P453293,H04,39,Female,Woman,White,Hispanic or Latino,CA,Medicaid,2025-06-04,2025-06-08,Home,162.9,,20915.62
+P551645,H01,95,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2019-05-30,2019-05-30,Home,,J18.9,4536.22
+P112535,H04,57,Female,Woman,White,Not Hispanic or Latino,FL,Commercial,2024-05-12,2024-05-14,Expired,276.1,,15092.41
+P450192,H05,54,Female,Woman,White,Not Hispanic or Latino,NY,Medicaid,2024-02-20,2024-02-20,Transfer,,N20.0,12427.83
+P160992,H07,59,Female,Woman,White,Not Hispanic or Latino,IL,Commercial,2023-09-15,2023-09-17,Home,,K92.2,
+P801977,H06,50,Male,Man,White,Not Hispanic or Latino,FL,Commercial,2019-10-20,2019-10-27,Home,491.21,,30350.84
+P163126,H02,70,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2020-10-30,2020-11-02,Home,998.59,,31480.27
+P270050,H07,50,Female,Woman,Black or African American,Not Hispanic or Latino,IL,Medicaid,2023-11-02,2023-11-04,Transfer,,K56.609,14135.90
+P525290,H02,62,Female,Woman,White,Not Hispanic or Latino,PA,Self-pay,2021-08-15,2021-08-19,Home,733.00,,17226.45
+P808085,H03,35,Female,Woman,White,Not Hispanic or Latino,TX,Medicaid,2022-10-12,2022-10-13,Home,,K92.2,5006.74
+P678270,H03,22,Male,Man,White,Not Hispanic or Latino,TX,Commercial,2023-08-16,2023-08-19,Home,,S72.001A,32198.21
+P632154,H10,26,Female,Woman,Some Other Race,Hispanic or Latino,MA,Commercial,2021-01-21,2021-01-25,Home,574.20,,19592.22
+P169812,H01,67,Female,Woman,Some Other Race,Hispanic or Latino,OH,Medicaid,2022-01-06,2022-01-07,Home,,S72.001A,9725.86
+P718188,H01,69,Male,Man,White,Not Hispanic or Latino,NJ,,2024-02-14,2024-02-14,SNF,,A41.9,
+P567942,H04,47,Male,Man,White,Not Hispanic or Latino,CA,Medicaid,2022-10-29,2022-10-31,Home,162.9,,17335.94
+P888576,H06,71,Male,Man,White,Hispanic or Latino,FL,Medicare,2023-12-19,2023-12-22,Expired,786.50,,15018.39
+P126202,H09,81,Male,Man,White,Not Hispanic or Latino,AZ,Commercial,2024-01-25,2024-01-31,Expired,,D64.9,19711.83
+P296077,H09,55,Female,Woman,White,Not Hispanic or Latino,AZ,Medicaid,2021-04-27,2021-04-28,Home,,N18.6,5145.35
+P857944,H02,70,Female,Woman,White,Not Hispanic or Latino,AL,Medicare,2020-05-04,2020-05-07,Home,276.51,,17703.74
+P462400,H03,38,Female,Woman,Asian,Not Hispanic or Latino,TX,Commercial,2023-06-28,2023-06-28,Home,,K35.80,5849.31
+P125484,H01,22,Female,Woman,White,Not Hispanic or Latino,OH,Self-pay,2021-01-12,2021-01-14,Home,,R55,15111.09
+P640266,H02,36,Male,Man,Asian,Not Hispanic or Latino,PA,Medicaid,2020-04-14,2020-04-17,Transfer,789.00,,15388.78
+P453039,H05,60,Male,Man,White,Not Hispanic or Latino,NY,Self-pay,2020-10-20,2020-10-22,Home,,L89.154,14462.32
+P619508,H03,7,Female,Woman,Black or African American,Not Hispanic or Latino,TX,Commercial,2022-07-09,2022-07-10,Home,,E86.0,7675.79
+P103368,H10,80,Female,Woman,American Indian or Alaska Native,Hispanic or Latino,MA,Medicaid,2022-09-22,2022-09-29,Home with home health,250.02,,30362.75
+P611144,H02,84,Male,Man,White,Not Hispanic or Latino,PA,Medicare,2024-08-30,2024-08-31,Home,540.9,,6810.69
+P275614,H10,80,Female,Woman,White,Not Hispanic or Latino,MA,Commercial,2025-04-16,2025-04-20,Home,569.3,,17310.61
+P559618,H05,69,Female,Woman,Black or African American,,NY,Medicare,2019-02-14,2019-02-19,SNF,,E11.9,10985.57
+P114337,H02,64,Unknown,Woman,White,Not Hispanic or Latino,PA,,2024-03-01,2024-03-02,Home,174.9,,4991.95
+P498480,H05,63,Male,Man,White,Not Hispanic or Latino,NY,Commercial,2021-10-22,2021-10-23,Home,,N17.9,12785.79
+P648850,H07,35,Female,Woman,Black or African American,Not Hispanic or Latino,IL,Medicare,2023-10-20,2023-10-21,Home,,F32.9,6573.74
+P594991,H01,48,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2022-04-18,2022-04-20,Transfer,,I61.9,19872.30
+P475785,H02,46,Female,Woman,White,Not Hispanic or Latino,PA,Commercial,2021-06-15,2021-06-18,Home,780.60,,12680.68
+P586847,H01,76,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2022-12-01,2022-12-14,Home with home health,,K85.90,36703.58
+P480013,H01,71,Male,Man,White,Not Hispanic or Latino,OH,Medicare,2025-01-25,2025-02-01,Transfer,,I61.9,23472.93
+P412939,H05,88,Male,Man,Asian,Not Hispanic or Latino,NY,Commercial,2022-08-11,2022-08-16,Home with home health,,K80.20,40191.06
+P892502,H01,21,Male,Man,White,Hispanic or Latino,OH,Commercial,2025-09-23,2025-09-29,Home,,J44.0,27055.69
+P813901,H05,52,Female,Woman,White,Not Hispanic or Latino,NY,Commercial,2019-11-20,2019-11-20,Home,,I63.9,5603.89
+P871803,H04,67,Male,Man,Some Other Race,Not Hispanic or Latino,CA,Medicare,2022-07-15,2022-07-16,Home,276.51,,7511.64
+P520215,H05,55,Female,Non-binary,White,Not Hispanic or Latino,NY,Medicaid,2020-08-02,2020-08-08,Home with home health,,N39.0,53541.60
+P924591,H08,51,Male,Man,White,Not Hispanic or Latino,GA,Medicaid,2024-05-11,2024-05-14,Home,820.8,,23965.96
+P316761,H06,35,Female,Woman,Some Other Race,Hispanic or Latino,CO,Self-pay,2021-05-23,2021-06-02,Home,491.21,,61236.19
+P111232,H03,49,Female,Woman,White,Not Hispanic or Latino,TX,Medicaid,2021-09-18,2021-09-21,Home,,I25.10,17465.27
+P845798,H05,56,Female,Woman,Black or African American,Not Hispanic or Latino,NY,Medicare,2024-09-12,2024-09-14,Home,,L89.154,7360.15
+P976506,H03,55,Female,Woman,Black or African American,Not Hispanic or Latino,TX,Other,2024-06-17,2024-06-19,Transfer,,L89.154,10517.76
+P713980,H01,59,Female,Woman,White,Hispanic or Latino,OH,Commercial,2022-12-28,2022-12-29,Home,,J12.82,5034.71
+P316319,H06,43,Female,Non-binary,White,Not Hispanic or Latino,FL,Medicaid,2023-11-26,2023-12-01,Transfer,410.91,,19797.48
+P317597,H03,65,Male,Man,Some Other Race,Hispanic or Latino,TX,Commercial,2025-10-08,2025-10-11,Home with home health,,A41.9,9920.39
+P353669,H02,30,Male,Man,White,Not Hispanic or Latino,PA,Medicaid,2022-08-06,2022-08-10,Home,434.91,,25786.23
+P958040,H04,63,Male,Man,White,Not Hispanic or Latino,CA,Commercial,2020-03-04,2020-03-06,Home with home health,564.00,,12681.81
+P687646,H05,87,Female,Woman,Some Other Race,Hispanic or Latino,NY,Medicare,2022-09-16,2022-09-16,Home with home health,,C50.919,4526.42
+P779817,H05,68,Male,Man,Black or African American,Not Hispanic or Latino,NY,Medicare,2024-07-04,2024-07-07,Home,,I10,16161.23
+P465588,H02,70,Male,Man,White,Not Hispanic or Latino,PA,Self-pay,2023-02-01,2023-02-02,Home with home health,410.71,,5261.89
+P601648,H01,59,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2020-03-11,2020-03-18,AMA,,K56.609,37605.02
+P974325,H08,60,Male,Man,White,Not Hispanic or Latino,GA,Medicaid,2024-10-24,2024-10-29,Home,780.60,,29282.51
+P725474,H04,21,Female,Woman,White,Not Hispanic or Latino,CA,Commercial,2021-05-31,2021-06-01,Home,401.9,,5277.81
+P935203,H07,19,Male,Man,Black or African American,Not Hispanic or Latino,IL,Medicaid,2021-01-04,2021-01-09,Home,,K44.9,28764.74
+P559217,H02,69,Male,Man,White,Hispanic or Latino,PA,,2022-04-08,2022-04-11,Home,414.01,,13964.35
+P754910,H01,78,Male,Man,White,Not Hispanic or Latino,OH,Medicare,2023-08-25,2023-08-25,Home,,E11.65,6669.46
+P603666,H08,54,Female,Woman,Black or African American,,GA,Commercial,2019-11-05,2019-11-05,Home with home health,707.03,,4343.31
+P459021,H01,95,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2020-12-08,2020-12-11,Home,,C50.919,13831.41
+P530627,H10,29,Female,Woman,White,,MA,Medicaid,2024-12-11,2024-12-13,Transfer,715.90,,14493.38
+P237747,H05,56,Male,Man,White,Not Hispanic or Latino,NY,Medicaid,2024-10-03,2024-10-12,Home,,J44.0,58730.29
+P666607,H01,20,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2023-01-29,2023-01-31,Home,,A41.9,9551.70
+P200180,H04,39,Female,Woman,White,Not Hispanic or Latino,CA,Commercial,2019-04-22,2019-05-01,Home,285.9,,38905.78
+P128748,H06,54,Female,Woman,White,Not Hispanic or Latino,FL,Commercial,2019-11-19,2019-11-21,Home,553.3,,12690.54
+P658273,H04,27,Female,Woman,White,Not Hispanic or Latino,CA,Self-pay,2022-01-19,2022-01-22,Home,272.4,,8067.58
+P670337,H02,0,Female,Woman,White,Not Hispanic or Latino,PA,Commercial,2023-02-27,2023-03-01,Home with home health,789.00,,13878.33
+P616869,H01,95,Male,Man,White,Hispanic or Latino,OH,Medicare,2020-09-15,2020-09-21,Home,,K92.2,17980.29
+P789020,H02,71,Female,Woman,Black or African American,Not Hispanic or Latino,PA,Medicare,2021-01-04,2021-01-07,Home,311,,15331.73
+P538814,H10,66,Male,Man,White,Not Hispanic or Latino,MA,Medicare,2020-12-19,2020-12-25,AMA,428.0,,26696.45
+P658256,H07,34,Male,Man,Black or African American,Not Hispanic or Latino,IL,Medicaid,2019-04-09,2019-04-10,Home,,N17.9,7023.33
+P424227,H02,59,Male,Man,White,Not Hispanic or Latino,MI,Medicaid,2024-01-13,2024-01-16,Home,518.81,,13765.60
+P930876,H07,83,Male,Man,White,Not Hispanic or Latino,IL,Medicare,2025-10-25,2025-10-25,SNF,,I48.91,3544.20
+P268003,H01,51,Female,Woman,White,Not Hispanic or Latino,OH,Medicaid,2023-04-24,2023-04-25,Home,,I26.99,6295.70
+P285469,H02,95,Female,Woman,White,Not Hispanic or Latino,PA,Other,2023-02-12,2023-02-12,SNF,486,,4020.01
+P708863,H07,60,Female,Woman,White,Hispanic or Latino,IL,Commercial,2020-05-27,2020-05-28,Home,,R55,5986.53
+P557721,H10,36,Male,Man,White,Not Hispanic or Latino,MA,Commercial,2023-11-05,2023-11-13,Home,493.90,,28536.33
+P260785,H03,31,Male,Man,Black or African American,Not Hispanic or Latino,TX,Self-pay,2022-08-31,2022-09-05,Home,,J44.1,18919.45
+P564720,H05,34,Female,Woman,Some Other Race,Not Hispanic or Latino,NY,Other,2020-11-20,2020-11-23,Home,,K21.9,21382.43
+P494733,H07,49,Female,Woman,Black or African American,Not Hispanic or Latino,IL,Medicaid,2023-08-04,2023-08-06,Home,,N39.0,16930.60
+P491997,H03,55,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2020-03-14,2020-03-24,Home,,E78.5,45235.94
+P911090,H01,68,Male,Man,Black or African American,Not Hispanic or Latino,OH,Commercial,2019-04-22,2019-04-29,AMA,,J96.00,26729.65
+P137641,H08,24,Female,Woman,Two or More Races,Not Hispanic or Latino,GA,Self-pay,2019-11-09,2019-11-18,Home,707.03,,45032.95
+P783094,H07,39,Male,Man,Black or African American,Not Hispanic or Latino,IL,Self-pay,2023-01-29,2023-02-02,Home with home health,,E78.5,10463.51
+P369885,H08,58,Male,Man,White,Not Hispanic or Latino,GA,Commercial,2019-09-22,2019-09-25,Home,780.2,,14239.74
+P768550,H03,23,Female,Woman,White,Not Hispanic or Latino,TX,Medicaid,2024-12-17,2024-12-18,Home,,I21.4,5652.09
+P610324,H04,29,Male,Man,White,Hispanic or Latino,CA,Medicaid,2021-08-25,2021-08-25,Expired,185,,5581.01
+P852211,H03,63,Male,Man,White,Not Hispanic or Latino,TX,Other,2021-08-11,2021-08-13,Home,,J12.82,8022.91
+P591674,H04,33,Female,Woman,Some Other Race,Hispanic or Latino,CA,Medicaid,2024-07-11,2024-07-22,Home,530.81,,31030.06
+P394649,H08,50,Male,Man,Black or African American,Not Hispanic or Latino,GA,Commercial,2023-10-06,2023-10-09,Home,789.00,,11677.19
+P425337,H01,60,Male,Man,Black or African American,Not Hispanic or Latino,OH,Commercial,2023-12-12,2023-12-14,Home,,J44.0,11407.89
+P793284,H08,57,Female,Woman,Black or African American,Not Hispanic or Latino,CA,Self-pay,2023-09-21,2023-09-23,Home,185,,4667.66
+P866770,H03,64,Male,Man,White,Not Hispanic or Latino,TX,Medicaid,2024-02-07,2024-02-09,Home,,I21.4,12385.31
+P314684,H07,58,Male,Man,White,Not Hispanic or Latino,IL,Other,2025-02-19,2025-02-20,Home,,A04.72,
+P902240,H10,21,Female,Woman,Two or More Races,Not Hispanic or Latino,MA,Medicaid,2021-05-22,2021-05-26,Transfer,496,,19320.40
+P565339,H01,47,Male,Man,White,Not Hispanic or Latino,OH,,2021-10-04,2021-10-06,Home,,K92.2,15363.21
+P768519,H01,45,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2023-09-20,2023-09-23,Home,,L03.115,11877.12
+P985390,H07,85,Female,Woman,Black or African American,Not Hispanic or Latino,IL,Self-pay,2023-09-26,2023-10-01,SNF,,J44.0,21307.56
+P968166,H01,39,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Commercial,2022-01-10,2022-01-12,Home,,E78.5,14250.60
+P573597,H01,26,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Commercial,2024-07-22,2024-07-29,Home,,E87.1,26883.00
+P919878,H05,63,Female,Woman,White,Unknown,NY,Medicaid,2020-07-24,2020-07-26,Home,,E11.9,12767.75
+P190586,H03,76,Male,Man,White,Not Hispanic or Latino,TX,Medicare,2023-11-12,2023-11-14,Home,,I21.4,11329.68
+P389870,H05,72,Female,Woman,White,Hispanic or Latino,NY,Medicare,2023-07-16,2023-07-20,Home with home health,,M51.26,25703.05
+P569597,H01,95,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2019-06-24,2019-06-29,Home with home health,,K59.00,28241.00
+P220667,H04,91,Male,Man,White,Not Hispanic or Latino,CA,Commercial,2020-11-08,2020-11-10,Home with home health,584.9,,5818.06
+P194714,H05,95,Female,Woman,White,Not Hispanic or Latino,NY,Medicare,2022-06-21,2022-06-25,Expired,,J45.909,28025.88
+P849522,H06,40,Male,Man,Asian,Not Hispanic or Latino,FL,Other,2022-05-20,2022-05-26,Home,592.0,,36132.60
+P202104,H02,80,Male,Man,White,Not Hispanic or Latino,PA,Medicare,2022-12-03,2022-12-07,Home,707.03,,55872.86
+P614543,H04,88,Male,Man,Some Other Race,Hispanic or Latino,CA,Commercial,2019-08-22,2019-08-23,Home,707.03,,11193.40
+P280204,H01,14,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2023-04-08,2023-04-10,Home with home health,,K92.2,16007.43
+P960076,H06,56,Female,Woman,White,Not Hispanic or Latino,FL,Commercial,2023-08-19,2023-08-30,SNF,592.0,,72515.54
+P720133,H01,62,Female,Woman,Some Other Race,Hispanic or Latino,OH,Medicare,2024-11-08,2024-11-09,Transfer,,I10,6953.17
+P295216,H02,49,Male,Man,White,Hispanic or Latino,MA,Medicaid,2019-03-26,2019-03-29,Home,311,,13538.73
+P216525,H07,39,Female,Woman,Some Other Race,,IL,Commercial,2021-09-10,2021-09-13,SNF,,N20.0,29321.53
+P473815,H01,72,Male,Man,White,Not Hispanic or Latino,OH,Medicare,2020-02-01,2020-02-04,Home,,R07.9,22916.89
+P771372,H06,44,Male,Man,White,Not Hispanic or Latino,FL,Self-pay,2024-10-17,2024-10-21,Home,682.6,,17289.65
+P256670,H06,7,Male,Man,Two or More Races,Not Hispanic or Latino,FL,Medicaid,2024-02-09,2024-02-11,Home,507.0,,15217.63
+P940225,H01,95,Female,Woman,White,Not Hispanic or Latino,OH,Medicare,2020-05-23,2020-05-27,SNF,,K21.9,17459.61
+P852721,H02,23,Female,Woman,White,Hispanic or Latino,PA,Commercial,2024-10-28,2024-11-02,Transfer,434.91,,34676.72
+P808642,H07,95,Female,Woman,White,Hispanic or Latino,IL,Self-pay,2023-05-18,2023-05-25,Home,,I25.10,32335.62
+P938521,H03,69,Male,Man,Asian,Not Hispanic or Latino,TX,,2024-03-03,2024-03-03,Home with home health,,R55,
+P892380,H07,90,Female,Woman,White,Not Hispanic or Latino,IL,Medicare,2023-08-04,2023-08-06,Transfer,,M81.0,20989.03
+P444100,H06,52,Female,Woman,White,Not Hispanic or Latino,FL,Self-pay,2022-07-16,2022-07-18,Home,285.9,,8853.12
+P368444,H07,62,Male,Man,White,Not Hispanic or Latino,IL,Medicare,2021-12-04,2021-12-15,Home,,L03.115,33059.22
+P454945,H01,81,Female,Woman,Some Other Race,Hispanic or Latino,OH,Medicare,2019-04-07,2019-04-15,Home with home health,,C50.919,34447.50
+P135403,H01,37,Female,Woman,White,Not Hispanic or Latino,NJ,Medicaid,2024-05-28,2024-06-06,Home,,A41.9,46100.23
+P572013,H03,22,Male,Man,White,Not Hispanic or Latino,TX,Commercial,2022-03-05,2022-03-13,Home,,J69.0,51575.55
+P473253,H04,46,Male,Man,Black or African American,Not Hispanic or Latino,CA,Commercial,2025-03-03,2025-03-15,Home,789.00,,38999.39
+P328911,H02,61,Female,Woman,White,Not Hispanic or Latino,PA,Medicaid,2023-01-03,2023-01-05,Home,415.19,,13968.23
+P338310,H05,18,Male,Man,White,Not Hispanic or Latino,NY,Medicare,2024-08-12,2024-08-12,Home,,I61.9,8240.93
+P155653,H01,51,Male,Man,White,Not Hispanic or Latino,OH,Medicaid,2022-01-05,2022-01-08,Home with home health,,R55,8820.76
+P639891,H04,85,Female,Woman,White,Not Hispanic or Latino,CA,Medicaid,2020-04-09,2020-04-10,Home,174.9,,8031.92
+P811297,H10,74,Female,Woman,Black or African American,Not Hispanic or Latino,MA,Medicare,2023-12-30,2024-01-05,Home,715.90,,46755.89
+P419634,H02,21,Male,Man,White,Hispanic or Latino,PA,Other,2019-03-22,2019-03-22,Home,434.91,,7725.32
+P759328,H03,57,Female,Woman,Black or African American,Not Hispanic or Latino,TX,Commercial,2019-09-17,2019-09-20,Home,,E11.65,11647.55
+P707285,H01,39,Male,Man,White,Not Hispanic or Latino,OH,Medicaid,2020-03-14,2020-03-18,Home,,I47.2,24732.94
+P726346,H03,63,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2023-02-23,2023-02-27,Home,,A04.72,17985.69
+P867292,H02,46,Female,Woman,White,Hispanic or Latino,PA,Medicaid,2023-09-21,2023-09-30,Home,162.9,,42413.28
+P672089,H03,45,Male,Man,White,Not Hispanic or Latino,TX,Medicaid,2023-09-30,2023-09-30,Home,,I61.9,6929.10
+P127865,H06,38,Male,Man,White,Not Hispanic or Latino,FL,Commercial,2021-11-10,2021-11-14,Home,185,,15114.78
+P630366,H05,37,Female,Woman,White,Not Hispanic or Latino,NY,Commercial,2019-12-27,2019-12-30,Home,,M17.9,19193.51
+P473043,H07,75,Female,Woman,Some Other Race,Hispanic or Latino,IL,Other,2022-09-01,2022-09-03,Home,,I10,12404.34
+P980995,H01,35,Male,Man,Asian,Not Hispanic or Latino,OH,Self-pay,2024-07-11,2024-07-16,AMA,,K56.609,24855.92
+P586383,H03,37,Female,Woman,White,Not Hispanic or Latino,TX,Commercial,2019-09-16,2019-09-18,Home,,E86.0,7085.35
+P910455,H07,62,Female,Woman,White,Not Hispanic or Latino,IL,Commercial,2022-12-21,2022-12-27,Home,,J18.9,35057.65
+P318322,H05,86,Female,Woman,White,,NY,Commercial,2021-12-12,2021-12-13,Home,,T81.4XXA,6391.02
+P118973,H01,62,Female,Woman,Asian,Not Hispanic or Latino,OH,Medicaid,2019-02-26,2019-03-03,Home,,K62.5,44433.33
+P184235,H01,11,Female,Woman,White,Not Hispanic or Latino,OH,Self-pay,2021-02-04,2021-02-06,Home,,K85.90,7755.19
+P569678,H03,67,Male,Man,White,Hispanic or Latino,TX,Medicare,2024-03-09,2024-03-14,Home,,K62.5,16526.83
+P572556,H03,82,Male,Man,White,Not Hispanic or Latino,TX,Medicare,2025-05-25,2025-05-26,Home with home health,,I21.9,10653.61
+P172545,H04,61,Male,Man,White,Not Hispanic or Latino,CA,Commercial,2020-03-28,2020-03-29,SNF,250.00,,8479.13
+P193250,H02,81,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2021-07-12,2021-07-17,Home,496,,28427.85
+P194508,H01,59,Male,Man,White,Hispanic or Latino,OH,Other,2022-04-15,2022-04-16,Home,,M81.0,5635.80
+P945209,H10,63,Male,Man,Black or African American,Not Hispanic or Latino,NC,Commercial,2019-02-03,2019-02-04,Home with home health,998.59,,12252.55
+P526866,H02,55,Female,Woman,White,Not Hispanic or Latino,PA,Medicaid,2021-12-12,2021-12-21,Home,496,,
+P266917,H01,69,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2020-06-15,2020-06-16,Home,,I63.9,
+P942701,H05,50,Male,Man,Some Other Race,Hispanic or Latino,NY,Commercial,2020-01-13,2020-01-16,Home,,M51.26,15986.48
+P742418,H08,31,Male,Man,White,Hispanic or Latino,GA,Commercial,2025-07-22,2025-07-29,Home,780.60,,40131.43
+P349735,H08,76,Male,Man,Two or More Races,Not Hispanic or Latino,GA,Medicare,2020-05-13,2020-05-17,Home,410.71,,
+P926669,H02,66,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2020-05-27,2020-05-30,Home,491.21,,31479.11
+P681675,H07,79,Male,Man,White,Hispanic or Latino,IL,Commercial,2019-04-18,2019-04-20,Home,,I61.9,11226.03
+P316461,H02,45,Male,Man,White,Not Hispanic or Latino,PA,Medicaid,2023-07-08,2023-07-11,Home,998.59,,
+P469258,H02,48,Male,Man,Some Other Race,Not Hispanic or Latino,PA,Commercial,2019-04-19,2019-04-22,Home,250.00,,19865.45
+P255579,H01,25,Male,Man,White,Not Hispanic or Latino,OH,Medicaid,2020-09-28,2020-09-30,Home with home health,,C34.90,11142.29
+P381067,H08,56,Male,Man,Two or More Races,Unknown,GA,Commercial,2024-08-02,2024-08-04,Transfer,276.51,,9345.86
+P814732,H07,56,Male,Man,White,Not Hispanic or Latino,IL,Medicaid,2021-06-11,2021-06-12,Home,,A04.72,7940.30
+P945272,H02,72,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2025-05-31,2025-05-31,Home,427.31,,9469.02
+P397829,H07,50,Male,Man,White,Not Hispanic or Latino,IL,Commercial,2022-11-17,2022-11-19,Transfer,,K62.5,9629.02
+P910303,H05,43,Male,Man,White,Not Hispanic or Latino,NY,Medicaid,2019-05-13,2019-05-15,Home,,K80.20,20343.59
+P990276,H01,39,Female,Woman,Black or African American,Not Hispanic or Latino,OH,Commercial,2025-04-17,2025-04-21,Home,,M81.0,21090.40
+P444011,H01,54,Female,Woman,White,Not Hispanic or Latino,OH,Medicaid,2025-09-28,2025-10-01,Transfer,,R10.9,15689.36
+P645561,H02,50,Female,Woman,Some Other Race,Hispanic or Latino,PA,Commercial,2022-01-05,2022-01-07,Home,553.3,,19787.77
+P668395,H01,67,Male,Man,Black or African American,Not Hispanic or Latino,OH,Medicare,2019-02-10,2019-02-13,Home,,K80.20,18635.21
+P537553,H02,54,Male,Man,White,Not Hispanic or Latino,PA,Medicaid,2023-02-22,2023-02-25,Home,493.90,,16566.41
+P650598,H05,82,Female,Woman,White,Not Hispanic or Latino,NC,Other,2023-10-30,2023-11-02,SNF,,C34.90,27887.78
+P286773,H07,27,Male,Man,White,Not Hispanic or Latino,IL,Commercial,2020-05-15,2020-05-16,AMA,,I47.2,7966.23
+P954305,H08,43,Female,Woman,Some Other Race,Hispanic or Latino,GA,Medicaid,2024-12-04,2024-12-08,SNF,493.90,,29264.92
+P849398,H04,46,Male,Man,Black or African American,Not Hispanic or Latino,CA,Other,2024-04-09,2024-04-13,Home with home health,592.0,,12259.91
+P497610,H02,53,Female,Woman,White,Not Hispanic or Latino,OH,Commercial,2022-04-22,2022-04-27,SNF,427.1,,15102.83
+P273544,H04,37,Female,Woman,White,Not Hispanic or Latino,CA,Commercial,2022-07-06,2022-07-13,Home,185,,33209.47
+P531638,H04,95,Male,Man,White,Not Hispanic or Latino,CA,Self-pay,2019-11-24,2019-11-25,SNF,786.50,,8125.01
+P551851,H02,89,Male,Man,Some Other Race,Hispanic or Latino,PA,Medicare,2020-11-14,2020-11-16,Home,682.6,,13903.67
+P834927,H06,26,Female,Woman,Black or African American,Not Hispanic or Latino,FL,Commercial,2023-03-12,2023-03-19,Home,311,,44336.58
+P935129,H07,69,Male,Man,Asian,Not Hispanic or Latino,IL,Medicare,2025-09-28,2025-10-04,Transfer,,K80.20,21291.75
+P266871,H02,65,Male,Man,Black or African American,Not Hispanic or Latino,PA,Medicare,2023-08-27,2023-08-29,Home,715.90,,15199.66
+P158539,H03,61,Male,Man,American Indian or Alaska Native,Not Hispanic or Latino,TX,Commercial,2025-02-07,2025-02-09,Home,,E87.1,17325.97
+P127557,H07,83,Male,Man,White,Not Hispanic or Latino,IL,Medicare,2023-06-06,2023-06-12,Home,,N20.0,32641.87
+P183393,H01,94,Female,Woman,White,Hispanic or Latino,OH,Medicare,2022-01-07,2022-01-07,SNF,,J45.909,5158.37
+P960166,H02,60,Male,Man,White,Not Hispanic or Latino,PA,Medicaid,2020-08-02,2020-08-03,Home,174.9,,3438.53
+P851683,H02,55,Female,Woman,White,Not Hispanic or Latino,PA,Medicare,2024-09-01,2024-09-03,Home,820.8,,7693.33
+P767991,H09,69,Male,Man,Two or More Races,Hispanic or Latino,AZ,Medicare,2021-06-13,2021-06-15,Home with home health,,N39.0,11961.99
+P540474,H06,95,Female,Woman,White,Not Hispanic or Latino,FL,Medicare,2019-07-17,2019-07-19,Transfer,564.00,,6332.27
+P415982,H01,30,Male,Man,White,Not Hispanic or Latino,OH,Commercial,2025-05-20,2025-05-28,AMA,,T81.4XXA,30073.11
+P670656,H09,94,Male,Man,Black or African American,Not Hispanic or Latino,AZ,Medicare,2024-10-17,2024-10-20,Transfer,,I48.91,10139.40
+P608389,H06,45,Male,Man,White,Not Hispanic or Latino,FL,Self-pay,2020-10-26,2020-10-27,Transfer,491.21,,13286.92
+P359322,H03,51,Male,Man,White,Not Hispanic or Latino,TX,Medicaid,2023-07-26,2023-07-27,Home,,E86.0,7382.68
+P717348,H04,72,Male,Man,Black or African American,Hispanic or Latino,CA,Medicare,2019-07-02,2019-07-04,SNF,507.0,,6962.55
+P654226,H01,59,Female,Woman,Asian,Not Hispanic or Latino,OH,Commercial,2020-02-09,2020-02-11,SNF,,I26.99,7367.30
+P940594,H01,32,Male,Man,White,Hispanic or Latino,OH,Medicaid,2019-05-18,2019-05-20,SNF,,J44.1,12109.26
+P729740,H08,88,Female,Woman,White,Not Hispanic or Latino,GA,Medicaid,2019-12-20,2019-12-22,SNF,530.81,,11513.22
+P337258,H08,66,Male,Man,White,Not Hispanic or Latino,GA,Medicare,2021-08-23,2021-08-24,Home,577.0,,13657.71
+P445483,H02,49,Female,Woman,White,Hispanic or Latino,PA,Medicaid,2021-08-18,2021-08-18,Transfer,715.90,,6987.44
+P316277,H06,67,Male,Man,Asian,Hispanic or Latino,FL,Medicare,2024-04-23,2024-04-23,Home,414.01,,15656.38
+P125798,H04,65,Male,Man,Black or African American,Not Hispanic or Latino,CA,Medicare,2023-11-26,2023-11-28,Home,592.0,,5572.38
