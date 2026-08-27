@@ -166,6 +166,7 @@ date  (2): admission_date, discharge_date
 #   discharge_disposition &lt;chr&gt;, icd9 &lt;chr&gt;, icd10 &lt;chr&gt;, total_charges &lt;dbl&gt;</code></pre>
 </div>
 </div>
+<p><u><strong>NOTE:</strong></u> <strong>This data and the patients therein are randomly generated, and not based on any real people. Any patterns that emerge from this data set should not be used to make conclusions or draw patterns about any group or society.</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(exp_patient<span class="sc">$</span>icd9)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -203,7 +204,137 @@ date  (2): admission_date, discharge_date
 </section>
 <section id="step-1-filtering-by-a-csv" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-filtering-by-a-csv">Step 1: Filtering by a CSV</h2>
-<p>Let’s say we’re interested in a sample that only includes our diagnosis of interest ( )</p>
+<p>Let’s say we’re interested in a sample that only includes our diagnoses of interest ( ):</p>
+</section>
+<section id="step-2-obtaining-length-of-stay" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-obtaining-length-of-stay">Step 2: Obtaining Length of Stay</h2>
+<p>Let’s say we’re interested in knowing how long our sample patients were at their respective hospitals before discharge:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>exp_patient <span class="ot">&lt;-</span> exp_patient <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">admission_date =</span> <span class="fu">as.Date</span>(admission_date),</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">discharge_date =</span> <span class="fu">as.Date</span>(discharge_date),</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">los_days =</span> <span class="fu">as.numeric</span>(discharge_date <span class="sc">-</span> admission_date)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co"># And then visualizing to see our distribution of los</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> exp_patient,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> los_days)) <span class="sc">+</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_management_example_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-exploring-category-collapsing" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-exploring-category-collapsing">Step 3: Exploring Category Collapsing</h2>
+<p>Let’s say we’re interested in decreasing the number of race/ethnicity categories and creating a single, race_eth variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, we can explore the race and ethnicity variables</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(exp_patient<span class="sc">$</span>race)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+         American Indian or Alaska Native 
+                                       10 
+                                    Asian 
+                                       65 
+                Black or African American 
+                                      142 
+Native Hawaiian or Other Pacific Islander 
+                                        8 
+                          Some Other Race 
+                                      106 
+                        Two or More Races 
+                                       31 
+                                    White 
+                                      638 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(exp_patient<span class="sc">$</span>ethnicity)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Hispanic or Latino Not Hispanic or Latino                Unknown 
+                   185                    759                     21 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># And see how these categories overlap</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(exp_patient<span class="sc">$</span>race, exp_patient<span class="sc">$</span>ethnicity)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                           
+                                            Hispanic or Latino
+  American Indian or Alaska Native                           3
+  Asian                                                      2
+  Black or African American                                  9
+  Native Hawaiian or Other Pacific Islander                  4
+  Some Other Race                                           72
+  Two or More Races                                          8
+  White                                                     87
+                                           
+                                            Not Hispanic or Latino Unknown
+  American Indian or Alaska Native                               6       1
+  Asian                                                         60       2
+  Black or African American                                    126       2
+  Native Hawaiian or Other Pacific Islander                      3       0
+  Some Other Race                                               28       0
+  Two or More Races                                             22       1
+  White                                                        514      15</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creating a new variable</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>exp_patient <span class="ot">&lt;-</span> exp_patient <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">race_eth =</span> <span class="fu">case_when</span>(</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Hispanic or Latino Category</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>      ethnicity <span class="sc">==</span> <span class="st">"Hispanic or Latino"</span> <span class="sc">&amp;</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>        (race <span class="sc">==</span> <span class="st">"White"</span> <span class="sc">|</span> race <span class="sc">==</span> <span class="st">"Some Other Race"</span>) <span class="sc">~</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Hispanic or Latino"</span>,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Two Or More Races</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>      ethnicity <span class="sc">==</span> <span class="st">"Hispanic or Latino"</span> <span class="sc">&amp;</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>        race <span class="sc">!=</span> <span class="st">"White"</span> <span class="sc">&amp;</span> race <span class="sc">!=</span> <span class="st">"Some Other Race"</span> <span class="sc">~</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Two or More Races"</span>,</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>      race <span class="sc">==</span> <span class="st">"Two or More Races"</span> <span class="sc">~</span> <span class="st">"Two or More Races"</span>,</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>      <span class="co"># White</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>      (ethnicity <span class="sc">!=</span> <span class="st">"Hispanic or Latino"</span> <span class="sc">|</span> <span class="fu">is.na</span>(ethnicity)) <span class="sc">&amp;</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>        race <span class="sc">==</span> <span class="st">"White"</span> <span class="sc">~</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"White"</span>,</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Black</span></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>      (ethnicity <span class="sc">!=</span> <span class="st">"Hispanic or Latino"</span> <span class="sc">|</span> <span class="fu">is.na</span>(ethnicity)) <span class="sc">&amp;</span></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>        race <span class="sc">==</span> <span class="st">"Black or African American"</span> <span class="sc">~</span></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Black or African American"</span>,</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>      <span class="co"># AIAN &amp; NHPI </span></span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>      (ethnicity <span class="sc">!=</span> <span class="st">"Hispanic or Latino"</span> <span class="sc">|</span> <span class="fu">is.na</span>(ethnicity)) <span class="sc">&amp;</span></span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>        (race <span class="sc">==</span> <span class="st">"American Indian or Alaska Native"</span> <span class="sc">|</span> </span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>           race <span class="sc">==</span> <span class="st">"Native Hawaiian or Other Pacific Islander"</span>) <span class="sc">~</span></span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"AIAN or NHPI"</span>,</span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Asian</span></span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>      (ethnicity <span class="sc">!=</span> <span class="st">"Hispanic or Latino"</span> <span class="sc">|</span> <span class="fu">is.na</span>(ethnicity)) <span class="sc">&amp;</span></span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a>        race <span class="sc">==</span> <span class="st">"Asian"</span> <span class="sc">~</span> <span class="st">"Asian"</span>,</span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Other </span></span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a>      (ethnicity <span class="sc">!=</span> <span class="st">"Hispanic or Latino"</span> <span class="sc">|</span> <span class="fu">is.na</span>(ethnicity)) <span class="sc">&amp;</span></span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a>        race <span class="sc">==</span> <span class="st">"Some Other Race"</span> <span class="sc">~</span></span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Other"</span></span>
+<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Looking at new variable</span></span>
+<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(exp_patient<span class="sc">$</span>race_eth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+             AIAN or NHPI                     Asian Black or African American 
+                       11                        63                       133 
+       Hispanic or Latino                     Other         Two or More Races 
+                      159                        34                        49 
+                    White 
+                      551 </code></pre>
+</div>
+</div>
 </section>
 
 </main>

@@ -22,6 +22,8 @@ exp_patient <- read_csv("../data/inpatient_patients_example.csv")
 head(exp_patient)
 ```
 
+[**NOTE:**]{.underline} **This data and the patients therein are randomly generated, and not based on any real people. Any patterns that emerge from this data set should not be used to make conclusions or draw patterns about any group or society.**
+
 ```{r}
 table(exp_patient$icd9)
 table(exp_patient$icd10)
@@ -34,3 +36,74 @@ Let's say we're interested in a sample that only includes our diagnoses of inter
 ## Step 2: Obtaining Length of Stay
 
 Let's say we're interested in knowing how long our sample patients were at their respective hospitals before discharge:
+
+```{r}
+exp_patient <- exp_patient %>%
+  mutate(
+    admission_date = as.Date(admission_date),
+    discharge_date = as.Date(discharge_date),
+    los_days = as.numeric(discharge_date - admission_date)
+  )
+
+# And then visualizing to see our distribution of los
+ggplot(data = exp_patient,
+       aes(x = los_days)) +
+  geom_bar()
+```
+
+## Step 3: Exploring Category Collapsing
+
+Let's say we're interested in decreasing the number of race/ethnicity categories and creating a single, race_eth variable.
+
+```{r}
+# First, we can explore the race and ethnicity variables
+table(exp_patient$race)
+table(exp_patient$ethnicity)
+# And see how these categories overlap
+table(exp_patient$race, exp_patient$ethnicity)
+
+#creating a new variable
+exp_patient <- exp_patient %>%
+  mutate(
+    race_eth = case_when(
+      # Hispanic or Latino Category
+      ethnicity == "Hispanic or Latino" &
+        (race == "White" | race == "Some Other Race") ~
+        "Hispanic or Latino",
+      
+      # Two Or More Races
+      ethnicity == "Hispanic or Latino" &
+        race != "White" & race != "Some Other Race" ~
+        "Two or More Races",
+      race == "Two or More Races" ~ "Two or More Races",
+      
+      # White
+      (ethnicity != "Hispanic or Latino" | is.na(ethnicity)) &
+        race == "White" ~
+        "White",
+      
+      # Black
+      (ethnicity != "Hispanic or Latino" | is.na(ethnicity)) &
+        race == "Black or African American" ~
+        "Black or African American",
+      
+      # AIAN & NHPI 
+      (ethnicity != "Hispanic or Latino" | is.na(ethnicity)) &
+        (race == "American Indian or Alaska Native" | 
+           race == "Native Hawaiian or Other Pacific Islander") ~
+        "AIAN or NHPI",
+      
+      # Asian
+      (ethnicity != "Hispanic or Latino" | is.na(ethnicity)) &
+        race == "Asian" ~ "Asian",
+      
+      # Other 
+      (ethnicity != "Hispanic or Latino" | is.na(ethnicity)) &
+        race == "Some Other Race" ~
+        "Other"
+    )
+  )
+
+# Looking at new variable
+table(exp_patient$race_eth)
+```
