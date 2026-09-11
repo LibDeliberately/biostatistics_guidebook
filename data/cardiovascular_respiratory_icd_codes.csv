@@ -1,0 +1,32 @@
+icd_ver,code,desc
+9,401.9,Unspecified essential hypertension
+9,403.90,"Hypertensive chronic kidney disease, unspecified, with CKD stage I–IV or unspecified"
+9,410.71,"Subendocardial infarction, initial episode of care (NSTEMI)"
+9,410.91,"Acute myocardial infarction of unspecified site, initial episode of care"
+9,414.01,Coronary atherosclerosis of native coronary artery
+9,415.19,Other pulmonary embolism and infarction
+9,427.1,Paroxysmal ventricular tachycardia
+9,427.31,Atrial fibrillation
+9,428.0,"Congestive heart failure, unspecified"
+9,486,"Pneumonia, organism unspecified"
+9,491.21,Obstructive chronic bronchitis with (acute) exacerbation
+9,493.90,"Asthma, unspecified type, unspecified"
+9,496,"Chronic airway obstruction, not elsewhere classified"
+9,507.0,Pneumonitis due to inhalation of food or vomitus
+9,518.81,Acute respiratory failure
+10,I10,Essential (primary) hypertension
+10,I12.9,"Hypertensive CKD with stage 1–4 CKD, or unspecified CKD"
+10,I21.4,Non-ST elevation (NSTEMI) myocardial infarction
+10,I21.9,"Acute myocardial infarction, unspecified"
+10,I25.10,Atherosclerotic heart disease of native coronary artery without angina pectoris
+10,I26.99,Other pulmonary embolism without acute cor pulmonale
+10,I47.2,Ventricular tachycardia
+10,I48.91,Unspecified atrial fibrillation
+10,I50.9,"Heart failure, unspecified"
+10,J12.82,Pneumonia due to coronavirus disease 2019
+10,J18.9,"Pneumonia, unspecified organism"
+10,J44.0,COPD with (acute) lower respiratory infection
+10,J44.1,COPD with (acute) exacerbation
+10,J45.909,"Unspecified asthma, uncomplicated"
+10,J69.0,Pneumonitis due to inhalation of food and vomit
+10,J96.00,"Acute respiratory failure, unspecified whether with hypoxia or hypercapnia"

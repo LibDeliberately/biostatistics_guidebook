@@ -24,6 +24,8 @@ head(exp_patient)
 
 [**NOTE:**]{.underline} **This data and the patients therein are randomly generated, and not based on any real people. Any patterns that emerge from this data set should not be used to make conclusions or draw patterns about any group or society.**
 
+**THIS DATA SHOULD ONLY BE USED FOR THE PURPOSE OF LEARNING TO USE R.**
+
 ```{r}
 table(exp_patient$icd9)
 table(exp_patient$icd10)
@@ -31,14 +33,36 @@ table(exp_patient$icd10)
 
 ## Step 1: Filtering by a CSV
 
-Let's say we're interested in a sample that only includes our diagnoses of interest ( ):
+Let's say we're interested in a sample that only includes our diagnoses categories of interest: cardiovascular and respiratory health issues.
+
+```{r}
+# importing a CSV that has all of the codes I'm interested in keeping for my analytic dataset.
+icd_codes_cvd_resp <- read_csv("../data/cardiovascular_respiratory_icd_codes.csv")
+# We usually want to have a chunk that imports everything in one place, but I'm keeping it here for illustrative purposes. 
+# Note that if we only had a few ICD codes of interest, we could also manually create this object like this:
+example_word_obj <- c("hello", "world", "here", "I", "am")
+
+
+# creating an object that stores all the codes I'm interested in for this filter
+cvd_resp <- (icd_codes_cvd_resp$code)
+
+# filtering patient observations that have any numbers I'm interested in in either icd9 or icd10
+exp_patient_clean <- exp_patient %>%
+  filter(icd9 %in% cvd_resp | icd10 %in% cvd_resp)
+
+# Examining exp_patient_clean to make sure it worked and observe changes from original dataset
+nrow(exp_patient_clean) #289 is expected
+head(exp_patient_clean)
+
+```
 
 ## Step 2: Obtaining Length of Stay
 
 Let's say we're interested in knowing how long our sample patients were at their respective hospitals before discharge:
 
 ```{r}
-exp_patient <- exp_patient %>%
+# First we need to calculate how long admission was for the patients
+exp_patient_clean <- exp_patient_clean %>%
   mutate(
     admission_date = as.Date(admission_date),
     discharge_date = as.Date(discharge_date),
@@ -46,7 +70,7 @@ exp_patient <- exp_patient %>%
   )
 
 # And then visualizing to see our distribution of los
-ggplot(data = exp_patient,
+ggplot(data = exp_patient_clean,
        aes(x = los_days)) +
   geom_bar()
 ```
@@ -57,13 +81,13 @@ Let's say we're interested in decreasing the number of race/ethnicity categories
 
 ```{r}
 # First, we can explore the race and ethnicity variables
-table(exp_patient$race)
-table(exp_patient$ethnicity)
+table(exp_patient_clean$race)
+table(exp_patient_clean$ethnicity)
 # And see how these categories overlap
-table(exp_patient$race, exp_patient$ethnicity)
+table(exp_patient_clean$race, exp_patient_clean$ethnicity)
 
 #creating a new variable
-exp_patient <- exp_patient %>%
+exp_patient_clean <- exp_patient_clean %>%
   mutate(
     race_eth = case_when(
       # Hispanic or Latino Category
@@ -105,5 +129,5 @@ exp_patient <- exp_patient %>%
   )
 
 # Looking at new variable
-table(exp_patient$race_eth)
+table(exp_patient_clean$race_eth)
 ```
