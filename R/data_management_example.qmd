@@ -131,3 +131,47 @@ exp_patient_clean <- exp_patient_clean %>%
 # Looking at new variable
 table(exp_patient_clean$race_eth)
 ```
+
+## Step 4: Converting Measurements
+
+Let's say we're interested in understanding the overall obesity prevalence in our sample. The dataset includes **height** and **waist** circumference in inches, so we can compute the Body Roundness Index (BRI) and collapse it into categories.
+
+```{r}
+# We should first create a continuous variable using the BRI formula
+# (height and waist are both in inches; the ratio inside the formula is unitless)
+exp_patient_clean <- exp_patient_clean %>%
+  mutate(
+    BRI_raw = 364.2 - 365.5 * sqrt(1 - (waist / (2 * pi))^2 / (0.5 * height)^2),
+    BRI = round(BRI_raw, digits = 1)
+  )
+
+# Then we should categorize BRI into distinct categories:
+# very lean, average, overweight, and high central obesity
+exp_patient_clean <- exp_patient_clean %>%
+  mutate(
+    BRI_cat = case_when(
+      BRI < 3.4 ~ "Very Lean",
+      BRI >= 3.4 & BRI <= 5.4 ~ "Average",
+      BRI >= 5.5 & BRI < 6.9 ~ "Overweight",
+      BRI >= 6.9 ~ "High Central Obesity"
+    )
+  )
+
+table(exp_patient_clean$BRI_cat)
+```
+
+## Step 5: A New Dataset Enters
+
+Let's say that as we've been working on this management, we're given access to a new dataset that uses ICD11 Diagnosis codes.
+
+// Import and Look at it
+
+// It looks less organized! Different format!
+
+//Missing values?
+
+//Grouping by ID?
+
+// Applying all management steps (1-4) on this new dataset?
+
+//Merging with old dataset
