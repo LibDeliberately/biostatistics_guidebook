@@ -12,6 +12,7 @@ Loading all libraries necessary:
 ```{r}
 library(dplyr)
 library(tidyverse)
+library(readxl)
 ```
 
 Loading csv and viewing
@@ -162,16 +163,68 @@ table(exp_patient_clean$BRI_cat)
 
 ## Step 5: A New Dataset Enters
 
-Let's say that as we've been working on this management, we're given access to a new dataset that uses ICD11 Diagnosis codes.
+Let's say that, as we've been working on this management, we're given access to a new dataset that uses ICD11 Diagnosis codes.
 
-// Import and Look at it
+We'll want to eventually merge this with our previous data, but first we should take a look at it.
 
-// It looks less organized! Different format!
+```{r}
+exp_pat_11 <- read_excel("../data/inpatient_patients_icd11_example.xlsx")
+head(exp_pat_11)
+```
 
-//Missing values?
+This dataset looks different from the other we've been looking at, but seems to get at all the same information more or less. It will need significantly more cleaning than the previous dataset we were working with.
 
-//Grouping by ID?
+```{r}
+# investigating the dataset for differences
+
+# Are there missing values?
+# Can we impute any missing values?
+# How should we treat missingness? 
+```
+
+Some of the variables have multiple formats entered. We'll want to tidy this up before continuing.
+
+```{r}
+# gender
+exp_pat_11 <- exp_pat_11 %>%
+  mutate(
+    gender = case_when(
+      GENDER_ID %in% c("Man", "MAN", "M", "male", "1") ~ "Man",
+      GENDER_ID %in% c("Woman","WOMAN", "F", "female", "2") ~ "Woman",
+      GENDER_ID %in% c("Non-binary","NB", "N/B", "X", "3") ~ "Non-binary"
+    )
+  )
+
+# sex
+exp_pat_11 <- exp_pat_11 %>%
+  mutate(
+    sex = case_when(
+      SEX_CD %in% c("M","m"," M", "MALE", "Male","1","01") ~ "Male",
+      SEX_CD %in% c("F", "f", " F", "FEMALE", "Female", "2", "02") ~ "Female",
+      SEX_CD %in% c("U","UNK","X","9",".") | is.na(SEX_CD) ~ "Unknown/Indeterminate"
+    )
+  )
+
+# and then we can remove the old, uncleaned versions of the variables we've modified
+clean_exp_pat_11 <- exp_pat_11 %>% 
+  select(
+    -SEX_CD,
+    -GENDER_ID
+         )
+```
+
+It appears that this dataset isn't yet collapsed so that there's one row per person. Instead, it appears that each row is a singular visit. We'll have to collapse so that each row is a unique ID.
+
+```{r}
+collapsed_pat11 <- clean_exp_pat_11 %>%
+  group_by(MRN) %>%
+  summarise(
+    age = max(as.numeric(AGE), na.rm = TRUE), # We'll be keeping the most recent record of age to represent the patient's most recent clinical state.
+  )
+```
 
 // Applying all management steps (1-4) on this new dataset?
 
-//Merging with old dataset
+Finally, we can combine this dataset with our original one.
+
+*But wait! There's a chance that there might be some overlap between patients on both* *datasets. We should check that first.*
