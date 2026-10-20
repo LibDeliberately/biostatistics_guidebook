@@ -185,6 +185,29 @@ This dataset looks different from the other we've been looking at, but seems to 
 Some of the variables have multiple formats entered. We'll want to tidy this up before continuing.
 
 ```{r}
+
+# unique patient identifier and encounter identifier
+exp_pat_11 <- exp_pat_11 %>%
+  mutate(
+    patient_id = MRN,
+    enc_id = ENC_ID
+  )
+
+# facility 
+exp_pat_11 <- exp_pat_11 %>%
+  hospital_id = case_when(
+    FAC_CD %in% x("H1","01","OH-MAIN","H01","Ohio main campus") ~ "H01",
+    FAC_CD %in% x("H2","02","PA-WEST","H02","Pennsylvania west") ~ "H02",
+    FAC_CD %in% x("H3","03","TX-CENT","H03","Texas central") ~ "H03",
+    FAC_CD %in% x("H4","04","CA-NORTH","H04","California north") ~ "H04",
+    FAC_CD %in% x("H5","05","NY-METRO","H05","New York metro") ~ "H05",
+    FAC_CD %in% x("H6","06","FL-SOUTH","H06","Florida south") ~ "H06",
+    FAC_CD %in% x("H7","07","IL-COOK","H07","Illinois — Cook") ~ "H07",
+    FAC_CD %in% x("H8","08","GA-ATL","H08","Georgia — Atlanta") ~ "H08",
+    FAC_CD %in% x("H9","09","AZ-PHX","H09","Arizona — Phoenix") ~ "H09",
+    FAC_CD %in% x("H10","10","CO-DEN","H10","Colorado — Denver") ~ "H10",
+  )
+  
 # gender
 exp_pat_11 <- exp_pat_11 %>%
   mutate(
@@ -205,12 +228,57 @@ exp_pat_11 <- exp_pat_11 %>%
     )
   )
 
+# race
+
+# ethnicity
+exp_pat_11 <- exp_pat_11 %>%
+  mutate(
+    ethnicity = ifelse(
+      ETHNIC_CD %in% c("H","HL","Hispanic","HISPANIC","Latino","Y","1"),
+      "Hispanic or Latino",
+      "Not Hispanic or Latino"
+    )
+  )
+
+# age
+exp_pat_11 <- exp_pat_11 %>%
+  mutate(
+    age = as.numeric(AGE)
+  )
+
+# state
+
+# payer
+
+# admission date
+
+# discharge date
+
+# discharge disposition
+
+# icd
+
+# total charges
+
+# height 
+
+# waist
+
 # and then we can remove the old, uncleaned versions of the variables we've modified
 clean_exp_pat_11 <- exp_pat_11 %>% 
   select(
     -SEX_CD,
-    -GENDER_ID
+    -GENDER_ID,
+    -AGE,
+    -MRN,
+    -ENC_ID,
+    -FAC_CD
          )
+```
+
+```{r}
+# and now we can look at our nicer dataset with well-labeled variables! :)
+head(clean_exp_pat_11)
 ```
 
 It appears that this dataset isn't yet collapsed so that there's one row per person. Instead, it appears that each row is a singular visit. We'll have to collapse so that each row is a unique ID.
