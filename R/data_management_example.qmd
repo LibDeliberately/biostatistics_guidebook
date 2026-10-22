@@ -21,6 +21,7 @@ Loading csv and viewing
 exp_patient <- read_csv("../data/inpatient_patients_example.csv")
 
 head(exp_patient)
+
 ```
 
 [**NOTE:**]{.underline} **This data and the patients therein are randomly generated, and not based on any real people. Any patterns that emerge from this data set should not be used to make conclusions or draw patterns about any group or society.**
@@ -185,7 +186,7 @@ This dataset looks different from the other we've been looking at, but seems to 
 Some of the variables have multiple formats entered. We'll want to tidy this up before continuing.
 
 ```{r}
-
+# Simple cleans
 # unique patient identifier and encounter identifier
 exp_pat_11 <- exp_pat_11 %>%
   mutate(
@@ -229,6 +230,23 @@ exp_pat_11 <- exp_pat_11 %>%
   )
 
 # race
+exp_pat_11 <- exp_pat_11 %>%
+  mutate(
+    race = case_when(
+      RACE_CD %in% c("W","Wh","WHITE","White","Caucasian","1","01") ~ "White",
+      RACE_CD %in% c("B","BLACK","Black","AA","AfrAm","2","02") ~ 
+        "Black or African American",
+      RACE_CD %in% c("A","As","ASIAN","Asian","4","04") ~ "Asian",
+      RACE_CD %in% c("I","AIAN","AI/AN","Native","3","03") ~ 
+        "American Indian or Alaska Natie",
+      RACE_CD %in% c("P","PI","NHPI","NH/PI","5","05") ~ 
+        "Native Hawaiian or Pacific Islander",
+      RACE_CD %in% c("O","OTHER","Other","SOR","6","06") ~ 
+        "Some Other Race",
+      RACE_CD %in% c("M","MULTI","Two or More","2+","7","07") ~ 
+        "Two or More Races"
+    )
+  )
 
 # ethnicity
 exp_pat_11 <- exp_pat_11 %>%
@@ -247,22 +265,58 @@ exp_pat_11 <- exp_pat_11 %>%
   )
 
 # state
+# this one is fine! Just need to rename the variable
+exp_pat_11 <- exp_pat_11 %>% 
+  rename(state = PAT_STATE)
 
 # payer
-
-# admission date
-
-# discharge date
+exp_pat_11 <- exp_pat_11 %>%
+  mutate(
+    payer = case_when(
+      PAYOR_CD %in% c("MC","MCR","MEDICARE","Medicare","MedCare","1") ~
+        "Medicare",
+      PAYOR_CD %in% c("MD","MCD","MEDICAID","Medicaid","MedCaid","2") ~
+        "Medicaid",
+      PAYOR_CD %in% c("COM","COMM","Commercial","PRIVATE","Priv","BCBS","3") ~
+        "Commercial",
+      PAYOR_CD %in% c("SP","SELF","SELF PAY","Self-pay","Selfpay","4") ~
+        "Self-pay",
+      PAYOR_CD %in% c("OTH","OTHER","Other","Misc","UNK","5") ~
+        "Other/Unknown"
+    )
+  )
 
 # discharge disposition
-
-# icd
+exp_pat_11 <- exp_pat_11 %>%
+  mutate(
+    discharge_disposition = case_when(
+      DSCH_DISP %in% c("01","1","HOME","Home", "DISCH HOME", "01-Home") ~
+        "Home",
+      DSCH_DISP %in% c("06","6","HHA","HOME HH", "Home w/ HH") ~
+        "Home with home health",
+      DSCH_DISP %in% c("03","3","SNF","Skilled Nursing", "03-SNF") ~
+        "SNF",
+      DSCH_DISP %in% c("02","2","XFER","TRANS", "Transfer") ~
+        "Transfer",
+      DSCH_DISP %in% c("07","7","AMA","LAMA", "Left AMA") ~
+        "AMA",
+      DSCH_DISP %in% c("20","EXP","Expired","Died", "DECEASED", "20-Expired") ~
+        "Expired"
+    )
+  )
 
 # total charges
+# Already numeric, just needs a rename :)
+exp_pat_11 <- exp_pat_11 %>% 
+  rename(total_charges = TOT_CHG)
 
 # height 
+exp_pat_11 <- exp_pat_11 %>% 
+  rename(height = HEIGHT)
 
 # waist
+exp_pat_11 <- exp_pat_11 %>% 
+  rename(waist = WAIST)
 
 # and then we can remove the old, uncleaned versions of the variables we've modified
 clean_exp_pat_11 <- exp_pat_11 %>% 
@@ -272,8 +326,21 @@ clean_exp_pat_11 <- exp_pat_11 %>%
     -AGE,
     -MRN,
     -ENC_ID,
-    -FAC_CD
+    -FAC_CD,
+    -RACE_CD,
+    -PAYOR_CD,
+    -DSCH_DISP
          )
+```
+
+```{r}
+# admissions and discharges are special cases, since they're in different date formats
+
+# admission date
+
+# discharge date
+
+# ICD11_CD, DX_POA, & DX_SEQ need their own special care too. 
 ```
 
 ```{r}
